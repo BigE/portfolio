@@ -159,18 +159,26 @@ class Diff_HTML
 	 */
 	protected function _convert($contents)
 	{
-		$contents = str_replace(array("\r\n", "\r", ' '), "\n", trim($contents));
-		$contents = str_replace(array('<', '>'), array("\n<", ">\n"), $contents);
+		/*$contents = str_replace(array("\r\n", "\r", ' '), "\n", trim($contents));
+		$contents = str_replace(array('<', '>'), array("\n<", ">\n"), $contents);*/
+		$contents = str_replace(array("<", ">"), array("\n<", ">\n"), preg_replace("/(\r\n|\r|\n|\t|\s{2,500})/m", " ", $contents));
 		$array = explode("\n", $contents);
 		$out = array();
 
 		foreach ($array as $line) {
-			if (!empty($line)) {
+			if (empty($line)) continue;
+			if ($line[0] != '<' && strpos($line, ' ') !== false) {
+				$extra = explode(' ', $line);
+				foreach ($extra as $line) {
+					if (!empty($line)) {
+						$out[] = $line;
+					}
+				}
+			} else {
 				$out[] = $line;
 			}
 		}
 
-		// We need the trailing newline to keep silly output out of the diff.
 		return($out);
 	}
 
@@ -186,7 +194,13 @@ class Diff_HTML
 					$output[] = $line;
 				}
 			} else {
-				$tag = substr($line, 1, -1);
+				if (($end = strpos($line, ' ')) === false) {
+					$end = -1;
+				} else {
+					$end--;
+				}
+
+				$tag = substr($line, 1, $end);
 				if (isset($this->_tags[$tag])) {
 					$this->_openTags[] = $tag;
 					$output[] = $line.str_replace('[tag]', $this->_tags[$tag], $this->getAttribute(self::ATTR_ADD_TAG));
@@ -212,7 +226,13 @@ class Diff_HTML
 			if ($line[1] == '/') {
 				$tag = substr($line, 2, -1);
 			} else {
-				$tag = substr($line, 1, -1);
+				if (($end = strpos($line, ' ')) === false) {
+					$end = -1;
+				} else {
+					$end--;
+				}
+
+				$tag = substr($line, 1, $end);
 			}
 
 			if (isset($this->_tags[$tag])) {
