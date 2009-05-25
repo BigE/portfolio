@@ -49,6 +49,7 @@ div#content {
 
 div#description {
 	float: left;
+	height: 100%;
 	text-align: left;
 	width: 280px;
 }
@@ -58,8 +59,7 @@ div#ie6 {
 	margin-top: 15px;
 }
 
-div#technologies {
-	height: 300px;
+div#mainBox {
 	margin-left: 300px;
 	min-height: 300px;
 	padding: 10px;
