@@ -22,11 +22,11 @@ $(document).ready(function() {
 				notes where I can of what works and what doesn't. Thanks!</p>
 				<div id="ie6"></div>
 			</div>
-			<div id="technologies">
+			<div id="mainBox">
 				<div id="php" class="examples">
 					<h3>PHP Technologies</h3>
 					<div class="projects">
-						<a href="">PHP Diff</a>
+						<a href="/diff">PHP Diff</a>
 						<a href="">Gallery</a>
 						<a href="">SiTech Library</a>
 					</div>
