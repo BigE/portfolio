@@ -22,6 +22,7 @@ if (isset($css)) {
 		<script type="text/javascript" src="/js/jquery.simplemodal-1.2.3.min.js"></script>
 		<script type="text/javascript" src="/js/contact.js"></script>
 		<script type="text/javascript">
+<![CDATA[
 			$(document).ready(function () {
 				if (jQuery.browser.msie && jQuery.browser.version <= 6) {
 					// IE6 and below don't support PNG transparency, so we need
@@ -30,6 +31,7 @@ if (isset($css)) {
 					$('img#logo').attr('src', '/images/logo.gif');
 				}
 			});
+]]>
 		</script>
 <?php
 if (!empty($jsArr)) {
@@ -51,9 +53,13 @@ if (!empty($jsArr)) {
     <body>
 		<div id="content">
 			<div id="header"><a href="/"><img id="logo" src="/images/logo.png" alt="Eric's Portfolio" /></a></div>
-<?php echo $content; ?>
+<?php echo rtrim($content, "\n"),"\n"; ?>
 			<div id="footer">
 				Copyright &copy; 2009 - <a class="contact" href="/contact">Eric Gach</a> - All Rights Reserved
+				<p>
+					<a href="http://validator.w3.org/check?uri=referer"><img src="http://www.w3.org/Icons/valid-xhtml10" alt="Valid XHTML 1.0 Strict" height="31" width="88" /></a>
+					<a href="http://jigsaw.w3.org/css-validator/check/referer"><img style="border:0;width:88px;height:31px" src="http://jigsaw.w3.org/css-validator/images/vcss" alt="Valid CSS!" /></a>
+				</p>
 			</div>
 		</div>
     </body>

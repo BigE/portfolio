@@ -22,7 +22,7 @@ switch ($uri->getPath()) {
 		break;
 
 	case '/diff':
-		$orig = 'The quick brown fox<br>jummped over the fence.';
+		$orig = 'The quick brown fox<br />jummped over the fence.';
 		$new = '<h3>The Fox</h3><p>The quick brown fox jumped over the fence!</p>';
 		$view->setLayout('general.tpl');
 		$diff = new Diff_HTML();
