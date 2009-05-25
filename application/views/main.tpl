@@ -18,8 +18,8 @@ $(document).ready(function() {
 				ideas implemented into projects.</p>
 				<p><strong>Eric's Resume</strong><br />Download - <a href="/docs/resume.pdf">PDF</a> - <a href="/docs/resume.doc">Word Document</a></p>
 				<p><strong>Note</strong><br />This site is still in development. Some things will
-				work and some won't. I will keep updating this site regularly and try to make
-				notes where I can of what works and what doesn't. Thanks!</p>
+				work and some won't. I will keep updating this site regularly. If a link
+				has a line through it, it is a section that is incomplete.</p>
 				<div id="ie6"></div>
 			</div>
 			<div id="mainBox">
@@ -27,23 +27,23 @@ $(document).ready(function() {
 					<h3>PHP Technologies</h3>
 					<div class="projects">
 						<a href="/diff">PHP Diff</a>
-						<a href="">Gallery</a>
-						<a href="">SiTech Library</a>
+						<del><a href="/incomplete"><del>Gallery</a></del>
+						<del><a href="/incomplete">SiTech Library</a></del>
 					</div>
 				</div>
 				<div id="jquery" class="examples">
 					<h3>JQuery</h3>
 					<div class="projects">
-						<a href="">Example 1</a>
-						<a href="">Example 2</a>
-						<a href="">Example 3</a>
+						<del><a href="/incomplete">Example 1</a></del>
+						<del><a href="/incomplete">Example 2</a></del>
+						<del><a href="/incomplete">Example 3</a></del>
 					</div>
 				</div>
 				<div id="csharp" class="examples">
 					<h3>C/C++/C#</h3>
 					<div class="projects">
-						<a href="">IrssiProxy (C#)</a>
-						<a href="">liboscar (C)</a>
+						<del><a href="/incomplete">IrssiProxy (C#)</a></del>
+						<del><a href="/incomplete">liboscar (C)</a></del>
 					</div>
 				</div>
 			</div>

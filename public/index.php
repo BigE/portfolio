@@ -36,6 +36,11 @@ switch ($uri->getPath()) {
 		$view->display('diff.tpl');
 		break;
 
+	case '/incomplete':
+		$view->setLayout('general.tpl');
+		$view->display('incomplete.tpl');
+		break;
+	
 	default:
 		header("HTTP/1.0 404 Not Found");
 		$view->setLayout('general.tpl');
