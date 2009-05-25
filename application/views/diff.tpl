@@ -9,11 +9,11 @@
 			</div>
 			<div id="mainBox">
 				<h2>Original Version</h2>
-				<p><?php echo $original; ?></p>
-				<hr>
+				<div id="original"><?php echo $original; ?></div>
+				<hr />
 				<h2>New Version</h2>
-				<p><?php echo $new; ?></p>
-				<hr>
+				<div id="new"><?php echo $new; ?></div>
+				<hr />
 				<h2>Diff Output</h2>
-				<p><?php echo $diff; ?></p>
+				<div id="diff"><?php echo $diff; ?></div>
 			</div>

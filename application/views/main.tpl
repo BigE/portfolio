@@ -2,6 +2,7 @@
 $jsArr = array('jquery.corner.js');
 ?>
 			<script type="text/javascript">
+<![CDATA[
 $(document).ready(function() {
 	$('div.examples h3').corner();
 	if (jQuery.browser.msie && jQuery.browser.version < 7) {
@@ -9,6 +10,7 @@ $(document).ready(function() {
 		$('#ie6').effect('highlight', {color: '#ff7979'}, 2000);
 	}
 });
+]]>
 			</script>
 			<div id="description">
 				<h3>About This Site</h3>
@@ -27,7 +29,7 @@ $(document).ready(function() {
 					<h3>PHP Technologies</h3>
 					<div class="projects">
 						<a href="/diff">PHP Diff</a>
-						<del><a href="/incomplete"><del>Gallery</a></del>
+						<del><a href="/incomplete">Gallery</a></del>
 						<del><a href="/incomplete">SiTech Library</a></del>
 					</div>
 				</div>
