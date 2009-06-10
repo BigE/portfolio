@@ -3,7 +3,7 @@ echo $tpl->doctype('XHTML_10_STRICT'),PHP_EOL;
 ?>
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
     <head>
-		<base href="http://portfolio.seksibody.com<?php if ($_SERVER['SERVER_PORT'] != 80) { echo ':'.$_SERVER['SERVER_PORT']; }?>/" />
+		<base href="http://<?php echo $_SERVER['HTTP_HOST']; ?>/" />
 		<link rel="stylesheet" href="/css/global.css" />
 		<link rel="stylesheet" href="/css/contact.css" />
 <?php

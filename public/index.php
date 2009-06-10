@@ -12,16 +12,17 @@ SiTech_Loader::loadBootstrap();
 
 $uri = new SiTech_Uri();
 $view = new SiTech_Template(SITECH_APP_PATH.'/views');
+$path = explode('/', ltrim($uri->getPath(), '/'));
 
-switch ($uri->getPath()) {
-	case '/':
-	case '/home':
-	case '/index':
+switch ($path[0]) {
+	case '':
+	case 'home':
+	case 'index':
 		$view->setLayout('general.tpl');
 		$view->display('main.tpl');
 		break;
 
-	case '/diff':
+	case 'diff':
 		$orig = 'The quick brown fox<br />jummped over the fence.';
 		$new = '<h3>The Fox</h3><p>The quick brown fox jumped over the fence!</p>';
 		$view->setLayout('general.tpl');
@@ -36,11 +37,27 @@ switch ($uri->getPath()) {
 		$view->display('diff.tpl');
 		break;
 
-	case '/incomplete':
+	case 'gallery':
+		break;
+
+	case 'incomplete':
 		$view->setLayout('general.tpl');
 		$view->display('incomplete.tpl');
 		break;
-	
+
+	case 'source':
+		switch ($path[1]) {
+			case 'diff':
+				$page = realpath(SITECH_APP_PATH.'/../public/source/PHP/Diff/HTML.php');
+				break;
+		}
+
+		if (isset($page)) {
+			$view->setLayout('general.tpl');
+			$view->assign('page', $page);
+			$view->display('source.tpl');
+			break;
+		}
 	default:
 		header("HTTP/1.0 404 Not Found");
 		$view->setLayout('general.tpl');

@@ -6,6 +6,7 @@
 				should contain additions and/or removals from the original document.
 				Then the output from the diff will show additions and removals of
 				individual words and HTML tags.</p>
+				<p><a href="/source/diff">View Source</a></p>
 			</div>
 			<div id="mainBox">
 				<h2>Original Version</h2>
