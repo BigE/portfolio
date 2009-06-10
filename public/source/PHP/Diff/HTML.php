@@ -1,9 +1,5 @@
 <?php
 /**
- *
- */
-
-/**
  * This class uses the system diff in a way that makes it easy to show the
  * differences in HTML files. In stead of showing differences line by line, it
  * treats each word and HTML tag as a line. This makes it easier to show the
@@ -13,18 +9,51 @@
  */
 class Diff_HTML
 {
+	/**
+	 * Location of the diff binary. The default setting is /usr/bin/diff
+	 */
 	const ATTR_DIFF_BIN = 1;
+	/**
+	 * Custom HTML output when an added tag is found. The default adds an <ins>
+	 * tag that is clickable with a JS alert popup about the tag found.
+	 */
 	const ATTR_ADD_TAG = 2;
+	/**
+	 * Custom HTML output when a removed tag is found. The default adds a <del>
+	 * tag that is clickable with a JS alert popup about the tag removed.
+	 */
 	const ATTR_DEL_TAG = 3;
 
-	const TYPE_FILE = 1;
-	const TYPE_STRING = 2;
-
+	/**
+	 * Attributes for the class.
+	 *
+	 * @var array
+	 */
 	protected $_attributes = array();
+	/**
+	 * The new document to be compared by the diff.
+	 *
+	 * @var array
+	 */
 	protected $_new = array();
+	/**
+	 * The original document to be compared by the diff.
+	 *
+	 * @var array
+	 */
 	protected $_original = array();
+	/**
+	 * Tags that are open while parsing the diff output.
+	 *
+	 * @var array
+	 */
 	protected $_openTags = array();
 
+	/**
+	 * This is an array of tags that will be noted in the diff as added/removed.
+	 *
+	 * @var array
+	 */
 	private $_tags = array(
 		'br'    => 'Line Break',
 		'h1'    => 'Heading 1',
@@ -39,6 +68,9 @@ class Diff_HTML
 		'tr'    => 'Table Row'
 	);
 
+	/**
+	 * Class constructor.
+	 */
 	public function __construct()
 	{
 		$this->setAttribute(self::ATTR_DIFF_BIN, '/usr/bin/diff');
@@ -78,6 +110,13 @@ class Diff_HTML
 		unlink($new);
 	}
 
+	/**
+	 * Get an attributes value. If the attribute is not set, this will return
+	 * null.
+	 *
+	 * @param int $attr This should be a Diff_HTML::ATTR_* constant
+	 * @return mixed
+	 */
 	public function getAttribute($attr)
 	{
 		if (isset($this->_attributes[$attr])) {
@@ -87,21 +126,44 @@ class Diff_HTML
 		}
 	}
 
+	/**
+	 * Load the new document into the engine to prepare for diff.
+	 *
+	 * @param string $contents
+	 */
 	public function loadNew($contents)
 	{
 		$this->_new = $this->_convert($contents);
 	}
 
+	/**
+	 * Load the original document into the engine to prepare for diff.
+	 *
+	 * @param string $contents
+	 */
 	public function loadOriginal($contents)
 	{
 		$this->_original = $this->_convert($contents);
 	}
 
+	/**
+	 * Set the attribute to the value specified.
+	 *
+	 * @param int $attr This should be one of the Diff_HTML::ATTR_* constants.
+	 * @param mixed $value The value to set the attribute to.
+	 */
 	public function setAttribute($attr, $value)
 	{
 		$this->_attributes[$attr] = $value;
 	}
 
+	/**
+	 * This changes the diff code into usable HTML. The HTML output will show
+	 * the differences in the old and new markup as well as mark each HTML tag
+	 * that was changed in the document.
+	 *
+	 * @return string
+	 */
 	public function toHtml()
 	{
 		$output = array();
@@ -144,10 +206,11 @@ class Diff_HTML
 	 * Store the HTML output into the specified file.
 	 *
 	 * @param string $filename
+	 * @return bool
 	 */
 	public function toFile($filename)
 	{
-		file_put_contents($filename, $this->toHtml());
+		return(file_put_contents($filename, $this->toHtml()));
 	}
 
 	/**
@@ -182,6 +245,13 @@ class Diff_HTML
 		return($out);
 	}
 
+	/**
+	 * This will add a line to the output of content that has been added to the
+	 * document in the new version.
+	 *
+	 * @param string $line Line of diff output that we're parsing.
+	 * @param array $output Array of output to append to.
+	 */
 	protected function _outAdd($line, array &$output)
 	{
 		if ($line[0] == '<') {
@@ -213,11 +283,25 @@ class Diff_HTML
 		}
 	}
 
+	/**
+	 * This adds a line to the output that exists in both documents.
+	 *
+	 * @param string $line Line of diff output that we're parsing.
+	 * @param array $output Array of output to append to.
+	 */
 	protected function _outNormal($line, array &$output)
 	{
 		$output[] = $line;
 	}
 
+	/**
+	 * This adds output to show that the line was removed from the new document.
+	 * If it is a HTML tag that was removed, we just display a placeholder where
+	 * the tag would have been, but leave the tag out of the output.
+	 *
+	 * @param string $line Line of diff output that we're parsing.
+	 * @param array $output Array of output to append to.
+	 */
 	protected function _outRemove($line, array &$output)
 	{
 		if ($line[0] == '<') {
