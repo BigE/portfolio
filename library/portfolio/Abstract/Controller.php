@@ -31,7 +31,7 @@ abstract class portfolio_Abstract_Controller
 	 */
 	protected $_view;
 
-	public function __construct()
+	public function __construct($catchUndefined = true)
 	{
 		$this->_view = new portfolio_Template();
 		
@@ -55,10 +55,10 @@ abstract class portfolio_Abstract_Controller
 		$this->_path = $parts;
 		$this->_parsePath();
 
-		if (method_exists($this, $this->_action)) {
+		if (method_exists($this, $this->_action) || $catchUndefined === false) {
 			call_user_func(array($this, $this->_action));
 		} else {
-			throw new SiTech_Exception('Invalid action "%s"', array($this->_action));
+			throw new portfolio_Controller_Exception('Invalid action "%s"', array($this->_action), portfolio_Controller_Exception::ERROR_404);
 		}
 	}
 

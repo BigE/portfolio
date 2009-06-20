@@ -18,11 +18,27 @@ try {
 		exit;
 	}
 
-	$controller = SiTech_Loader::loadController($parts[0]);
-} catch (Exception $ex) {
-	header("HTTP/1.0 404 Not Found");
+	SiTech_Loader::loadController($parts[0]);
+} catch (portfolio_Controller_Exception $ex) {
 	$view = new portfolio_Template();
 	$view->setLayout('general.tpl');
 	$view->assign('page', $uri);
-	$view->display('404.tpl');
+	
+	switch ($ex->getHTTPCode()) {
+		case portfolio_Controller_Exception::ERROR_404:
+			header('HTTP/1.0 404 Not Found');
+			$view->display('errors/404.tpl');
+			break;
+
+		case portfolio_Controller_Exception::ERROR_500:
+			header('HTTP/1.1 500 Internal Server Error');
+			$view->display('errors/500.tpl');
+			break;
+	}
+} catch (Exception $ex) {
+	header('HTTP/1.1 500 Internal Server Error');
+	$view = new portfolio_Template();
+	$view->setLayout('general.tpl');
+	$view->assign('page', $uri);
+	$view->display('errors/500.tpl');
 }
