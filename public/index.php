@@ -4,64 +4,25 @@ defined('PS') || define('PS', PATH_SEPARATOR);
 defined('SITECH_APP_PATH') || define('SITECH_APP_PATH', realpath(dirname(__FILE__).'/../application'));
 defined('SITECH_LIB_PATH') || define('SITECH_LIB_PATH', realpath(SITECH_APP_PATH.'/../library'));
 
-set_include_path(realpath(SITECH_APP_PATH.'/../public/source/PHP').PS.get_include_path());
-
+set_include_path(realpath(SITECH_LIB_PATH).PS.get_include_path());
 require_once('SiTech/Loader.php');
 SiTech_Loader::registerAutoload();
-SiTech_Loader::loadBootstrap();
-
 $uri = new SiTech_Uri();
-$view = new SiTech_Template(SITECH_APP_PATH.'/views');
-$path = explode('/', ltrim($uri->getPath(), '/'));
+try {
+	SiTech_Loader::loadBootstrap();
 
-switch ($path[0]) {
-	case '':
-	case 'home':
-	case 'index':
-		$view->setLayout('general.tpl');
-		$view->display('main.tpl');
-		break;
+	$parts = explode('/', ltrim($uri->getPath(), '/'), 2);
+	if (empty($parts[0])) $parts[0] = 'default';
+	elseif ($parts[0] == 'info' || $parts[0] == 'info.php') {
+		phpinfo();
+		exit;
+	}
 
-	case 'diff':
-		$orig = 'The quick brown fox<br />jummped over the fence.';
-		$new = '<h3>The Fox</h3><p>The quick brown fox jumped over the fence!</p>';
-		$view->setLayout('general.tpl');
-		$diff = new Diff_HTML();
-		$diff->loadOriginal($orig);
-		$diff->loadNew($new);
-		$diff->diff();
-		$view->assign('css', array('diff.css'));
-		$view->assign('original', $orig);
-		$view->assign('new', $new);
-		$view->assign('diff', $diff);
-		$view->display('diff.tpl');
-		break;
-
-	case 'gallery':
-		break;
-
-	case 'incomplete':
-		$view->setLayout('general.tpl');
-		$view->display('incomplete.tpl');
-		break;
-
-	case 'source':
-		switch ($path[1]) {
-			case 'diff':
-				$page = realpath(SITECH_APP_PATH.'/../public/source/PHP/Diff/HTML.php');
-				break;
-		}
-
-		if (isset($page)) {
-			$view->setLayout('general.tpl');
-			$view->assign('page', $page);
-			$view->display('source.tpl');
-			break;
-		}
-	default:
-		header("HTTP/1.0 404 Not Found");
-		$view->setLayout('general.tpl');
-		$view->assign('page', $uri);
-		$view->display('404.tpl');
-		break;
+	$controller = SiTech_Loader::loadController($parts[0]);
+} catch (Exception $ex) {
+	header("HTTP/1.0 404 Not Found");
+	$view = new portfolio_Template();
+	$view->setLayout('general.tpl');
+	$view->assign('page', $uri);
+	$view->display('404.tpl');
 }
