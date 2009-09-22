@@ -45,7 +45,7 @@ $(document).ready(function() {
 					<h3>C/C++/C#</h3>
 					<div class="projects">
 						<del><a href="/incomplete">IrssiProxy (C#)</a></del>
-						<del><a href="/incomplete">liboscar (C)</a></del>
+						<a href="/liboscar">liboscar (C)</a>
 					</div>
 				</div>
 			</div>

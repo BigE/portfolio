@@ -29,6 +29,13 @@ a:link, a:visited {
 	color: #0000cf;
 }
 
+code {
+	background-color: #e8e8e8;
+	display: block;
+	padding: 10px 20px;
+	margin: 5px;
+}
+
 div#header {
 	background-color: #437543;
 	border: 1px solid black;
