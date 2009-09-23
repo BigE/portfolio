@@ -29,6 +29,10 @@ a:link, a:visited {
 	color: #0000cf;
 }
 
+del a:link, del a:visited {
+    text-decoration: inherit;
+}
+
 code {
 	background-color: #e8e8e8;
 	display: block;

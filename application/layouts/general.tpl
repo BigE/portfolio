@@ -19,10 +19,10 @@ if (isset($css)) {
 ?>
 		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 		<script type="text/javascript" src="/js/jquery-1.3.2.min.js"></script>
-		<script type="text/javascript" src="/js/jquery.simplemodal-1.2.3.min.js"></script>
+		<script type="text/javascript" src="/js/jquery.simplemodal-1.3.min.js"></script>
 		<script type="text/javascript" src="/js/contact.js"></script>
 		<script type="text/javascript">
-<![CDATA[
+/*<![CDATA[*/
 			$(document).ready(function () {
 				if (jQuery.browser.msie && jQuery.browser.version <= 6) {
 					// IE6 and below don't support PNG transparency, so we need
@@ -31,7 +31,7 @@ if (isset($css)) {
 					$('img#logo').attr('src', '/images/logo.gif');
 				}
 			});
-]]>
+/*]]>*/
 		</script>
 <?php
 if (!empty($jsArr)) {

@@ -18,12 +18,12 @@ try {
 		exit;
 	}
 
-	SiTech_Loader::loadController($parts[0]);
+	SiTech_Loader::loadController($parts[0], $uri);
 } catch (portfolio_Controller_Exception $ex) {
 	$view = new portfolio_Template();
 	$view->setLayout('general.tpl');
 	$view->assign('page', $uri);
-	
+
 	switch ($ex->getHTTPCode()) {
 		case portfolio_Controller_Exception::ERROR_404:
 			header('HTTP/1.0 404 Not Found');
