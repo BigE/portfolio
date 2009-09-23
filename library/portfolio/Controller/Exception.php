@@ -14,9 +14,11 @@ class portfolio_Controller_Exception extends SiTech_Exception
 	const ERROR_404 = 1;
 	const ERROR_500 = 2;
 
+	protected $_httpCode;
+
 	public function __construct($message, $args = array(), $httpCode = null)
 	{
-		if (!empty($code)) {
+		if (!empty($httpCode)) {
 			$this->_httpCode = $httpCode;
 		}
 

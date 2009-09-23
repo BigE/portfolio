@@ -6,7 +6,7 @@
 			such as libpurple that support this, liboscar aims to be an easy
 			interface for applications to use without having to deal with the
 			intricate peices of OSCAR itself.</p>
-			<p><a href="http://svn.php-oop.net/browse/listing.php?repname=liboscar&path=%2F&sc=0">Browse Source</a></p>
+			<p><a href="http://websvn.php-oop.net/C%20Projects.liboscar">Browse Source</a></p>
 		</div>
 		<div id="mainBox">
 			<h2>liboscar</h2>
