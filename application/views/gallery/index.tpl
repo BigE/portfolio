@@ -33,4 +33,5 @@ function galleryDemo() {
 </div>
 <div id="mainBox">
 	<h2>Gallery</h2>
+	<p></p>
 </div>

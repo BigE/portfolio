@@ -111,6 +111,7 @@ div.projects a:hover {
 div#footer {
 	background-color: #437543;
 	border: 1px solid black;
+	clear: both;
 	color: white;
 	padding: 2px 0;
 	text-align: center
