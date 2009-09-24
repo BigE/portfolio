@@ -1,4 +1,14 @@
 <?php
+$themes = array(
+	'blue',
+	'deep-red',
+	'turqoise',
+	'deep-blue',
+	'dark-grey'
+);
+
+$theme = (empty($_COOKIE['theme']) || !array_search($_COOKIE['theme'], $themes))? $themes[0] : $_COOKIE['theme'];
+
 echo $tpl->doctype('XHTML_10_STRICT'),PHP_EOL;
 ?>
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
@@ -18,9 +28,11 @@ if (isset($css)) {
 }
 ?>
 		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-		<script type="text/javascript" src="/js/jquery-1.3.2.min.js"></script>
-		<script type="text/javascript" src="/js/jquery.simplemodal-1.3.min.js"></script>
-		<script type="text/javascript" src="/js/contact.js"></script>
+		<script type="text/javascript" src="js/jquery-1.3.2.min.js"></script>
+		<script type="text/javascript" src="js/jquery.simplemodal-1.3.min.js"></script>
+		<script type="text/javascript" src="js/jquery.cookie.js"></script>
+		<script type="text/javascript" src="js/global.js"></script>
+		<script type="text/javascript" src="js/contact.js"></script>
 		<script type="text/javascript">
 /*<![CDATA[*/
 			$(document).ready(function () {
@@ -36,7 +48,7 @@ if (isset($css)) {
 <?php
 if (!empty($jsArr)) {
 	foreach ($jsArr as $js) {
-		echo "\t\t<script type=\"text/javascript\" src=\"/js/$js\"></script>\n";
+		echo "\t\t<script type=\"text/javascript\" src=\"js/$js\"></script>\n";
 	}
 }
 ?>
@@ -52,9 +64,17 @@ if (!empty($jsArr)) {
     </head>
     <body>
 		<div id="content">
-			<div id="header"><a href="/"><img id="logo" src="/images/logo.png" alt="Eric's Portfolio" /></a></div>
+			<div id="header" class="<?php echo $theme; ?>"><a href="/"><img id="logo" src="/images/logo.png" alt="Eric's Portfolio" /></a></div>
+			<div id="themes">
+				Change Theme:
+<?php
+foreach (array_reverse($themes) as $t) {
+	echo '<div class="theme '.$t.'">&nbsp;</div>';
+}
+?>
+			</div>
 <?php echo rtrim($content, "\n"),"\n"; ?>
-			<div id="footer">
+			<div id="footer" class="<?php echo $theme; ?>">
 				Copyright &copy; 2009 - <a class="contact" href="/contact">Eric Gach</a> - All Rights Reserved
 				<p>
 					<a href="http://validator.w3.org/check?uri=referer"><img src="http://www.w3.org/Icons/valid-xhtml10" alt="Valid XHTML 1.0 Strict" height="31" width="88" /></a>

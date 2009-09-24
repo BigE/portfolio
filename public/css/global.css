@@ -41,12 +41,16 @@ code {
 }
 
 div#header {
-	background-color: #437543;
 	border: 1px solid black;
 	color: white;
 	font-weight: normal;
 	margin-top: 0;
 	padding: 10px;
+}
+
+div#themes {
+	margin: 5px 0;
+	text-align: right;
 }
 
 div#content {
@@ -109,7 +113,6 @@ div.projects a:hover {
 }
 
 div#footer {
-	background-color: #437543;
 	border: 1px solid black;
 	clear: both;
 	color: white;
@@ -119,4 +122,33 @@ div#footer {
 
 div#footer a {
 	color: white;
+}
+
+.theme {
+	border: 1px solid black;
+	cursor: pointer;
+	float: right;
+	height: 20px;
+	margin: 0 5px;
+	width: 20px;
+}
+
+.blue {
+	background-color: #586caa;
+}
+
+.deep-red {
+	background-color: #6B2222;
+}
+
+.turqoise {
+	background-color: #1E7A6F;
+}
+
+.deep-blue {
+	background-color: #160D89;
+}
+
+.dark-grey {
+	background-color: #074944;
 }
