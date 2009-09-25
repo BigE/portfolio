@@ -7,7 +7,7 @@ $(document).ready(function() {
 	$('div.examples h3').corner();
 	if (jQuery.browser.msie && jQuery.browser.version < 7) {
 		$('#ie6').html('I noticed you\'re using IE ' + jQuery.browser.version + '. While this design is compatable with your browser, there are minor problems that could cause some inconvinence. I reccomend you upgrade or use <a href="http://www.opera.com" target="new">Opera</a>. Thanks.');
-		$('#ie6').effect('highlight', {color: '#ff7979'}, 2000);
+		//$('#ie6').effect('highlight', {color: '#ff7979'}, 2000);
 	}
 });
 /*]]>*/
