@@ -25,6 +25,15 @@ $(document).ready(function() {
 				<div id="ie6"></div>
 			</div>
 			<div id="mainBox">
+				<h2>About Eric</h2>
+				<p>I am an experienced PHP programmer that has experience with small scripts up to
+				large scale enterprise applications. Through PHP I have also experienced working with
+				HTML, CSS, and even Javascript. I have been striving to learn more and experience
+				more in the programming world, so I have started to take on other languages like
+				python, C and C#.</p>
+				<p>This site is to display and list some of the technologies that I have encountered
+				and used in my experience. Please have a look around and get in touch with me if you
+				have any questions or issues!</p>
 				<div id="php" class="examples">
 					<h3>PHP Technologies</h3>
 					<div class="projects">
