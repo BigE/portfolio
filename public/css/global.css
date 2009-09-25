@@ -12,8 +12,28 @@
 */
 
 @font-face {
-	src: url(../fonts/Diavlo_BOOK_II_37.otf) format("opentype");
-	font-family: "Diavlo";
+	font-family: Diavlo;
+	font-weight: bold;
+	src: url(../fonts/Diavlo_II_37/Diavlo_BOLD_II_37.otf) format("opentype");
+}
+
+/* You have to keep the "normal" font last because Opera only parses the last rule *sigh* */
+@font-face {
+	font-family: Diavlo;
+	font-weight: normal;
+	src: url(../fonts/Diavlo_II_37/Diavlo_BOOK_II_37.otf) format("opentype");
+}
+
+@font-face {
+	font-family: Delicious;
+	font-weight: bold;
+	src: url(../fonts/Delicious/Delicious-Bold.otf) format("opentype");
+}
+
+@font-face {
+	font-family: Delicious;
+	font-weight: normal;
+	src: url(../fonts/Delicious/Delicious-Roman.otf) format("opentype");
 }
 
 root { 
@@ -22,7 +42,7 @@ root {
 
 body {
 	background: url(/images/stripe.png) repeat;
-	font-family: Diavlo, Tahoma, Verdana, sans-serif;
+	font-family: Diavlo, Tahoma, sans-serif;
 	font-size: 11pt;
 }
 
