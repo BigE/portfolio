@@ -3,11 +3,11 @@
 function galleryDemo() {
 	// Display an external page using an iframe
 	var src = "http://gallery.php-oop.net";
-	$.modal('<iframe src="' + src + '" height="600" width="900" style="border:0">', {
+	$.modal('<iframe src="' + src + '" height="520" width="900" style="border:0">', {
 		containerCss:{
 			backgroundColor:"#fff",
 			borderColor:"#0063dc",
-			height:600,
+			height:520, /* this height fits nicely in 1024x768 */
 			padding:0,
 			width:900
 		},
