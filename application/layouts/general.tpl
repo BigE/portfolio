@@ -58,12 +58,13 @@ if (!empty($jsArr)) {
 				/* force for missing max-height in IE6 and below */
 				height: 380px;
 			}
-
-			div#header img {
-				background:none;
-				filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(
-					src='images/logo.png', sizingMethod='scale'
-				);
+		</style>
+		<![endif]-->
+		<!--[if IE]>
+		<style type="text/css">
+			body {
+				/* Font size fix since IE doesn't use CSS3 yet */
+				font-size: 10pt;
 			}
 		</style>
 		<![endif]-->
