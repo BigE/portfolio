@@ -14,16 +14,16 @@ echo $tpl->doctype('XHTML_10_STRICT'),PHP_EOL;
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
     <head>
 		<base href="http://<?php echo $_SERVER['HTTP_HOST']; ?>/" />
-		<link rel="stylesheet" href="/css/global.css" />
-		<link rel="stylesheet" href="/css/contact.css" />
+		<link rel="stylesheet" href="css/global.css" />
+		<link rel="stylesheet" href="css/contact.css" />
 <?php
 if (isset($css)) {
 	if (is_array($css)) {
 		foreach ($css as $stylesheet) {
-			echo "\t\t",'<link rel="stylesheet" href="/css/',$stylesheet,'" />',"\n";
+			echo "\t\t",'<link rel="stylesheet" href="css/',$stylesheet,'" />',"\n";
 		}
 	} else {
-		echo '<link rel="stylesheet" href="/css/',$css,'" />',"\n";
+		echo '<link rel="stylesheet" href="css/',$css,'" />',"\n";
 	}
 }
 ?>

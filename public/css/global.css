@@ -14,26 +14,26 @@
 @font-face {
 	font-family: Diavlo;
 	font-weight: bold;
-	src: url(../fonts/Diavlo_II_37/Diavlo_BOLD_II_37.otf) format("opentype");
+	src: local("Diavlo Bold"), url(../fonts/Diavlo_II_37/Diavlo_BOLD_II_37.otf) format("opentype");
 }
 
 /* You have to keep the "normal" font last because Opera only parses the last rule *sigh* */
 @font-face {
 	font-family: Diavlo;
 	font-weight: normal;
-	src: url(../fonts/Diavlo_II_37/Diavlo_BOOK_II_37.otf) format("opentype");
+	src: local("Diavlo Book"), url(../fonts/Diavlo_II_37/Diavlo_BOOK_II_37.otf) format("opentype");
 }
 
 @font-face {
 	font-family: Delicious;
 	font-weight: bold;
-	src: url(../fonts/Delicious/Delicious-Bold.otf) format("opentype");
+	src: local("Delicious"), url(../fonts/Delicious/Delicious-Bold.otf) format("opentype");
 }
 
 @font-face {
 	font-family: Delicious;
 	font-weight: normal;
-	src: url(../fonts/Delicious/Delicious-Roman.otf) format("opentype");
+	src: local("Delicious"), url(../fonts/Delicious/Delicious-Roman.otf) format("opentype");
 }
 
 root { 
