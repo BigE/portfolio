@@ -52,11 +52,18 @@ if (!empty($jsArr)) {
 	}
 }
 ?>
-		<!--[if lte IE 6]>
+		<!--[if lt IE 7]>
 		<style type="text/css">
 			div#mainBox {
 				/* force for missing max-height in IE6 and below */
 				height: 380px;
+			}
+
+			div#header img {
+				background:none;
+				filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(
+					src='images/logo.png', sizingMethod='scale'
+				);
 			}
 		</style>
 		<![endif]-->
@@ -66,13 +73,11 @@ if (!empty($jsArr)) {
 		<div id="content">
 			<div id="header" class="<?php echo $theme; ?>"><a href="/"><img id="logo" src="/images/logo.png" alt="Eric's Portfolio" /></a></div>
 			<div id="themes">
-				Change Theme:
-<?php
+				Change Theme:<?php
 foreach (array_reverse($themes) as $t) {
 	echo '<div class="theme '.$t.'">&nbsp;</div>';
 }
-?>
-			</div>
+?></div>
 <?php echo rtrim($content, "\n"),"\n"; ?>
 			<div id="footer" class="<?php echo $theme; ?>">
 				Copyright &copy; 2009 - <a class="contact" href="/contact">Eric Gach</a> - All Rights Reserved
