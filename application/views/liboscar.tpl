@@ -6,7 +6,7 @@
 			such as libpurple that support this, liboscar aims to be an easy
 			interface for applications to use without having to deal with the
 			intricate peices of OSCAR itself.</p>
-			<p><a href="http://websvn.php-oop.net/C%20Projects.liboscar">Browse Source</a></p>
+			<p><a href="http://websvn.php-oop.net/C%20Projects.liboscar" target="source">Browse Source</a></p>
 		</div>
 		<div id="mainBox">
 			<h2>liboscar</h2>
@@ -20,7 +20,7 @@
 			download the source through SVN. To view the source, you can click
 			the "Browse Source" link to the left side. To download the source,
 			you will need a SVN client which you can get from
-			<a href="http://subversion.tigris.org/">http://subversion.tigris.org/</a>.
+			<a href="http://subversion.tigris.org/" target="svn">http://subversion.tigris.org/</a>.
 			Once you have a client, just enter the following command:
 			<code>
 				svn co https://svn.php-oop.net/C/liboscar/trunk liboscar

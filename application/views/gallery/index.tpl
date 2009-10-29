@@ -74,9 +74,19 @@ function galleryDemo() {
 	but just a simple gallery to organize and display images from a specified
 	folder. This gallery even works recursively to display sub-folders as well.</p>
 	<p><a href="http://gallery.php-oop.net" onclick="return galleryDemo();">Gallery Demo</a><br />
-	<a href="http://websvn.php-oop.net/PHP%20Projects.gallery">Browse Source</a></p>
+	<a href="http://websvn.php-oop.net/PHP%20Projects.gallery" target="source">Browse Source</a></p>
 </div>
 <div id="mainBox">
 	<h2>Gallery</h2>
-	<p></p>
+	<p>
+		While this gallery is a very simple peice of software, it is also quite
+		advanced. The gallery itself will display thumbnails of images and video
+		files for the user to open. It works recursively to show sub folders in
+		the navigation menu, so any depth of folders can be opened.
+
+		Since this gallery was created for my own personal needs, it isn't
+		comparable to other professional gallery software, but it is still a
+		quite powerful system. It even comes with an admin area and an install
+		script to ease the use of setup and usage.
+	</p>
 </div>
