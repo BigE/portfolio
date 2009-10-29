@@ -39,7 +39,7 @@ $(document).ready(function() {
 					<div class="projects">
 						<a href="/diff">PHP Diff</a>
 						<a href="/gallery">Gallery</a>
-						<del><a href="/incomplete">SiTech Library</a></del>
+						<a href="/sitech">SiTech Library</a>
 					</div>
 				</div>
 				<div id="jquery" class="examples">
