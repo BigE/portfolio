@@ -4,7 +4,8 @@ $themes = array(
 	'deep-red',
 	'turqoise',
 	'deep-blue',
-	'dark-grey'
+	'dark-grey',
+	'orange'
 );
 
 $theme = (empty($_COOKIE['theme']) || !array_search($_COOKIE['theme'], $themes))? $themes[0] : $_COOKIE['theme'];
