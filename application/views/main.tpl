@@ -53,7 +53,7 @@ $(document).ready(function() {
 				<div id="csharp" class="examples">
 					<h3>C/C++/C#</h3>
 					<div class="projects">
-						<del><a href="/incomplete">IrssiProxy (C#)</a></del>
+						<a href="/irssinotify">IrssiNotify (C#)</a>
 						<a href="/liboscar">liboscar (C)</a>
 					</div>
 				</div>
