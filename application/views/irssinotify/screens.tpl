@@ -79,7 +79,8 @@ $(document).ready(function (){
 	<p>
 		These are various action screenshots of IrssiNotify in action when I'm
 		using and testing it. Most of them I lowered the quality of to help with
-		bandwidth and loading times.
+		bandwidth and loading times. I have also blurred the irrelevant sections
+		of the screen shots.
 	</p>
 	<p><a href="/irssinotify">Back to IrssiNotify</a></p>
 </div>
