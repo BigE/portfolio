@@ -30,7 +30,7 @@ $(document).ready(function() {
 				large scale enterprise applications. Through PHP I have also experienced working with
 				HTML, CSS, and even Javascript. I have been striving to learn more and experience
 				more in the programming world, so I have started to take on other languages like
-				python, C and C#.</p>
+				Python, C and C#.</p>
 				<p>This site is to display and list some of the technologies that I have encountered
 				and used in my experience. Please have a look around and get in touch with me if you
 				have any questions or issues!</p>
@@ -42,12 +42,10 @@ $(document).ready(function() {
 						<a href="/sitech">SiTech Library</a>
 					</div>
 				</div>
-				<div id="jquery" class="examples">
-					<h3>JQuery</h3>
+				<div id="python" class="examples">
+					<h3>Python</h3>
 					<div class="projects">
-						<del><a href="/incomplete">Example 1</a></del>
-						<del><a href="/incomplete">Example 2</a></del>
-						<del><a href="/incomplete">Example 3</a></del>
+						<a href="/simpleirc">SimpleIRC</a>
 					</div>
 				</div>
 				<div id="csharp" class="examples">
