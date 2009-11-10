@@ -16,6 +16,7 @@ echo $tpl->doctype('XHTML_10_STRICT'),PHP_EOL;
     <head>
 		<base href="http://<?php echo $_SERVER['HTTP_HOST']; ?>/" />
 		<link rel="stylesheet" href="css/global.css" />
+		<link rel="stylesheet" href="css/jquery-ui-1.7.2.custom.css" type="text/css" media="screen" charset="utf-8" />
 		<link rel="stylesheet" href="css/contact.css" />
 <?php
 if (isset($css)) {
@@ -30,6 +31,7 @@ if (isset($css)) {
 ?>
 		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 		<script type="text/javascript" src="js/jquery-1.3.2.min.js"></script>
+		<script type="text/javascript" src="js/jquery-ui-1.7.2.custom.min.js"></script>
 		<script type="text/javascript" src="js/jquery.simplemodal-1.3.min.js"></script>
 		<script type="text/javascript" src="js/jquery.cookie.js"></script>
 		<script type="text/javascript" src="js/global.js"></script>
@@ -74,13 +76,18 @@ if (!empty($jsArr)) {
     <body>
 		<div id="content">
 			<div id="header" class="<?php echo $theme; ?>"><a href="/"><img id="logo" src="/images/logo.png" alt="Eric's Portfolio" /></a></div>
+			<div id="font">
+				<a href="#" class="link">Enable Custom Font</a>&nbsp;[<a href="#" class="about">?</a>]
+			</div>
 			<div id="themes">
 				Change Theme:<?php
 foreach (array_reverse($themes) as $t) {
 	echo '<div class="theme '.$t.'">&nbsp;</div>';
 }
 ?></div>
+			<div id="main">
 <?php echo rtrim($content, "\n"),"\n"; ?>
+			</div>
 			<div id="footer" class="<?php echo $theme; ?>">
 				Copyright &copy; 2009 - <a class="contact" href="/contact">Eric Gach</a> - All Rights Reserved
 				<p>
@@ -89,5 +96,6 @@ foreach (array_reverse($themes) as $t) {
 				</p>
 			</div>
 		</div>
+		<div id="general" class="dialog"></div>
     </body>
 </html>
