@@ -74,7 +74,7 @@ function galleryDemo() {
 	but just a simple gallery to organize and display images from a specified
 	folder. This gallery even works recursively to display sub-folders as well.</p>
 	<p><a href="http://gallery.php-oop.net" onclick="return galleryDemo();">Gallery Demo</a><br />
-	<a href="http://websvn.php-oop.net/PHP%20Projects.gallery" target="source">Browse Source</a></p>
+	<a href="http://websvn.php-oop.net/PHP%20Projects.gallery" class="new-window">Browse Source</a></p>
 </div>
 <div id="mainBox">
 	<h2>Gallery</h2>

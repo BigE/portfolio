@@ -45,6 +45,12 @@ if (isset($css)) {
 					// user is using IE6 or lower.
 					$('img#logo').attr('src', '/images/logo.gif');
 				}
+
+				/* XHTML 1.0 Strict removes the use of target="" in <a> tags. */
+				$('a.new-window').click(function() {
+					window.open(this.href);
+					return(false);
+				});
 			});
 /*]]>*/
 		</script>
