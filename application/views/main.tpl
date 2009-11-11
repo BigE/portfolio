@@ -14,14 +14,26 @@ $(document).ready(function() {
 			</script>
 			<div id="description">
 				<h3>About This Site</h3>
-				<p>All code examples listed here are technologies or ideas used in different projects.
-				The projects languages range from PHP &amp; Javascript to C &amp; C#. All projects
-				listed here are fully working demos to show examples of previous work completed or
-				ideas implemented into projects.</p>
-				<p><strong>Eric's Resume</strong><br />Download - <a href="/docs/resume.pdf">PDF</a> - <a href="/docs/resume.doc">Word Document</a></p>
-				<p><strong>Note</strong><br />This site is still in development. Some things will
-				work and some won't. I will keep updating this site regularly. If a link
-				has a line through it, it is a section that is incomplete.</p>
+				<p>
+					All code examples listed here are technologies or ideas used in different projects.
+					The projects languages range from PHP &amp; Javascript to C &amp; C#. All projects
+					listed here are fully working demos to show examples of previous work completed or
+					ideas implemented into projects.
+				</p>
+				<p>
+					All JavaScript code and effects are built using the <a href="http://jquery.com/" target="jquery">jQuery</a>
+					framework and using <a href="http://jqueryui.com/" target="jqueryui">jQuery UI</a>
+					for UI effects. I will also add a jQuery section to show
+					examples of technologies used with jQuery and AJAX.
+				</p>
+				<h4>Eric's Resume</h4>
+				<p>Download - <a href="/docs/resume.pdf">PDF</a> - <a href="/docs/resume.doc">Word Document</a></p>
+				<h4>Note</h4>
+				<p>
+					This site is still in development. Some things will
+					work and some won't. I will keep updating this site regularly. If a link
+					has a line through it, it is a section that is incomplete.
+				</p>
 				<div id="ie6"></div>
 			</div>
 			<div id="mainBox">

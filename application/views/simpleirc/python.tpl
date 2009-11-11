@@ -6,6 +6,10 @@
 		useful to users. It also supports user registration, and user elevation
 		for special commands.
 	</p>
+	<p>
+		<a href="simpleirc/php">PHP Version</a><br />
+		<a href="http://websvn.php-oop.net/Python%20Projects.SimpleIRC" target="source">Browse Source</a>
+	</p>
 </div>
 <div id="mainBox">
 	<h2>SimpleIRC - Python</h2>

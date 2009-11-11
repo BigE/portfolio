@@ -17,6 +17,11 @@ class SimpleircController extends portfolio_Abstract_Controller
 	{
 		$this->python();
 	}
+
+	public function php()
+	{
+		$this->_view->display('simpleirc/php.tpl');
+	}
 	
 	public function python()
 	{
