@@ -4,7 +4,7 @@
 			to help aid the development of sites. The point behind SiTech is not
 			just to speed the development of applications, but to use minimal
 			amounts of code to aid them.</p>
-			<p><a href="http://websvn.php-oop.net/PHP%20Projects.SiTech" target="source">Browse Source</a></p>
+			<p><a href="http://websvn.php-oop.net/PHP%20Projects.SiTech" class="new-window">Browse Source</a></p>
 		</div>
 		<div id="mainBox">
 			<h2>SiTech Library</h2>
@@ -34,13 +34,13 @@
 						<strong>SiTech_ConfigParser</strong> - Configuration
 						parser that can parse INI files, XML files, and PHP files
 						that assign a $config variable array. This works very
-						similar to the python <a href="http://docs.python.org/library/configparser.html#module-ConfigParser" target="config">ConfigParser</a> module.
+						similar to the python <a href="http://docs.python.org/library/configparser.html#module-ConfigParser" class="new-window">ConfigParser</a> module.
 					</li>
 					<li>
 						<a name="SiTech_Console"></a>
 						<strong>SiTech_Console</strong> - Currently only supports
 						a SiTech_Console_GetOpts class that works somewhat similar
-						to the python <a href="http://docs.python.org/library/getopt.html#module-getopt" target="getopt">getopt</a> module.
+						to the python <a href="http://docs.python.org/library/getopt.html#module-getopt" class="new-window">getopt</a> module.
 					</li>
 					<li>
 						<a name="SiTech_Controller"></a>

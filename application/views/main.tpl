@@ -6,7 +6,7 @@ $jsArr = array('jquery.corner.js');
 $(document).ready(function() {
 	$('div.examples h3').corner();
 	if (jQuery.browser.msie && jQuery.browser.version < 7) {
-		$('#ie6').html('I noticed you\'re using IE ' + jQuery.browser.version + '. While this design is compatable with your browser, there are minor problems that could cause some inconvinence. I reccomend you upgrade or use <a href="http://www.opera.com" target="new">Opera</a>. Thanks.');
+		$('#ie6').html('I noticed you\'re using IE ' + jQuery.browser.version + '. While this design is compatable with your browser, there are minor problems that could cause some inconvinence. I reccomend you upgrade or use <a href="http://www.opera.com" class="new-window">Opera</a>. Thanks.');
 		//$('#ie6').effect('highlight', {color: '#ff7979'}, 2000);
 	}
 });
@@ -21,8 +21,8 @@ $(document).ready(function() {
 					ideas implemented into projects.
 				</p>
 				<p>
-					All JavaScript code and effects are built using the <a href="http://jquery.com/" target="jquery">jQuery</a>
-					framework and using <a href="http://jqueryui.com/" target="jqueryui">jQuery UI</a>
+					All JavaScript code and effects are built using the <a href="http://jquery.com/" class="new-window">jQuery</a>
+					framework and using <a href="http://jqueryui.com/" class="new-window">jQuery UI</a>
 					for UI effects. I will also add a jQuery section to show
 					examples of technologies used with jQuery and AJAX.
 				</p>
