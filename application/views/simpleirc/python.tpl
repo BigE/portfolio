@@ -8,7 +8,7 @@
 	</p>
 	<p>
 		<a href="simpleirc/php">PHP Version</a><br />
-		<a href="http://websvn.php-oop.net/Python%20Projects.SimpleIRC" class="new-window">Browse Source</a>
+		<a href="http://kenai.com/projects/simpleirc/sources/simpleirc-repository/show" class="new-window">Browse Source</a>
 	</p>
 </div>
 <div id="mainBox">
