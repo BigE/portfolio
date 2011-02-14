@@ -1,0 +1,3 @@
+[submodule "library/vendors/SiTech"]
+	path = library/vendors/SiTech
+	url = git@github.com:BigE/SiTech.git
