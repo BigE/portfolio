@@ -4,7 +4,7 @@
 			to help aid the development of sites. The point behind SiTech is not
 			just to speed the development of applications, but to use minimal
 			amounts of code to aid them.</p>
-			<p><a href="http://github.com/BigE/portfolio" class="new-window">Browse Source</a></p>
+			<p><a href="http://github.com/BigE/SiTech" class="new-window">Browse Source</a></p>
 		</div>
 		<div id="mainBox">
 			<h2>SiTech Library</h2>
