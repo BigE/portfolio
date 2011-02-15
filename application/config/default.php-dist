@@ -1,0 +1,11 @@
+<?php
+$config = array(
+	'base' => array(
+		'base_url' => 'http://localhost/~eric/portfolio/',
+		'development' => true
+	),
+	'db' => array(
+		'development' => array(),
+		'production' => array()
+	)
+);
