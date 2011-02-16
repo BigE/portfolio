@@ -6,6 +6,8 @@
  */
 class DefaultController extends \Portfolio\Controller\AController
 {
+	protected $_layout = 'general.tpl';
+
 	public function index()
 	{
 	}

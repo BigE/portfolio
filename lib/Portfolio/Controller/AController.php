@@ -12,6 +12,7 @@ namespace Portfolio\Controller;
  *
  * @author Eric Gach <eric@php-oop.net>
  */
-class AController extends \SiTech\Controller\AController
+abstract class AController extends \SiTech\Controller\AController
 {
+	protected $_layout = 'general.tpl';
 }

@@ -1,0 +1,109 @@
+/* 
+	Document   : general
+	Created on : Feb 15, 2011, 12:11:34 PM
+	Author     : Eric Gach <eric@php-oop.net>
+	Description:
+		Purpose of the stylesheet follows.
+*/
+
+/* 
+   TODO customize this sample style
+   Syntax recommendation http://www.w3.org/TR/REC-CSS2/
+*/
+
+root { 
+	display: block;
+}
+
+body {
+	font-family: Arial,Helvetica,sans-serif;
+	font-size: 14px;
+}
+
+h1 {
+	font-size: 1.8em;
+	margin: 20px 10px;
+}
+
+h2 {
+	font-size: 1.6em;
+}
+
+h3 {
+	font-size: 1.4em;
+}
+
+h4 {
+	font-size: 1.2em;
+}
+
+h2, h3, h4 {
+	margin: 10px 8px;
+}
+
+#content p {
+	margin: 20px 0;
+	padding: 0 8px;
+}
+
+#main {
+	margin: 0 auto;
+	min-width: 800px;
+	width: 75%;
+}
+
+#header {
+	min-width: 800px;
+	position: fixed;
+	top: 0;
+	width: 75%
+}
+
+#content {
+	margin-bottom: 40px;
+	margin-top: 90px;
+	padding: 10px;
+}
+
+#description {
+	float: left;
+	margin-right: 10px;
+	width: 300px;
+}
+
+#box {
+	margin-left: 320px;
+}
+
+#footer {
+	bottom: 0;
+	font-size: 0.8em;
+	min-width: 800px;
+	padding: 4px 0;
+	position: fixed;
+	text-align: center;
+	width: 75%;
+}
+
+.examples {
+	float: left;
+	margin: 0 5px;
+	text-align: left;
+	width: 180px;
+}
+
+.examples h3 {
+	font-size: 1em;
+	margin: 0;
+	padding: 8px 3px;
+	text-align: center;
+}
+
+.examples .projects {
+	padding: 3px;
+}
+
+.examples .projects, .examples .projects li {
+	list-style: none;
+	margin: 0;
+}
