@@ -1,6 +1,7 @@
 <?php
 $config = array(
 	'base' => array(
+		'email' => 'Eric Gach <eric@php-oop.net>',
 		'url' => 'http://localhost/~eric/portfolio/',
 		'development' => true
 	),

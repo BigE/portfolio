@@ -41,6 +41,11 @@ h2, h3, h4 {
 	margin: 10px 8px;
 }
 
+label {
+	float: left;
+	width: 100px;
+}
+
 #content p {
 	margin: 20px 0;
 	padding: 0 8px;
@@ -56,11 +61,12 @@ h2, h3, h4 {
 	min-width: 800px;
 	position: fixed;
 	top: 0;
-	width: 75%
+	width: 75%;
+	z-index: 1000;
 }
 
 #content {
-	margin-bottom: 40px;
+	margin-bottom: 25px;
 	margin-top: 90px;
 	padding: 10px;
 }
@@ -69,6 +75,10 @@ h2, h3, h4 {
 	float: left;
 	margin-right: 10px;
 	width: 300px;
+}
+
+#description div.ui-widget {
+	margin-bottom: 10px;
 }
 
 #box {
@@ -83,27 +93,15 @@ h2, h3, h4 {
 	position: fixed;
 	text-align: center;
 	width: 75%;
+	z-index: 1000;
 }
 
-.examples {
-	float: left;
-	margin: 0 5px;
-	text-align: left;
-	width: 180px;
+.error.ui-widget {
+	clear: both;
+	margin: 2px;
+	padding: 6px;
 }
 
-.examples h3 {
-	font-size: 1em;
-	margin: 0;
-	padding: 8px 3px;
-	text-align: center;
-}
-
-.examples .projects {
-	padding: 3px;
-}
-
-.examples .projects, .examples .projects li {
-	list-style: none;
-	margin: 0;
+.error.ui-widget .ui-icon {
+	margin-right: 5px;
 }

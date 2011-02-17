@@ -11,6 +11,7 @@
 		<?php endforeach; endif; ?>
 		<script src="js/jquery-1.4.4.min.js" type="text/javascript"></script>
 		<script src="js/jquery-ui-1.8.9.custom.min.js" type="text/javascript"></script>
+		<script src="js/general.js" type="text/javascript"></script>
 		<script src="js/contact.js" type="text/javascript"></script>
 		<title>Eric Gach's Portfolio</title>
 	</head>
@@ -21,9 +22,10 @@
 			</div>
 			<div id="content">
 				<?php echo $content; ?>
+				<br style="clear: both;" />
 			</div>
 			<div id="footer" class="ui-widget-header ui-corner-top">
-				Copyright &copy; 2009-2011 - <a id="contact" href="contact">Eric Gach</a> - All Rights Reserved
+				Copyright &copy; 2009-2011 - <a id="contact" href="contact.html">Eric Gach</a> - All Rights Reserved
 			</div>
 		</div>
 	</body>
