@@ -1,0 +1,25 @@
+/* 
+    Document   : diff
+    Created on : Feb 20, 2011, 2:52:25 PM
+    Author     : Eric Gach <eric@php-oop.net>
+    Description:
+        Purpose of the stylesheet follows.
+*/
+
+/* 
+   TODO customize this sample style
+   Syntax recommendation http://www.w3.org/TR/REC-CSS2/
+*/
+
+
+ins.diff {
+    color: green;
+}
+
+del.diff {
+	color: red;
+}
+
+ins.tag, del.tag {
+	cursor: pointer;
+}

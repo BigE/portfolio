@@ -38,7 +38,7 @@ $(document).ready(function () {
 						</p>
 					</div>
 			</div>
-			<div id="box" class="ui-widget ui-widget-content ui-corner-all" style="padding-bottom: 120px;">
+			<div id="box" class="ui-widget ui-widget-content ui-corner-all">
 				<div class="ui-widget-header ui-corner-top">
 					<h2>About Eric</h2>
 				</div>
@@ -54,28 +54,28 @@ $(document).ready(function () {
 					<h3><a href="#php">PHP Technologies</a></h3>
 					<div>
 						<ul class="projects">
-							<li><a href="diff.html">PHP Diff</a></li>
-							<li><a href="gallery.html">Gallery</a></li>
-							<li><a href="sitech.html">SiTech Library</a></li>
+							<li><a href="project/diff.html">PHP Diff</a></li>
+							<li><a href="project/gallery.html">Gallery</a></li>
+							<li><a href="project/sitech.html">SiTech Library</a></li>
 						</ul>
 					</div>
 					<h3><a href="#js">JavaScript</a></h3>
 					<div>
 						<ul class="projects">
-							<li><a href="notification.html">jQuery Notification Plugin</a></li>
+							<li><a href="project/notification.html">jQuery Notification Plugin</a></li>
 						</ul>
 					</div>
 					<h3><a href="#python">Python</a></h3>
 					<div>
 						<ul class="projects">
-							<li><a href="simpleirc.html">SimpleIRC</a></li>
+							<li><a href="project/simpleirc.html">SimpleIRC</a></li>
 						</ul>
 					</div>
 					<h3><a href="#c">C/C++/C#</a></h3>
 					<div>
 						<ul class="projects">
-							<li><a href="irssinotify.html">IrssiNotify (C#)</a></li>
-							<li><a href="liboscar.html">liboscar (C)</a></li>
+							<li><a href="project/irssinotify.html">IrssiNotify (C#)</a></li>
+							<li><a href="project/liboscar.html">liboscar (C)</a></li>
 						</ul>
 					</div>
 				</div>
