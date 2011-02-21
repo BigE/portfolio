@@ -1,6 +1,6 @@
 <script type="text/javascript">
 $(document).ready(function () {
-	$('#examples').accordion({active: false, collapsible: true}).css('max-width', '95%').css('margin', '0 auto');
+	$('#examples').accordion({active: false, collapsible: true});
 });
 </script>
 				<div id="description">
@@ -38,7 +38,7 @@ $(document).ready(function () {
 						</p>
 					</div>
 			</div>
-			<div id="box" class="ui-widget ui-widget-content ui-corner-all">
+			<div id="box" class="ui-widget ui-widget-content ui-corner-all" style="padding-bottom: 20px;">
 				<div class="ui-widget-header ui-corner-top">
 					<h2>About Eric</h2>
 				</div>

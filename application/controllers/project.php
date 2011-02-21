@@ -29,4 +29,16 @@ class ProjectController extends Portfolio\Controller\AController
 		$this->_view->assign('new', $new);
 		$this->_view->assign('diff', $diff);
 	}
+
+	public function gallery()
+	{
+	}
+
+	public function simpleirc()
+	{
+	}
+
+	public function sitech()
+	{
+	}
 }

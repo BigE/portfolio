@@ -85,6 +85,11 @@ label {
 	margin-left: 320px;
 }
 
+#box .ui-accordion {
+	margin: 0 auto;
+	max-width: 95%;
+}
+
 #footer {
 	bottom: 0;
 	font-size: 0.8em;

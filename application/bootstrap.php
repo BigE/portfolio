@@ -6,4 +6,5 @@ $config = Portfolio\ConfigParser::singleton();
 // controller and action.
 define('SITECH_BASEURI', $config->get('base', 'url'));
 
+SiTech\Controller::addroute('/index.html', 'default', 'index');
 SiTech\Controller::addRoute('/contact(\.html|\.json)?', 'default', 'contact');

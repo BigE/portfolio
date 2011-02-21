@@ -18,7 +18,7 @@
 	<body>
 		<div id="main" class="ui-widget">
 			<div id="header" class="ui-widget-header ui-corner-bottom">
-				<h1>Test</h1>
+				<h1><a href="index.html">Test</a></h1>
 			</div>
 			<div id="content">
 				<?php echo $content; ?>

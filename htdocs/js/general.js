@@ -1,5 +1,9 @@
 $(document).ready(function () {
 	$('.error').not(':empty').each(highlightError);
+	$('a.new-window').click(function (e) {
+		window.open(this.href);
+		e.preventDefault();
+	});
 });
 
 function highlightError() {
