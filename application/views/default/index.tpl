@@ -3,40 +3,30 @@ $(document).ready(function () {
 	$('#examples').accordion({active: false, collapsible: true});
 });
 </script>
-				<div id="description">
-					<div class="box ui-widget ui-widget-content ui-corner-all">
-						<div  class="ui-widget-header ui-corner-top">
-							<h3>About This Site</h3>
-						</div>
-						<p>
-							All code examples listed here are technologies or ideas used in different projects.
-							The projects languages range from PHP &amp; Javascript to C &amp; C#. All projects
-							listed here are fully working demos to show examples of previous work completed or
-							ideas implemented into projects.
-						</p>
-						<p>
-							All JavaScript code and effects are built using the <a href="http://jquery.com/" class="new-window">jQuery</a>
-							framework and using <a href="http://jqueryui.com/" class="new-window">jQuery UI</a>
-							for UI effects. I will also add a jQuery section to show
-							examples of technologies used with jQuery and AJAX.
-						</p>
+			<div id="description">
+				<div class="box ui-widget ui-widget-content ui-corner-all">
+					<div  class="ui-widget-header ui-corner-top">
+						<h3>About This Site</h3>
 					</div>
-					<div class="ui-widget ui-widget-content ui-corner-all">
-						<div class="ui-widget-header">
-							<h4>Eric's Resume</h4>
-						</div>
-						<p>Download - <a href="docs/resume.pdf">PDF</a> - <a href="docs/resume.doc">Word Document</a></p>
+					<p>
+						All code examples listed here are technologies or ideas used in different projects.
+						The projects languages range from PHP &amp; Javascript to C &amp; C#. All projects
+						listed here are fully working demos to show examples of previous work completed or
+						ideas implemented into projects.
+					</p>
+					<p>
+						All JavaScript code and effects are built using the <a href="http://jquery.com/" class="new-window">jQuery</a>
+						framework and using <a href="http://jqueryui.com/" class="new-window">jQuery UI</a>
+						for UI effects. I will also add a jQuery section to show
+						examples of technologies used with jQuery and AJAX.
+					</p>
+				</div>
+				<div class="ui-widget ui-widget-content ui-corner-all">
+					<div class="ui-widget-header">
+						<h4>Eric's Resume</h4>
 					</div>
-					<div class="ui-widget ui-widget-content ui-corner-all">
-						<div class="ui-widget-header">
-							<h4>Note</h4>
-						</div>
-						<p>
-							This site is still in development. Some things will
-							work and some won't. I will keep updating this site regularly. If a link
-							has a line through it, it is a section that is incomplete.
-						</p>
-					</div>
+					<p>Download - <a href="docs/resume.pdf">PDF</a> - <a href="docs/resume.doc">Word Document</a></p>
+				</div>
 			</div>
 			<div id="box" class="ui-widget ui-widget-content ui-corner-all" style="padding-bottom: 20px;">
 				<div class="ui-widget-header ui-corner-top">
