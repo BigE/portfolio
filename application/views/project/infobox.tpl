@@ -35,9 +35,10 @@ $(document).ready(function () {
 		InfoBox will use the current jQuery UI theme, making it seamelessly
 		integrate into any website using the jQuery UI.
 	</p>
-	<!--<p>
-		<a href="source/infobox.html">Brouse Source</a>
-	</p>-->
+	<p>
+		<a href="source/infobox.js">View JS Source</a><br />
+		<a href="source/infobox.css">View CSS Source</a>
+	</p>
 </div>
 <div id="box" class="ui-widget ui-widget-content ui-corner-all">
 	<div class="ui-widget-header ui-corner-top">

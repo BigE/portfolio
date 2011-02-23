@@ -8,7 +8,7 @@
 								Then the output from the diff will show additions and removals of
 								individual words and HTML tags.
 							</p>
-							<p><a href="source/diff">View Source</a></p>
+							<p><a href="source/diff.phps">View Source</a></p>
 						</div>
 						<div id="box" class="ui-widget ui-widget-content ui-corner-all">
 							<div class="ui-widget-header ui-corner-top">

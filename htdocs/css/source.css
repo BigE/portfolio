@@ -15,15 +15,21 @@ root {
     display: block;
 }
 
-#code, #num {
+#lineno, .source {
 	font-size: 14px;
 	line-height: 20px;
 }
 
-#sitech_source #num {
+.source {
+	overflow: auto;
+}
+
+#lineno {
 	background-color: #e6e4e4;
-	border: 1px solid black;
+	border-right: 1px solid black;
+	float: left;
 	margin-right: 5px;
 	padding-left: 5px;
 	padding-right: 5px;
+	text-align: right;
 }
