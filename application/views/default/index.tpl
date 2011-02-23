@@ -62,7 +62,7 @@ $(document).ready(function () {
 					<h3><a href="#js">JavaScript</a></h3>
 					<div>
 						<ul class="projects">
-							<li><a href="project/notification.html">jQuery Notification Plugin</a></li>
+							<li><a href="project/infobox.html">jQuery InfoBox Plugin</a></li>
 						</ul>
 					</div>
 					<h3><a href="#python">Python</a></h3>

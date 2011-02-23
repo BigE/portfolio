@@ -6,13 +6,16 @@
 		<link rel="stylesheet" href="css/reset.css" />
 		<link rel="stylesheet" href="css/general.css" />
 		<link rel="stylesheet" href="css/hot-sneaks/jquery-ui-1.8.9.custom.css" />
-		<?php if (isset($css) && is_array($css)): foreach ($css as $s): ?>
+<?php if (isset($css) && is_array($css)): foreach ($css as $s): ?>
 		<link rel="stylesheet" href="css/<?php echo $s; ?>" />
-		<?php endforeach; endif; ?>
+<?php endforeach; endif; ?>
 		<script src="js/jquery-1.4.4.min.js" type="text/javascript"></script>
 		<script src="js/jquery-ui-1.8.9.custom.min.js" type="text/javascript"></script>
 		<script src="js/general.js" type="text/javascript"></script>
 		<script src="js/contact.js" type="text/javascript"></script>
+<?php if (isset($js) && is_array($js)): foreach ($js as $j): ?>
+		<script src="<?php echo $j; ?>" type="text/javascript"></script>
+<?php endforeach; endif; ?>
 		<title>Eric Gach's Portfolio</title>
 	</head>
 	<body>

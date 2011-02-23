@@ -34,6 +34,31 @@ class ProjectController extends Portfolio\Controller\AController
 	{
 	}
 
+	public function infobox()
+	{
+		$this->_view->assign('css', array('jquery-infobox-1.0.0.css'));
+		$this->_view->assign('js', array('js/jquery-infobox-1.0.0.js'));
+	}
+
+	public function irssinotify()
+	{
+		$screens = array();
+
+		$images = new DirectoryIterator(SITECH_APP_PATH.'/../htdocs/images/irssinotify/');
+		foreach ($images as $img) {
+			if ($img->isDir() || substr($img->getFilename(), 0, 6) == 'thumb_') continue;
+			if (substr($img->getFilename(), strrpos($img->getFilename(), '.')) == '.jpg') {
+				$screens[] = $img->getFilename();
+			}
+		}
+
+		$this->_view->assign('screens', $screens);
+	}
+
+	public function liboscar()
+	{
+	}
+
 	public function simpleirc()
 	{
 	}

@@ -1,0 +1,38 @@
+/*
+    Document   : jquery-infobox-1.0.0.css
+    Created on : Jan 14, 2011, 1:04:41 PM
+    Author     : Eric Gach <eric@php-oop.net>
+    Description:
+                This is the stylesheet for the infobox that is used within the gallery
+                to display information to the user.
+*/
+
+root {
+    display: block;
+}
+
+.infobox {
+        bottom: 0;
+        display: block;
+        margin: 0px 10px;
+        position: fixed;
+        right: 0;
+        width: 300px;
+		z-index: 1000;
+}
+
+.infobox div {
+        padding: 5px;
+}
+
+.infobox-icon-l {
+        float: left;
+}
+
+.infobox-icon-r {
+        float: right;
+}
+
+.ui-icon-close {
+        cursor: pointer;
+}
