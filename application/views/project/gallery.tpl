@@ -21,7 +21,7 @@ $(document).ready(function () {
 	<p>This gallery is a gallery I designed for my own needs. Its nothing fancy
 	but just a simple gallery to organize and display images from a specified
 	folder. This gallery even works recursively to display sub-folders as well.</p>
-	<p><a href="http://gallery.php-oop.net/" id="demo">Gallery Demo</a><br />
+	<p><a href="gallery/" id="demo">Gallery Demo</a><br />
 	<a href="http://websvn.php-oop.net/PHP.gallery" class="new-window">Browse Source</a></p>
 </div>
 <div id="box" class="ui-widget ui-widget-content ui-corner-all">
