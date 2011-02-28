@@ -1,27 +1,9 @@
-<script type="text/javascript">
-$(document).ready(function () {
-	$('#demo').click(function (e) {
-		e.preventDefault();
-		$.get(this.href, function (data) {
-			$('<div id="dialog" />').html(data).dialog({
-				close: function () {
-					$(this).dialog('destroy');
-				},
-				height: 600,
-				modal: true,
-				title: 'Gallery Demo',
-				width: 800
-			});
-		});
-	});
-});
-</script>
 <div id="description" class="ui-widget ui-widget-content ui-corner-all">
 	<div class="ui-widget-header ui-corner-top"><h3>My Gallery</h3></div>
 	<p>This gallery is a gallery I designed for my own needs. Its nothing fancy
 	but just a simple gallery to organize and display images from a specified
 	folder. This gallery even works recursively to display sub-folders as well.</p>
-	<p><a href="gallery/" id="demo">Gallery Demo</a><br />
+	<p><a href="http://gallery.php-oop.net/" class="new-window">Gallery Demo</a><br />
 	<a href="http://websvn.php-oop.net/PHP.gallery" class="new-window">Browse Source</a></p>
 </div>
 <div id="box" class="ui-widget ui-widget-content ui-corner-all">
