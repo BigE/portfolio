@@ -4,7 +4,7 @@
  *
  * @author eric
  */
-class DefaultController extends \Portfolio\Controller\AController
+class DefaultController extends \Portfolio\Controller\Base
 {
 	protected $_layout = 'general.tpl';
 

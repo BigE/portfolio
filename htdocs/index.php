@@ -8,8 +8,8 @@ SiTech\Loader::registerAutoload();
 SiTech\Loader::loadBootstrap();
 
 try {
-	SiTech\Controller::dispatch(new SiTech\Uri());
-} catch (SiTech\Controller\Exception $ex) {
+	SiTech\Routing\Router::dispatch();
+} catch (SiTech\Routing\Exception $ex) {
 	var_dump($ex);
 } catch (Exception $ex) {
 	var_dump($ex);

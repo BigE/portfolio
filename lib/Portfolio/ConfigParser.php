@@ -12,7 +12,7 @@ namespace Portfolio;
  *
  * @author Eric Gach <eric@php-oop.net>
  */
-class ConfigParser extends \SiTech\ConfigParser
+class ConfigParser extends \SiTech\ConfigParser\ConfigParser
 {
 	/**
 	 * @var \Portfolio\ConfigParser
@@ -43,13 +43,13 @@ class ConfigParser extends \SiTech\ConfigParser
 
 	/**
 	 * Singleton to load the ConfigParser class into the portfolio site.
-	 * 
+	 *
 	 * @return \Portfolio\ConfigParser
 	 */
 	public static function singleton()
 	{
 		if (!isset(self::$_instance)) {
-			self::$_instance = \Portfolio\ConfigParser::load(array(\SiTech\ConfigParser::ATTR_HANDLER => new \SiTech\ConfigParser\Handler\_Array()));
+			self::$_instance = new \Portfolio\ConfigParser(array(\SiTech\ConfigParser\ConfigParser::ATTR_HANDLER => new \SiTech\ConfigParser\Handler\_Array()));
 			self::$_instance->read(array(SITECH_APP_PATH.DIRECTORY_SEPARATOR.'config'.DIRECTORY_SEPARATOR.'default.php'));
 		}
 
