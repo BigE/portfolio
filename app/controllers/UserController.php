@@ -1,6 +1,6 @@
 <?php
 
-class BlogController extends \BaseController {
+class UserController extends \BaseController {
 
 	/**
 	 * Display a listing of the resource.
@@ -9,7 +9,7 @@ class BlogController extends \BaseController {
 	 */
 	public function index()
 	{
-		return View::make('blog.browse', ['entries' => Blog::mostRecent()->get()]);
+		//
 	}
 
 	/**
@@ -40,7 +40,7 @@ class BlogController extends \BaseController {
 	 */
 	public function show($id)
 	{
-		//
+		return View::make('user.show', ['user' => User::find($id)]);
 	}
 
 	/**
