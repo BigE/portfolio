@@ -2,6 +2,8 @@
 
 class BlogController extends \BaseController {
 
+	protected $layout = 'layouts.generic';
+
 	/**
 	 * Display a listing of the resource.
 	 *
@@ -40,7 +42,8 @@ class BlogController extends \BaseController {
 	 */
 	public function show($id)
 	{
-		//
+		$entry = Blog::find($id);
+		return View::make('blog.show', ['entry' => $entry]);
 	}
 
 	/**

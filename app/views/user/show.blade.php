@@ -1,5 +1,9 @@
 @extends('layouts.generic')
 
 @section('content')
-	<?php var_dump($user) ?>
+	<section class="user">
+		<header>
+			<h3><?=$user->realname?></h3>
+		</header>
+	</section>
 @stop

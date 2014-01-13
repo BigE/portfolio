@@ -51,4 +51,8 @@ class User extends Eloquent implements UserInterface, RemindableInterface
 		return $this->email;
 	}
 
+	public function htmlName()
+	{
+		return strtolower(preg_replace('/[^\w\-]+/u', '-', $this->realname));
+	}
 }

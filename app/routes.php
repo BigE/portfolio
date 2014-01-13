@@ -12,4 +12,5 @@
 */
 
 Route::get('/', 'BlogController@index');
+Route::resource('blog', 'BlogController');
 Route::resource('user', 'UserController');

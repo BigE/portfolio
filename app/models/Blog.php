@@ -16,4 +16,9 @@ class Blog extends Eloquent
 		             ->orderBy('created_at', 'desc')
 		             ->limit(10);
 	}
+
+	public function htmlTitle()
+	{
+		return preg_replace('/[^\w\-]+/u', '-', $this->title);
+	}
 }
