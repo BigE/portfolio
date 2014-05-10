@@ -25,3 +25,7 @@ body > header {
 #content {
 	margin: 2em 2em 2em 12em;
 }
+
+pre {
+	word-wrap: break-word;
+}

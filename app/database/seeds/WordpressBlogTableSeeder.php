@@ -1,7 +1,7 @@
 <?php
 use \Illuminate\Database\Seeder;
 
-class BlogTableSeeder extends Seeder
+class WordpressBlogTableSeeder extends Seeder
 {
 	public function run()
 	{

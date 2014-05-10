@@ -13,7 +13,6 @@ class DatabaseSeeder extends Seeder {
 		Eloquent::unguard();
 
 		$this->call('UserTableSeeder');
-		$this->call('BlogTableSeeder');
 	}
 
 }
