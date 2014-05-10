@@ -11,6 +11,31 @@
 |
 */
 
-Route::get('/', 'BlogController@index');
+Route::get('/', ['as' => 'default', 'uses' => 'BlogController@index']);
 Route::resource('blog', 'BlogController');
+Route::resource('resume', 'ResumeController');
 Route::resource('user', 'UserController');
+
+Route::get('login', ['as' => 'login', function() {
+	return View::make('user.login');
+}]);
+
+Route::post('login', ['as' => 'login', function() {
+	$userdata = [
+		'email' => Input::get('email'),
+		'password' => Input::get('password')
+	];
+
+	if (Auth::attempt($userdata, ((bool)Input::get('remember', false)))) {
+		return Redirect::to('user');
+	} else {
+		return Redirect::to('login')->with('login_errors', true);
+	}
+}]);
+
+Route::group(['before' => 'auth'], function () {
+	Route::get('logout', ['as' => 'logout', function() {
+		Auth::logout();
+		return Redirect::to('login');
+	}]);
+});

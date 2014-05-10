@@ -9,7 +9,7 @@ class UserTableSeeder extends Seeder
 		User::create(
 			[
 				'email' => 'eric@php-oop.net',
-				'password' => 'a50992fe2f86221e25b0052f80ee130f31265fdb',
+				'password' => '$2y$10$1I80dMhYwXchtapBUGhlPuBfWotFGP.M8Abb8UQbJoZrDwtBlx6tG',
 				'realname' => 'Eric Gach'
 			]
 		);
