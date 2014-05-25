@@ -1,6 +1,15 @@
 <?php
+class BaseController extends \Controller
+{
+	/**
+	 * @var User
+	 */
+	protected $user;
 
-class BaseController extends Controller {
+	public function __construct()
+	{
+		$this->user = \Auth::user();
+	}
 
 	/**
 	 * Setup the layout used by the controller.
@@ -9,9 +18,9 @@ class BaseController extends Controller {
 	 */
 	protected function setupLayout()
 	{
-		if ( ! is_null($this->layout))
+		if (!is_null($this->layout))
 		{
-			$this->layout = View::make($this->layout);
+			$this->layout = \View::make($this->layout);
 		}
 	}
 
