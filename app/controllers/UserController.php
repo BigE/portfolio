@@ -9,7 +9,12 @@ class UserController extends \BaseController {
 	 */
 	public function index()
 	{
-		return \View::make('user.index');
+		$user = $this->user->with('resumes')->with(array(
+			'posts' => function ($query) {
+				$query->orderBy('created_at', 'DESC');
+			}
+		))->first();
+		return \View::make('user.index', ['user' => $user]);
 	}
 
 	/**

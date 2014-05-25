@@ -1,0 +1,17 @@
+#title {
+	width: 30em;
+}
+
+.experience {
+	position: relative;
+}
+
+.experience h3 {
+	margin-left: 2.2em;
+}
+
+.experience .icons {
+	left: 0;
+	position: absolute;
+	top: 0;
+}
