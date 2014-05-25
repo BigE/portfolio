@@ -86,4 +86,14 @@ class User extends Eloquent implements UserInterface, RemindableInterface
 	{
 		return strtolower(preg_replace('/[^\w\-]+/u', '-', $this->realname));
 	}
+
+	public function posts()
+	{
+		return $this->hasMany('Blog', 'author_id');
+	}
+
+	public function resumes()
+	{
+		return $this->hasMany('Resume', 'owner_id');
+	}
 }
