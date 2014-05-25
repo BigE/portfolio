@@ -12,9 +12,10 @@
 */
 
 Route::get('/', ['as' => 'default', 'uses' => 'BlogController@index']);
-Route::resource('blog', 'BlogController');
-Route::resource('resume', 'ResumeController');
-Route::resource('user', 'UserController');
+Route::resource('blog', 'BlogController', ['only' => ['index', 'show']]);
+Route::resource('resume', 'ResumeController', ['only' => ['index', 'show']]);
+Route::resource('resume.experience', 'Resume\ExperienceController', ['only' => ['index', 'show']]);
+Route::resource('user', 'UserController', ['only' => ['show']]);
 
 Route::get('login', ['as' => 'login', function() {
 	return View::make('user.login');
@@ -38,4 +39,9 @@ Route::group(['before' => 'auth'], function () {
 		Auth::logout();
 		return Redirect::to('login');
 	}]);
+
+	Route::resource('blog', 'BlogController', ['except' => ['index', 'show']]);
+	Route::resource('resume', 'ResumeController', ['except' => ['index', 'show']]);
+	Route::resource('resume.experience', 'Resume\ExperienceController', ['except' => ['index', 'show']]);
+	Route::resource('user', 'UserController', ['except' => ['show']]);
 });

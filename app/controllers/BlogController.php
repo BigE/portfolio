@@ -1,18 +1,7 @@
 <?php
 
-class BlogController extends \BaseController {
-
-	protected $layout = 'layouts.generic';
-
-	/**
-	 * Display a listing of the resource.
-	 *
-	 * @return Response
-	 */
-	public function index()
-	{
-		return View::make('blog.browse', ['entries' => Blog::mostRecent()->get()]);
-	}
+class BlogController extends \BaseController
+{
 
 	/**
 	 * Show the form for creating a new resource.
@@ -22,6 +11,39 @@ class BlogController extends \BaseController {
 	public function create()
 	{
 		//
+	}
+
+	/**
+	 * Remove the specified resource from storage.
+	 *
+	 * @param  int  $id
+	 * @return Response
+	 */
+	public function destroy($id)
+	{
+		//
+	}
+
+	/**
+	 * Show the form for editing the specified resource.
+	 *
+	 * @param  int  $id
+	 * @return Response
+	 */
+	public function edit($id)
+	{
+		$entry = Blog::findOrFail($id);
+		return View::make('blog.edit', ['entry' => $entry]);
+	}
+
+	/**
+	 * Display a listing of the resource.
+	 *
+	 * @return Response
+	 */
+	public function index()
+	{
+		return View::make('blog.browse', ['entries' => Blog::mostRecent()->get()]);
 	}
 
 	/**
@@ -47,17 +69,6 @@ class BlogController extends \BaseController {
 	}
 
 	/**
-	 * Show the form for editing the specified resource.
-	 *
-	 * @param  int  $id
-	 * @return Response
-	 */
-	public function edit($id)
-	{
-		//
-	}
-
-	/**
 	 * Update the specified resource in storage.
 	 *
 	 * @param  int  $id
@@ -65,18 +76,11 @@ class BlogController extends \BaseController {
 	 */
 	public function update($id)
 	{
-		//
-	}
-
-	/**
-	 * Remove the specified resource from storage.
-	 *
-	 * @param  int  $id
-	 * @return Response
-	 */
-	public function destroy($id)
-	{
-		//
+		$entry = Blog::findOrFail($id);
+		$entry->title = \Input::get('title');
+		$entry->entry = \Input::get('entry');
+		$entry->save();
+		return Redirect::route('blog.edit', array($entry->id));
 	}
 
 }

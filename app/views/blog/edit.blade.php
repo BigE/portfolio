@@ -20,18 +20,18 @@
 	<header>
 		<h2>Edit Entry</h2>
 	</header>
-	{{ Form::model($entry) }}
+	{{ Form::model($entry,  array('method' => 'PUT', 'route' => array('blog.update', $entry->id))) }}
 	<div>
 		{{ Form::label('title', 'Title') }}
 		{{ Form::text('title', null, ['size' => 80]) }}
 	</div>
-	<section id="editor">
-		<textaera id="entry">{{ $entry->entry }}</textaera>
-	</section>
-		<footer>
-			<button type="reset">Reset</button>
-			<button type="submit">Save</button>
-		</footer>
-		{{ Form::close() }}
-	</section>
+	<div>
+		{{ Form::textarea('entry', null, array('id' => 'entry')) }}
+	</div>
+	<footer>
+		<button type="reset">Reset</button>
+		<button type="submit">Save</button>
+	</footer>
+	{{ Form::close() }}
+</section>
 @stop
