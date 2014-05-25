@@ -4,11 +4,12 @@
 		<base href="/" />
 		<link href='http://fonts.googleapis.com/css?family=Alef:400,700' rel='stylesheet' type='text/css'>
 		@section('css')
-		<link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet" />
-		<link rel="stylesheet" href="css/generic.css" />
+		<link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" />
+		<link rel="stylesheet" type="text/css" href="{{ asset('css/generic.css') }}" />
+		<link rel="stylesheet" type="text/css" href="{{ asset('css/froala_editor.min.css') }}" />
 		@show
 		@section('js')
-		<script type="text/javascript" src="{{ asset('js/generic.js') }}"></script>
+		<script type="text/javascript" src="//code.jquery.com/jquery-2.1.1.min.js"></script>
 		@show
 		<title>Eric's Portfolio</title>
 	</head>
