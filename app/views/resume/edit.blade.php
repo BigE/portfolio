@@ -2,7 +2,7 @@
 
 @section('css')
 @parent
-	<link rel="stylesheet" type="text/css" media="screen" href="css/user/edit.css" />
+	<link rel="stylesheet" type="text/css" media="screen" href="{{ asset('css/resume/edit.css') }}" />
 	<link rel="stylesheet" type="text/css" media="screen" href="{{ asset('css/froala_editor.min.css') }}" />
 @stop
 
@@ -19,9 +19,9 @@
 
 @section('content')
 	@if (isset($resume))
-	{{ Form::model($resume) }}
+	{{ Form::model($resume, array('method' => 'PUT', 'route' => array('resume.update', $resume->id))) }}
 	@else
-	{{ Form::open() }}
+	{{ Form::open(array('route' => 'resume.store')) }}
 	@endif
 		<section id="header">
 			<header>
@@ -42,6 +42,7 @@
 				{{ Form::textarea('objective', null, array('class' => 'editor')) }}
 			</div>
 		</section>
+@if (isset($resume))
 		<section id="experience">
 			<header>
 				<h2>Experience</h2>
@@ -67,6 +68,7 @@
 				@endforeach
 			</div>
 		</section>
+@endif
 		<footer>
 			<button type="reset"><span class="fa fa-refresh"></span> Reset</button>
 			<button type="submit"><span class="fa fa-save"></span> Save</button>
