@@ -1,12 +1,14 @@
 <?php
-class Blog extends Eloquent
+namespace App\Model;
+
+class Blog extends \Eloquent
 {
 	protected $table = 'blog';
 	protected $guarded = ['id'];
 
 	public function author()
 	{
-		return $this->hasOne('User', 'id', 'author_id');
+		return $this->hasOne('\App\Model\User', 'id', 'author_id');
 	}
 
 	public function scopeMostRecent($query)

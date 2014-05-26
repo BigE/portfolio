@@ -1,6 +1,8 @@
 <?php
+namespace App\Controller;
 
-class UserController extends \BaseController {
+class UserController extends BaseController
+{
 
 	/**
 	 * Display a listing of the resource.

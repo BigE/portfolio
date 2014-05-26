@@ -1,6 +1,7 @@
 <?php
+namespace App\Controller;
 
-class BlogController extends \BaseController
+class BlogController extends BaseController
 {
 
 	/**

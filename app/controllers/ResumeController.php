@@ -1,6 +1,9 @@
 <?php
+namespace App\Controller;
 
-class ResumeController extends \BaseController
+use \App\Model\Resume;
+
+class ResumeController extends BaseController
 {
 
 	/**
@@ -10,6 +13,18 @@ class ResumeController extends \BaseController
 	 */
 	public function create()
 	{
+		return \View::make('resume.edit');
+	}
+
+	/**
+	 * Remove the specified resource from storage.
+	 *
+	 * @param  int  $id
+	 * @return Response
+	 */
+	public function destroy($id)
+	{
+		//
 	}
 
 	/**
@@ -20,7 +35,7 @@ class ResumeController extends \BaseController
 	 */
 	public function edit($id)
 	{
-		$resume = \Resume::findOrFail($id);
+		$resume = Resume::findOrFail($id);
 		return \View::make('resume.edit', ['resume' => $resume]);
 	}
 
@@ -30,16 +45,6 @@ class ResumeController extends \BaseController
 	 * @return Response
 	 */
 	public function index()
-	{
-		//
-	}
-
-	/**
-	 * Store a newly created resource in storage.
-	 *
-	 * @return Response
-	 */
-	public function store()
 	{
 		//
 	}
@@ -56,6 +61,21 @@ class ResumeController extends \BaseController
 	}
 
 	/**
+	 * Store a newly created resource in storage.
+	 *
+	 * @return Response
+	 */
+	public function store()
+	{
+		$resume = new Resume();
+		$resume->owner_id = $this->user->id;
+		$resume->title = \Input::get('title');
+		$resume->objective = \Input::get('objective');
+		$resume->save();
+		return \Redirect::route('resume.edit', array($resume->id));
+	}
+
+	/**
 	 * Update the specified resource in storage.
 	 *
 	 * @param  int  $id
@@ -63,18 +83,11 @@ class ResumeController extends \BaseController
 	 */
 	public function update($id)
 	{
-		//
-	}
-
-	/**
-	 * Remove the specified resource from storage.
-	 *
-	 * @param  int  $id
-	 * @return Response
-	 */
-	public function destroy($id)
-	{
-		//
+		$resume = Resume::findOrFail($id);
+		$resume->title = \Input::get('title');
+		$resume->objective = \Input::get('objective');
+		$resume->save();
+		return Redirect::route('resume.edit', array($resume->id));
 	}
 
 }

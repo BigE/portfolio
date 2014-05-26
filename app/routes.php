@@ -11,11 +11,23 @@
 |
 */
 
-Route::get('/', ['as' => 'default', 'uses' => 'BlogController@index']);
-Route::resource('blog', 'BlogController', ['only' => ['index', 'show']]);
-Route::resource('resume', 'ResumeController', ['only' => ['index', 'show']]);
-Route::resource('resume.experience', 'Resume\ExperienceController', ['only' => ['index', 'show']]);
-Route::resource('user', 'UserController', ['only' => ['show']]);
+Route::group(['before' => 'auth'], function () {
+	Route::get('logout', ['as' => 'logout', function() {
+		Auth::logout();
+		return Redirect::to('login');
+	}]);
+
+	Route::resource('blog', '\App\Controller\BlogController', ['except' => ['index', 'show']]);
+	Route::resource('resume', '\App\Controller\ResumeController', ['except' => ['index', 'show']]);
+	Route::resource('resume.experience', '\App\Controller\Resume\ExperienceController', ['except' => ['index', 'show']]);
+	Route::resource('user', '\App\Controller\UserController', ['except' => ['show']]);
+});
+
+Route::get('/', ['as' => 'default', 'uses' => '\App\Controller\BlogController@index']);
+Route::resource('blog', '\App\Controller\BlogController', ['only' => ['index', 'show']]);
+Route::resource('resume', '\App\Controller\ResumeController', ['only' => ['index', 'show']]);
+Route::resource('resume.experience', '\App\Controller\Resume\ExperienceController', ['only' => ['index', 'show']]);
+Route::resource('user', '\App\Controller\UserController', ['only' => ['show']]);
 
 Route::get('login', ['as' => 'login', function() {
 	return View::make('user.login');
@@ -33,15 +45,3 @@ Route::post('login', ['as' => 'login', function() {
 		return Redirect::to('login')->with('login_errors', true);
 	}
 }]);
-
-Route::group(['before' => 'auth'], function () {
-	Route::get('logout', ['as' => 'logout', function() {
-		Auth::logout();
-		return Redirect::to('login');
-	}]);
-
-	Route::resource('blog', 'BlogController', ['except' => ['index', 'show']]);
-	Route::resource('resume', 'ResumeController', ['except' => ['index', 'show']]);
-	Route::resource('resume.experience', 'Resume\ExperienceController', ['except' => ['index', 'show']]);
-	Route::resource('user', 'UserController', ['except' => ['show']]);
-});
