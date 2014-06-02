@@ -2,13 +2,13 @@
 
 @section('css')
 @parent
-	<link rel="stylesheet" type="text/css" media="screen" href="{{ asset('css/resume/edit.css') }}" />
-	<link rel="stylesheet" type="text/css" media="screen" href="{{ asset('css/froala_editor.min.css') }}" />
+	<link rel="stylesheet" type="text/css" media="screen" href="css/resume/edit.css" />
+	<link rel="stylesheet" type="text/css" media="screen" href="components/froala/css/froala_editor.min.css" />
 @stop
 
 @section('js')
 @parent
-<script type="text/javascript" src="{{ asset('js/froala_editor.min.js') }}"></script>
+<script type="text/javascript" src="components/froala/js/froala_editor.min.js"></script>
 <script type="text/javascript">
 	$(function () {
 		$('.editor.inline').editable();
@@ -50,7 +50,7 @@
 			<div>
 				{{ Form::label('', Lang::get('Please list your work experience below')) }}
 				<br />
-				<a href="{{ URL::route('resume.experience.create', [$resume->id]) }}"><button id="experience-add"><span class="fa fa-plus"></span>Add Experience</button></a>
+				<a href="{{ URL::route('resume.experience.create', [$resume->id]) }}"><button id="experience-add" type="button"><span class="fa fa-plus"></span>Add Experience</button></a>
 				@foreach ($resume->experience as $experience)
 					<section class="experience">
 						<header>

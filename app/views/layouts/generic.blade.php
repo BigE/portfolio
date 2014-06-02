@@ -1,15 +1,15 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<base href="/" />
-		<link href='http://fonts.googleapis.com/css?family=Alef:400,700' rel='stylesheet' type='text/css'>
+		<base href="{{ asset('/') }}" />
+		<link href='//fonts.googleapis.com/css?family=Alef:400,700' rel='stylesheet' type='text/css'>
 		@section('css')
-		<link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" />
-		<link rel="stylesheet" type="text/css" href="{{ asset('css/generic.css') }}" />
-		<link rel="stylesheet" type="text/css" href="{{ asset('css/froala_editor.min.css') }}" />
+		<link rel="stylesheet" type="text/css" href="components/normalize-css/normalize.css" />
+		<link rel="stylesheet" type="text/css" href="components/font-awesome/css/font-awesome.min.css" />
+		<link rel="stylesheet" type="text/css" href="css/generic.css" />
 		@show
 		@section('js')
-		<script type="text/javascript" src="//code.jquery.com/jquery-2.1.1.min.js"></script>
+		<script type="text/javascript" src="components/jquery/jquery.min.js"></script>
 		@show
 		<title>Eric's Portfolio</title>
 	</head>
