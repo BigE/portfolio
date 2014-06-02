@@ -4,9 +4,21 @@ namespace App\Model;
 use Illuminate\Auth\UserInterface;
 use Illuminate\Auth\Reminders\RemindableInterface;
 
-class User extends \Eloquent implements UserInterface, RemindableInterface
+class User extends Model implements UserInterface, RemindableInterface
 {
 	protected $guarded = ['id'];
+
+	protected static $rules = [
+		'address1' => 'max:250',
+		'address2' => 'max:250',
+		'birthday' => 'date_format:Y-m-d',
+		'email' => 'required|email|unique:users',
+		'password' => 'required|min:8|confirmed',
+		'password_confirmation' => 'required|min:8|same:password',
+		'realname' => 'regex:/^[\w\s]+$/i|max:150',
+		'username' => 'required|alpha_dash|between:4,50|unique:users',
+		'zip_id' => 'numeric',
+	];
 
 	/**
 	 * The database table used by the model.
@@ -90,11 +102,25 @@ class User extends \Eloquent implements UserInterface, RemindableInterface
 
 	public function posts()
 	{
-		return $this->hasMany('Blog', 'author_id');
+		return $this->hasMany('\App\Model\Blog', 'author_id');
 	}
 
 	public function resumes()
 	{
-		return $this->hasMany('Resume', 'owner_id');
+		return $this->hasMany('\App\Model\Resume', 'owner_id');
+	}
+
+	public static function boot()
+	{
+		parent::boot();
+		static::saving(function (User $user) {
+			if (isset($user->password)) {
+				$user->password = \Hash::make($user->password);
+			}
+
+			if (isset($user->password_confirmation)) {
+				unset($user->password_confirmation);
+			}
+		});
 	}
 }
