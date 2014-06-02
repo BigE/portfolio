@@ -15,7 +15,7 @@ class WordpressBlogTableSeeder extends Seeder
 				$csv = array_combine($headers, $csv);
 				var_dump($csv);
 				if ($csv['post_type'] === 'post') {
-					$entry = new Blog();
+					$entry = new \App\Model\Blog();
 					$entry->author_id = $csv['post_author'];
 					$entry->created_at = $csv['post_date_gmt'];
 					$entry->entry = $csv['post_content'];

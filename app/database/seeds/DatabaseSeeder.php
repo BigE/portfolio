@@ -13,6 +13,9 @@ class DatabaseSeeder extends Seeder {
 		Eloquent::unguard();
 
 		$this->call('UserTableSeeder');
+		if (file_exists(base_path('wp_posts.csv'))) {
+			$this->call('WordpressBlogTableSeeder');
+		}
 	}
 
 }

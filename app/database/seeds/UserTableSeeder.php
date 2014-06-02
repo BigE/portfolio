@@ -6,12 +6,13 @@ class UserTableSeeder extends Seeder
 	public function run()
 	{
 		DB::table('users')->delete();
-		User::create(
+		var_dump(\App\Model\User::create(
 			[
-				'email' => 'eric@php-oop.net',
-				'password' => '$2y$10$1I80dMhYwXchtapBUGhlPuBfWotFGP.M8Abb8UQbJoZrDwtBlx6tG',
-				'realname' => 'Eric Gach'
+				'email' => 'example@php-oop.net',
+				'username' => 'admin',
+				'password' => 'password',
+				'password_confirmation' => 'password'
 			]
-		);
+		));
 	}
 }
