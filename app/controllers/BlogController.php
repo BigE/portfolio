@@ -1,6 +1,8 @@
 <?php
 namespace App\Controller;
 
+use \App\Model\Blog;
+
 class BlogController extends BaseController
 {
 
@@ -34,7 +36,7 @@ class BlogController extends BaseController
 	public function edit($id)
 	{
 		$entry = Blog::findOrFail($id);
-		return View::make('blog.edit', ['entry' => $entry]);
+		return \View::make('blog.edit', ['entry' => $entry]);
 	}
 
 	/**
@@ -44,7 +46,7 @@ class BlogController extends BaseController
 	 */
 	public function index()
 	{
-		return View::make('blog.browse', ['entries' => Blog::mostRecent()->get()]);
+		return \View::make('blog.browse', ['entries' => Blog::mostRecent()->get()]);
 	}
 
 	/**
@@ -66,7 +68,7 @@ class BlogController extends BaseController
 	public function show($id)
 	{
 		$entry = Blog::find($id);
-		return View::make('blog.show', ['entry' => $entry]);
+		return \View::make('blog.show', ['entry' => $entry]);
 	}
 
 	/**
@@ -81,7 +83,7 @@ class BlogController extends BaseController
 		$entry->title = \Input::get('title');
 		$entry->entry = \Input::get('entry');
 		$entry->save();
-		return Redirect::route('blog.edit', array($entry->id));
+		return \Redirect::route('blog.edit', array($entry->id));
 	}
 
 }

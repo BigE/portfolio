@@ -87,7 +87,7 @@ class ResumeController extends BaseController
 		$resume->title = \Input::get('title');
 		$resume->objective = \Input::get('objective');
 		$resume->save();
-		return Redirect::route('resume.edit', array($resume->id));
+		return \Redirect::route('resume.edit', array($resume->id));
 	}
 
 }
