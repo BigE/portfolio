@@ -1,0 +1,59 @@
+label {
+	display: inline-block;
+	width: 20em;
+}
+
+section {
+	position: relative;
+}
+
+#password_str {
+	margin-left: 20.5em;
+}
+
+div {
+	position: relative;
+}
+
+div > .fa-exclamation-circle {
+	color: #960009;
+	left: 20.6em;
+	position: absolute;
+	top: 0.3em;
+	z-index: 1001;
+}
+
+.fa-exclamation-circle ~ input.error {
+	position: relative;
+	padding-left: 1.4em;
+}
+
+span.error {
+	color: #960009;
+	display: block;
+	margin-left: 20.5em;
+}
+
+.desc {
+	display: none;
+	float: right;
+	margin-right: 10em;
+	position: relative;
+	width: 25em;
+}
+
+.desc .text {
+	color: #4c4c4c;
+	display: block;
+	padding-left: 3.4em;
+}
+
+.desc .fa-info-circle {
+	color: #006b96;
+	display: block;
+	font-size: 3em;
+	margin-right: 0.4em;
+	position: absolute;
+	left: 0;
+	top: 0;
+}
