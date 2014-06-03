@@ -2,8 +2,8 @@
 <html>
 	<head>
 		<base href="{{ asset('/') }}" />
-		<link href='//fonts.googleapis.com/css?family=Alef:400,700' rel='stylesheet' type='text/css'>
 		@section('css')
+		<link rel="stylesheet" type="text/css" href="css/fonts.css" />
 		<link rel="stylesheet" type="text/css" href="components/normalize-css/normalize.css" />
 		<link rel="stylesheet" type="text/css" href="components/font-awesome/css/font-awesome.min.css" />
 		<link rel="stylesheet" type="text/css" href="css/generic.css" />
