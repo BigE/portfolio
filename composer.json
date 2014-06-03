@@ -4,7 +4,14 @@
 	"keywords": ["framework", "laravel"],
 	"license": "MIT",
 	"require": {
-		"laravel/framework": "4.1.*"
+		"laravel/framework": "4.1.*",
+		"components/jquery": "2.1.*",
+		"components/jqueryui": "1.10.*",
+		"components/font-awesome": "4.1.*",
+		"components/froala": "*",
+		"BigE/jquery-passmeter": "0.1.*",
+		"vitalets/x-editable-jqueryui": "1.5.*",
+		"components/normalize.css": "*"
 	},
 	"autoload": {
 		"classmap": [
@@ -16,6 +23,73 @@
 			"app/tests/TestCase.php"
 		]
 	},
+	"repositories": [
+		{
+			"type": "package",
+			"package": {
+				"name": "components/froala",
+				"type": "component",
+				"version": "dev-master",
+				"dist": {
+					"url": "http://editor.froala.com/latest.zip",
+					"type": "zip"
+				},
+				"require": {
+					"robloach/component-installer": "*",
+					"components/jquery": ">=2.0"
+				},
+				"extra": {
+					"component": {
+						"name": "froala",
+						"scripts": [
+							"js/froala_editor.min.js",
+							"js/langs/**"
+						],
+						"styles": [
+							"css/froala_editor.css"
+						],
+						"files": [
+							"css/froala_editor.min.css"
+						]
+					}
+				}
+			}
+		},
+		{
+			"type": "vcs",
+			"url": "https://github.com/BigE/jquery-passmeter"
+		},
+		{
+			"type": "package",
+			"package": {
+				"name": "vitalets/x-editable-jqueryui",
+				"type": "component",
+				"version": "1.5.1",
+				"dist": {
+					"url": "http://vitalets.github.io/x-editable/assets/zip/jqueryui-editable-1.5.1.zip",
+					"type": "zip"
+				},
+				"require": {
+					"robloach/component-installer": "*",
+					"components/jqueryui": ">=1.9"
+				},
+				"extra": {
+					"component": {
+						"scripts": [
+							"jqueryui-editable/js/jqueryui-editable.js"
+						],
+						"styles": [
+							"jqueryui-editable/css/jqueryui-editable.css"
+						],
+						"files": [
+							"jqueryui-editable/js/jqueryui-editable.min.js",
+							"jqueryui-editable/img/*"
+						]
+					}
+				}
+			}
+		}
+	],
 	"scripts": {
 		"post-install-cmd": [
 			"php artisan optimize"
@@ -29,6 +103,7 @@
 		]
 	},
 	"config": {
+		"component-dir": "public/components",
 		"preferred-install": "dist"
 	},
 	"minimum-stability": "dev"
