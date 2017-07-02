@@ -1,0 +1,12 @@
+{
+  "name": "portfolio",
+  "version": "0.0.1-dev",
+  "description": "My portfolio website to show what I can do.",
+  "main": "index.js",
+  "repository": "https://github.com/BigE/portfolio.git",
+  "author": "Eric Gach <eric.gach@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "purecss": "^1.0.0"
+  }
+}
