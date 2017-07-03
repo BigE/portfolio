@@ -2,12 +2,16 @@
 <html>
     <head>
         <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width,initial-scale=1">
         <title>{% block title %}Welcome!{% endblock %}</title>
-        {% block stylesheets %}{% endblock %}
+        {% block stylesheets %}
+        <link rel="stylesheet" type="text/css" href="{{ asset('bundles/portfolio/css/pure.css') }}">
+        <link rel="stylesheet" type="text/css" href="{{ asset('css/base.css') }}">
+        {% endblock %}
         <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}">
     </head>
     <body>
-        {% block body %}{% endblock %}
+        {% block body %}<div class="content">{% block content %}{% endblock %}</div>{% endblock %}
         {% block javascripts %}{% endblock %}
     </body>
 </html>
