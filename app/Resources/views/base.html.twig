@@ -32,8 +32,13 @@
                     <div class="can-transform pure-menu pure-menu-horizontal menu-right">
                         <ul class="pure-menu-list">
                             <li class="pure-menu-separator"></li>
-                            <li class="pure-menu-item"><a href="{{ url('portfolio_security_register') }}" class="menu-button pure-menu-link">Register</a></li>
-                            <li class="pure-menu-item"><a href="{{ url('login') }}" class="menu-button menu-button-primary pure-menu-link">Login</a></li>
+                            {%- if app.user -%}
+                                <li class="pure-menu-item"><a href="" class="menu-button pure-menu-link">Dashboard</a></li>
+                                <li class="pure-menu-item"><a href="{{ url('logout') }}" class="menu-button menu-button-primary pure-menu-link">Logout</a></li>
+                            {%- else -%}
+                                <li class="pure-menu-item"><a href="{{ url('portfolio_security_register') }}" class="menu-button pure-menu-link">Register</a></li>
+                                <li class="pure-menu-item"><a href="{{ url('login') }}" class="menu-button menu-button-primary pure-menu-link">Login</a></li>
+                            {%- endif -%}
                         </ul>
                     </div>
                 </nav>
