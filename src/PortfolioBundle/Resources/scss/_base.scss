@@ -1,0 +1,63 @@
+html,body {
+    overflow-x: hidden;
+}
+
+html {
+    font-family: $font;
+    font-size: 10px;
+}
+
+body {
+    background-color: $light_shade;
+    font-size: 1.6rem;
+}
+
+a {
+    color: inherit;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: $heading;
+}
+
+#content {
+    padding: 4rem 1rem;
+}
+
+
+.error-list {
+    margin: 0 0 0 11em;
+}
+
+.error {
+    color: $error;
+}
+
+.menu-text {
+    display: inline-block;
+    line-height: 2em;
+    position: relative;
+    width: 100%;
+}
+
+.menu-text:before {
+    font-family: FontAwesome;
+    left: 0;
+    position: absolute;
+}
+
+.pure-menu-active > .pure-menu-link {
+    background-color: $light_shade;
+}
+
+.pure-menu-active .menu-text {
+    color: $dark_shade;
+}
+
+.profile-success {
+    padding: 0 0 1.8rem 0;
+}
+
+.success {
+    color: $success;
+}
