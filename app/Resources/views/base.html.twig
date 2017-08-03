@@ -1,3 +1,4 @@
+{% set menu_active = menu_active ?? null %}
 <!DOCTYPE html>
 <html>
     <head>
@@ -5,47 +6,73 @@
         <meta name="viewport" content="width=device-width,initial-scale=1">
         <title>{% block title %}Welcome!{% endblock %}</title>
         {% block stylesheets %}
+        <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Lato|Open+Sans">
         <link rel="stylesheet" type="text/css" href="{{ asset('bundles/portfolio/css/pure.css') }}">
         <link rel="stylesheet" type="text/css" href="{{ asset('bundles/portfolio/css/grids-responsive.css') }}">
+        <link rel="stylesheet" type="text/css" href="{{ asset('bundles/portfolio/css/font-awesome.css') }}">
         <link rel="stylesheet" type="text/css" href="{{ asset('build/global.css') }}">
         {% endblock %}
         <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}">
     </head>
     <body>
         {% block body %}
-            <header id="header" class="pure-g">
-                <div class="pure-u-1 pure-u-md-1-3">
-                    <div class="pure-menu">
-                        <a href="{{ url('homepage') }}" id="logo" class="menu-link pure-menu-heading">Eric's Portfolio</a>
-                        <a href="#" id="toggle" class="menu-icon"><span class="bar"></span><span class="bar"></span></a>
-                    </div>
-                </div>
-                <nav class="pure-u-1 pure-u-md-1-3">
-                    <div class="can-transform pure-menu pure-menu-horizontal">
-                        <ul class="pure-menu-list">
-                            <li class="pure-menu-separator"></li>
-                            <li class="pure-menu-item"><a href="" class="menu-link pure-menu-link">Resume</a></li>
-                        </ul>
-                    </div>
+            <header id="header" class="pure-menu">
+                <a href="{{ url('homepage') }}" id="logo" class="pure-menu-heading">
+                    <span class="image avatar"><img src="{{ asset('images/logo.png') }}" title="logo"></span>
+                    <h1>Eric Gach</h1>
+                    <p>Software Engineer</p>
+                </a>
+                <nav id="nav">
+                    <ul class="pure-menu-list">
+                        <li class="pure-menu-separator"></li>
+                        <li class="pure-menu-item">
+                            <a href="#" class="pure-menu-link">
+                                <span class="menu-text fa-file-text">Resume</span>
+                            </a>
+                        </li>
+                        <li class="pure-menu-item">
+                            <a href="" class="pure-menu-link">
+                                <span class="menu-text fa-codepen">Projects</span>
+                            </a>
+                        </li>
+                        <li class="pure-menu-separator"></li>
+                        {% if app.user %}
+                            <li class="pure-menu-item{% if menu_active == 'dashboard' %} pure-menu-active{% endif %}">
+                                <a href="{{ url('portfolio_user_dashboard') }}" class="pure-menu-link">
+                                    <span class="menu-text fa-dashboard">Dashboard</span>
+                                </a>
+                            </li>
+                            <li class="pure-menu-item">
+                                <a href="{{ url('logout') }}" class="pure-menu-link">
+                                    <span class="menu-text fa-sign-out">Logout</span>
+                                </a>
+                            </li>
+                        {% else %}
+                            <li class="pure-menu-item{% if menu_active == 'register' %} pure-menu-active{% endif %}">
+                                <a href="{{ url('portfolio_security_register') }}" class="pure-menu-link">
+                                    <span class="menu-text fa-user-plus">Register</span>
+                                </a>
+                            </li>
+                            <li class="pure-menu-item{% if menu_active == 'login' %} pure-menu-active{% endif %}">
+                                <a href="{{ url('login') }}" class="pure-menu-link">
+                                    <span class="menu-text fa-sign-in">Login</span>
+                                </a>
+                            </li>
+                        {% endif %}
+                    </ul>
                 </nav>
-                <nav class="pure-u-1 pure-u-md-1-3">
-                    <div class="can-transform pure-menu pure-menu-horizontal menu-right">
-                        <ul class="pure-menu-list">
-                            <li class="pure-menu-separator"></li>
-                            {%- if app.user -%}
-                                <li class="pure-menu-item"><a href="" class="menu-button pure-menu-link">Dashboard</a></li>
-                                <li class="pure-menu-item"><a href="{{ url('logout') }}" class="menu-button menu-button-primary pure-menu-link">Logout</a></li>
-                            {%- else -%}
-                                <li class="pure-menu-item"><a href="{{ url('portfolio_security_register') }}" class="menu-button pure-menu-link">Register</a></li>
-                                <li class="pure-menu-item"><a href="{{ url('login') }}" class="menu-button menu-button-primary pure-menu-link">Login</a></li>
-                            {%- endif -%}
-                        </ul>
-                    </div>
+                <nav id="social">
+                    <div class="pure-menu-separator"></div>
+                    <ul class="pure-menu-list pure-menu-horizontal">
+                        <li class="pure-menu-item"><a href="https://github.com/{{ github_username }}/" class="pure-menu-link fa-github-square" title="GitHub" target="_blank"></a></li>
+                        <li class="pure-menu-item"><a href="#" class="pure-menu-link fa-twitter-square" title="Twitter" target="_blank"></a></li>
+                    </ul>
                 </nav>
             </header>
             <section id="content">
                 {% block content %}{% endblock %}
             </section>
+            <a id="menuToggle"></a>
         {% endblock %}
         {%- block javascripts -%}
         <script type="text/javascript" src="{{ asset('build/app.js') }}"></script>

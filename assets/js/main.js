@@ -1,35 +1,27 @@
 document.addEventListener("DOMContentLoaded", function (event) {
-    var header = document.getElementById('header'),
+    var body = document.body,
         WINDOW_CHANGE_EVENT = ('onorientationchange' in window) ? 'orientationchange':'resize';
 
     function closeMenu() {
-        if (header.classList.contains('active')) {
+        if (body.classList.contains('header-visible')) {
             toggleMenu();
         }
-    }
-
-    function toggleHorizontal() {
-        Array.prototype.forEach.call(document.getElementsByClassName('can-transform'), function (element, i, a) {
-            element.classList.toggle('pure-menu-horizontal');
-        });
     }
 
     function toggleMenu() {
-        if (header.classList.contains('active')) {
-            setTimeout(toggleHorizontal, 500);
-        } else {
-            toggleHorizontal();
-        }
-
-        document.getElementById('toggle').classList.toggle('active');
-        header.classList.toggle('active');
+        body.classList.toggle('header-visible');
     }
 
-    Array.prototype.forEach.call(document.getElementsByClassName('menu-icon'), function (element, index, array) {
-        element.addEventListener('click', function (event) {
+    document.getElementById('menuToggle').addEventListener('click', function (event) {
+        toggleMenu();
+        event.preventDefault();
+    });
+
+    document.getElementById('content').addEventListener('click', function (event) {
+        if (body.classList.contains('header-visible')) {
             toggleMenu();
             event.preventDefault();
-        });
+        }
     });
 
     window.addEventListener(WINDOW_CHANGE_EVENT, closeMenu);

@@ -20,7 +20,7 @@ class RegisterType extends UserType
         $this->buildPasswordForm($builder, $options);
         $builder
             ->add('submit', SubmitType::class, ['label' => 'Register'])
-            ->add('reset', ResetType::class);
+        ;
     }
 
     /**

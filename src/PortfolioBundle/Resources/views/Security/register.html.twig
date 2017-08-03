@@ -1,11 +1,12 @@
 {% extends "::base.html.twig" %}
+{% set menu_active = 'register' %}
 
 {% block title %}AppBundle:Security:register{% endblock %}
 
 {% form_theme registerForm '@Portfolio/Form/purecss_layout.html.twig' %}
 
 {% block content %}
-    <h1>Welcome to the Security:register page</h1>
+    <h1>Registration</h1>
     {{ form_start(registerForm) }}
     {{ form_row(registerForm.email) }}
     {{ form_row(registerForm.username) }}
@@ -13,7 +14,6 @@
     {{ form_row(registerForm.plainPassword) }}
     <div class="pure-controls">
         {{ form_widget(registerForm.submit) }}
-        {{ form_widget(registerForm.reset) }}
     </div>
     {{ form_end(registerForm) }}
 {% endblock %}

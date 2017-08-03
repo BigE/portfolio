@@ -20,7 +20,7 @@ abstract class UserType extends AbstractType
                 'attr' => [
                     'maxlength' => 255,
                     'placeholder' => 'user@example.net',
-                    'size' => 40,
+                    'size' => 30,
                 ],
             ])
             ->add('username', TextType::class, [

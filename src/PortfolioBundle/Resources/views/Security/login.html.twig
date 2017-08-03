@@ -1,9 +1,10 @@
 {% extends "::base.html.twig" %}
+{% set menu_active = 'login' %}
 
 {% block title %}AppBundle:Security:login{% endblock %}
 
 {% block content %}
-    <h1>Welcome to the Security:login page</h1>
+    <h1>User Login</h1>
     <form method="post" class="pure-form pure-form-aligned">
         {%- if error|length > 0 -%}
             <div class="error-list">
@@ -12,16 +13,15 @@
         {%- endif -%}
         <div class="pure-control-group">
             <label for="email">E-mail Address</label>
-            <input type="email" id="email" name="_username" value="{{ username }}" required>
+            <input type="email" id="email" name="_username" size="30" value="{{ username }}" required>
         </div>
         <div class="pure-control-group">
             <label for="password">Password</label>
-            <input type="password" id="password" name="_password" value="" required>
+            <input type="password" id="password" name="_password" size="30" value="" required>
         </div>
         <div class="pure-controls">
             <label for="remember" class="pure-checkbox"><input type="checkbox" id="remember" name="remember_me" value="1"> Remember Login?</label>
             <button type="submit" class="pure-button pure-button-primary">Login</button>
-            <a href="{{ url('homepage') }}" class="pure-button">Cancel</a>
         </div>
     </form>
 {% endblock %}

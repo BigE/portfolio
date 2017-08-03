@@ -8,21 +8,44 @@
  * dark shade: 312E3E
  */
 
+// background colors
 $main: #cd5e36;
 $light_accent: #a1b5b9;
 $light_shade: #f7f9f5;
 $dark_accent: #ec983b;
 $dark_shade: #312e3e;
-// generic colors
+// foreground colors
 $default: #a1b5b9;
 $error: #f44336;
+$info: #302e3e;
+$success: #739748;
 $warning: #f08710;
+// fonts
+$font: Open Sans, sans-serif;
+$heading: Lato, sans-serif;
 
-* {
-    box-sizing: border-box;
+@mixin transform($wat) {
+    -webkit-transform: $wat;
+    -moz-transform: $wat;
+    -ms-transform: $wat;
+    -o-transform: $wat;
+    transform: $wat;
+}
+
+@mixin transition($prop, $time) {
+    -webkit-transition: $prop $time;
+    -moz-transition: $prop $time;
+    -ms-transition: $prop $time;
+    -o-transition: $prop $time;
+    transition: $prop $time;
+}
+
+html,body {
+    overflow-x: hidden;
 }
 
 html {
+    font-family: $font;
     font-size: 10px;
 }
 
@@ -35,136 +58,187 @@ a {
     color: inherit;
 }
 
-.pure-control-group .error-list {
-    margin: 0 0 0 11em;
+h1, h2, h3, h4, h5, h6 {
+    font-family: $heading;
 }
 
-.pure-button {
-    background-color: #999999;
-    color: #ffffff;
+#content {
+    padding: 4rem 1rem;
 }
 
-.pure-button-primary {
-    background-color: $main;
+#content, #menuToggle {
+    @include transition(transform, 0.5s ease);
+}
+
+body.header-visible #content, body.header-visible #menuToggle {
+    @include transform(translateX(27.5rem));
 }
 
 #header {
     background-color: $dark_shade;
-    max-height: 3.5rem;
-    overflow: hidden;
-    -webkit-transition: max-height 250ms ease-out;
-    -moz-transition: max-height 250ms ease-out;
-    -ms-transition: max-height 250ms ease-out;
-    -o-transition: max-height 250ms ease-out;
-    transition: max-height 250ms ease-out;
+    height: 100vh;
+    left: 0;
+    position: fixed;
+    @include transform(translateX(-27.5rem));
+    @include transition(transform, 0.5s ease);
+    text-align: right;
+    top: 0;
+    width: 27.5rem;
 }
 
-#header.active {
-    max-height: 50rem;
-    -webkit-transition: max-height 500ms ease-in;
-    -moz-transition: max-height 500ms ease-in;
-    -ms-transition: max-height 500ms ease-in;
-    -o-transition: max-height 500ms ease-in;
-    transition: max-height 500ms ease-in;
+body.header-visible #header {
+    @include transform(translateX(0));
+}
+
+#header a {
+    text-decoration: none;
 }
 
 #logo {
-    font-weight: bold;
+    color: $default;
+    padding: 0;
+    margin: 0.5rem 1rem;
+    min-height: 4.8rem;
+    position: relative;
 }
 
-#content {
+#logo h1 {
+    font-size: 2rem;
+    line-height: 2.4rem;
+    margin: 0;
 }
 
-.bar {
-    background-color: white;
-    display: block;
-    height: 0.2rem;
+#logo p {
+    font-size: 1.4rem;
+    line-height: 1.8rem;
+    margin: 0.6rem 0 0 0;
+}
+
+#logo .image {
+    display: inline-block;
+    left: 0;
     position: absolute;
-    top: 1.8rem;
-    -webkit-transition: all 500ms;
-    -moz-transition: all 500ms;
-    -ms-transition: all 500ms;
-    -o-transition: all 500ms;
-    transition: all 500ms;
-    width: 3rem;
+    top: 0;
 }
 
-.bar:first-child {
-    -webkit-transform: translateY(-0.6rem);
-    -moz-transform: translateY(-0.6rem);
-    -ms-transform: translateY(-0.6rem);
-    -o-transform: translateY(-0.6rem);
-    transform: translateY(-0.6rem);
+#menuToggle {
+    display: inline-block;
+    left: 0.25rem;
+    position: fixed;
+    top: 0.25rem;
 }
 
-.button-warning {
-    background-color: $warning;
+#menuToggle:before {
+    background-color: rgba(49, 46, 62, 0.8);
+    border-radius: 0.5rem;
+    color: $default;
+    content: '\f0c9';
+    display: block;
+    font-family: FontAwesome;
+    font-size: 2rem;
+    line-height: 4rem;
+    width: 5rem;
+    text-align: center;
+}
+
+#social {
+    bottom: 0;
+    position: absolute;
+    text-align: center;
+    width: 100%;
+}
+
+#social a:before {
+    font-family: FontAwesome;
+    font-size: 3.2rem;
+}
+
+.avatar img {
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    border-radius: 50%;
+    height: 4.8rem;
+    display: block;
+}
+
+.error-list {
+    margin: 0 0 0 11em;
 }
 
 .error {
     color: $error;
 }
 
-.menu-link, .menu-button {
-    color: #ffffff;
+.menu-text {
+    display: inline-block;
+    line-height: 2em;
+    position: relative;
+    width: 100%;
 }
 
-.menu-link:hover {
-    background-color: inherit;
-}
-
-.menu-icon {
-    display: block;
-    height: 3.5rem;
+.menu-text:before {
+    font-family: FontAwesome;
+    left: 0;
     position: absolute;
-    right: 0.7rem;
-    top: 0;
-    width: 3rem;
 }
 
-.menu-icon.active .bar {
-    -webkit-transform: rotate(45deg);
-    -moz-transform: rotate(45deg);
-    -ms-transform: rotate(45deg);
-    -o-transform: rotate(45deg);
-    transform: rotate(45deg);
+.pure-menu-active > .pure-menu-link {
+    background-color: $light_shade;
 }
 
-.menu-icon.active .bar:first-child {
-    -webkit-transform: rotate(-45deg);
-    -moz-transform: rotate(-45deg);
-    -ms-transform: rotate(-45deg);
-    -o-transform: rotate(-45deg);
-    transform: rotate(-45deg);
+.pure-menu-active .menu-text {
+    color: $dark_shade;
 }
 
-@media (min-width: 600px) {
-    #header :nth-child(2) {
-        text-align: center;
+.profile-success {
+    padding: 0 0 1.8rem 0;
+}
+
+.success {
+    color: $success;
+}
+
+@media (min-width: 1024px) {
+    #content {
+        @include transform(translateX(22%));
     }
 
-    #header .pure-menu-horizontal {
-        display: inline-block;
+    #header {
+        @include transform(translateX(0));
+        width: 20%;
     }
 
-    #header .pure-menu-horizontal .pure-menu-separator {
-        width: 0;
+    #logo .image {
+        position: relative;
     }
 
-    #toggle {
+    #menuToggle {
         display: none;
     }
+}
 
-    .menu-button, .menu-button:hover {
-        background-color: $default;
-        text-transform: uppercase;
+@media (min-width: 1320px) {
+    #content {
+        @include transform(translateX(34rem));
     }
 
-    .menu-button-primary, .menu-button-primary:hover {
-        background-color: $main;
+    #header {
+        width: 30rem;
     }
 
-    .menu-right {
-        text-align: right;
+    #logo {
+        min-height: 6.4rem;
+    }
+
+    #logo .image {
+        position: absolute;
+    }
+
+    #social a:before {
+        font-size: 4.2rem;
+    }
+
+    .avatar img {
+        height: 6.4rem;
     }
 }

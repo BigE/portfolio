@@ -77,6 +77,11 @@ class User implements UserInterface, \Serializable
         $this->created = new \DateTime('now', new \DateTimeZone('UTC'));
     }
 
+    public function __toString()
+    {
+        return (empty($this->name)? $this->getUsername() : $this->getName());
+    }
+
     /**
      * Get id
      *
