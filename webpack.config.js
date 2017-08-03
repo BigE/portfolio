@@ -13,10 +13,10 @@ Encore
     .cleanupOutputBeforeBuild()
 
     // will output as web/build/app.js
-    .addEntry('app', './assets/js/main.js')
+    .addEntry('app', './src/PortfolioBundle/Resources/js/main.js')
 
     // will output as web/build/global.css
-    .addStyleEntry('global', './assets/css/base.scss')
+    .addStyleEntry('global', './src/PortfolioBundle/Resources/scss/global.scss')
 
     // allow sass/scss files to be processed
     .enableSassLoader()
