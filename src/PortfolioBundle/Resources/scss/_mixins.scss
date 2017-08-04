@@ -13,3 +13,10 @@
     -o-transition: $prop $time;
     transition: $prop $time;
 }
+
+@mixin backface-visibility($prop) {
+    -webkit-backface-visibility: $prop;
+    -moz-backface-visibility: $prop;
+    -ms-backface-visibility: $prop;
+    backface-visibility: $prop;
+}

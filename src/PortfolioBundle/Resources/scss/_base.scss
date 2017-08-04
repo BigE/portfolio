@@ -5,6 +5,7 @@ html,body {
 html {
     font-family: $font;
     font-size: 10px;
+    scroll-behavior: smooth;
 }
 
 body {
@@ -21,9 +22,8 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 #content {
-    padding: 4rem 1rem;
+    padding: 4rem 2rem;
 }
-
 
 .error-list {
     margin: 0 0 0 11em;

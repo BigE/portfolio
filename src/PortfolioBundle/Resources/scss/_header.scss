@@ -22,10 +22,6 @@ body.header-visible #header {
     @include transform(translateX(0));
 }
 
-#header a {
-    text-decoration: none;
-}
-
 #logo {
     color: $default;
     padding: 0;
@@ -95,7 +91,7 @@ body.header-visible #header {
 
 @media (min-width: 1024px) {
     #content {
-        @include transform(translateX(22%));
+        margin-left: 22%;
     }
 
     #header {
@@ -114,7 +110,7 @@ body.header-visible #header {
 
 @media (min-width: 1320px) {
     #content {
-        @include transform(translateX(34rem));
+        margin-left: 30rem;
     }
 
     #header {

@@ -25,14 +25,19 @@
                 <nav id="nav">
                     <ul class="pure-menu-list">
                         <li class="pure-menu-separator"></li>
-                        <li class="pure-menu-item">
-                            <a href="#" class="pure-menu-link">
-                                <span class="menu-text fa-file-text">Resume</span>
+                        <li class="pure-menu-item section-link">
+                            <a href="{{ url('homepage') }}#about" class="pure-menu-link" data-section="about">
+                                <span class="menu-text fa-user-circle">About Me</span>
                             </a>
                         </li>
-                        <li class="pure-menu-item">
-                            <a href="" class="pure-menu-link">
-                                <span class="menu-text fa-codepen">Projects</span>
+                        <li class="pure-menu-item section-link">
+                            <a href="{{ url('homepage') }}#resume" class="pure-menu-link" data-section="resume">
+                                <span class="menu-text fa-file-text">My Resume</span>
+                            </a>
+                        </li>
+                        <li class="pure-menu-item section-link">
+                            <a href="{{ url('homepage') }}#projects" class="pure-menu-link" data-section="projects">
+                                <span class="menu-text fa-codepen">My Projects</span>
                             </a>
                         </li>
                         <li class="pure-menu-separator"></li>
