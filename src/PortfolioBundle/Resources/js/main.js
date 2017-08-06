@@ -64,7 +64,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
             BreakException = {};
         try {
             Array.prototype.forEach.call(document.getElementsByClassName('panel'), function (element, i, a) {
-                if ((element.offsetTop + element.offsetHeight) > (top + 100)) {
+                if ((element.offsetTop + element.offsetHeight) > (top + (window.innerHeight * 0.2)) && elem.scrollTop > 0) {
                     clearActive();
                     menu_items.forEach(function (item, x, aa) {
                         if (item.querySelector('.pure-menu-link').getAttribute('data-section') === element.id) {
@@ -72,6 +72,8 @@ document.addEventListener("DOMContentLoaded", function (event) {
                         }
                     });
                     throw BreakException;
+                } else if (elem.scrollTop === 0) {
+                    clearActive();
                 }
             });
         } catch (e) {

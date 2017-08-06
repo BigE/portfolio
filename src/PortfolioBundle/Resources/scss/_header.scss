@@ -1,4 +1,4 @@
-#content, #menuToggle {
+#content, #footer, #menuToggle {
     @include transition(transform, 0.5s ease);
 }
 
@@ -94,6 +94,10 @@ body.header-visible #header {
         margin-left: 22%;
     }
 
+    #footer {
+        margin-left: 22%;
+    }
+
     #header {
         @include transform(translateX(0));
         width: 20%;
@@ -110,6 +114,10 @@ body.header-visible #header {
 
 @media (min-width: 1320px) {
     #content {
+        margin-left: 30rem;
+    }
+
+    #footer {
         margin-left: 30rem;
     }
 

@@ -6,7 +6,7 @@
         <meta name="viewport" content="width=device-width,initial-scale=1">
         <title>{% block title %}Welcome!{% endblock %}</title>
         {% block stylesheets %}
-        <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Lato|Open+Sans">
+        <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Quicksand|Open+Sans">
         <link rel="stylesheet" type="text/css" href="{{ asset('bundles/portfolio/css/pure.css') }}">
         <link rel="stylesheet" type="text/css" href="{{ asset('bundles/portfolio/css/grids-responsive.css') }}">
         <link rel="stylesheet" type="text/css" href="{{ asset('bundles/portfolio/css/font-awesome.css') }}">
@@ -26,11 +26,6 @@
                     <ul class="pure-menu-list">
                         <li class="pure-menu-separator"></li>
                         <li class="pure-menu-item section-link">
-                            <a href="{{ url('homepage') }}#about" class="pure-menu-link" data-section="about">
-                                <span class="menu-text fa-user-circle">About Me</span>
-                            </a>
-                        </li>
-                        <li class="pure-menu-item section-link">
                             <a href="{{ url('homepage') }}#resume" class="pure-menu-link" data-section="resume">
                                 <span class="menu-text fa-file-text">My Resume</span>
                             </a>
@@ -38,6 +33,11 @@
                         <li class="pure-menu-item section-link">
                             <a href="{{ url('homepage') }}#projects" class="pure-menu-link" data-section="projects">
                                 <span class="menu-text fa-codepen">My Projects</span>
+                            </a>
+                        </li>
+                        <li class="pure-menu-item section-link">
+                            <a href="{{ url('homepage') }}#contact" class="pure-menu-link" data-section="contact">
+                                <span class="menu-text fa-send">Contact</span>
                             </a>
                         </li>
                         <li class="pure-menu-separator"></li>
@@ -77,6 +77,12 @@
             <section id="content">
                 {% block content %}{% endblock %}
             </section>
+            <footer id="footer">
+                <div>
+                    <section id="copyright">&copy; Eric Gach All Rights Reserved</section>
+                    <section id="project"><a href="https://www.github.com/BigE/portfolio" target="_blank">Portfolio</a> build using <a href="http://www.symfony.com/" target="_blank">Symfony</a></section>
+                </div>
+            </footer>
             <a id="menuToggle"></a>
         {% endblock %}
         {%- block javascripts -%}
