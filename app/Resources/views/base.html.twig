@@ -16,7 +16,7 @@
     <body>
         {% block body %}
             <header id="header" class="pure-menu">
-                <a href="{{ url('homepage') }}" id="logo" class="pure-menu-heading">
+                <a href="{{ url('homepage') }}#intro" id="logo" class="pure-menu-heading menu-trigger" data-section="intro">
                     <span class="image avatar"><img src="{{ asset('images/logo.png') }}" title="logo"></span>
                     <h1>Eric Gach</h1>
                     <p>Software Engineer</p>
@@ -24,18 +24,18 @@
                 <nav id="nav">
                     <ul class="pure-menu-list">
                         <li class="pure-menu-separator"></li>
-                        <li class="pure-menu-item section-link">
-                            <a href="{{ url('homepage') }}#about" class="pure-menu-link" data-section="about">
+                        <li class="pure-menu-item">
+                            <a href="{{ url('homepage') }}#about" class="pure-menu-link menu-trigger" data-section="about">
                                 <span class="menu-text fa-user-circle-o">About Me</span>
                             </a>
                         </li>
-                        <li class="pure-menu-item section-link">
-                            <a href="{{ url('homepage') }}#projects" class="pure-menu-link" data-section="projects">
+                        <li class="pure-menu-item">
+                            <a href="{{ url('homepage') }}#projects" class="pure-menu-link menu-trigger" data-section="projects">
                                 <span class="menu-text fa-codepen">My Projects</span>
                             </a>
                         </li>
-                        <li class="pure-menu-item section-link">
-                            <a href="{{ url('homepage') }}#contact" class="pure-menu-link" data-section="contact">
+                        <li class="pure-menu-item">
+                            <a href="{{ url('homepage') }}#contact" class="pure-menu-link menu-trigger" data-section="contact">
                                 <span class="menu-text fa-send">Contact</span>
                             </a>
                         </li>

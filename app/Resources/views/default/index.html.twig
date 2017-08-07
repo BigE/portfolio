@@ -3,9 +3,14 @@
 {% form_theme contactForm '@Portfolio/Form/purecss_layout.html.twig' %}
 
 {% block content %}
-    <h1>Welcome to my Portfolio</h1>
-    <section id="intro" class="panel"></section>
-    <section id="about" class="panel">
+    <section id="intro" class="menu-section">
+        <header>
+            <h1>Welcome to my Portfolio</h1>
+            <p>Within you will find many things about me and my skills</p>
+            <a href="#about" class="pure-button menu-trigger" data-section="about">Learn More</a>
+        </header>
+    </section>
+    <section id="about" class="panel menu-section">
         <header><h2>About Me</h2></header>
         <p>
             I am a self taught software engineer with over 15 years of extensive experience in primarily web
@@ -13,34 +18,39 @@
             applications as well. I have also, through my own curiousness, built back end services as well like
             an IRC bot.
         </p>
-        <p>
-            This portfolio site is another example of my abilities. It is built using the
-            <a href="http://php.net/" target="_blank">PHP</a> language and is built on the
-            <a href="http://symfony.com/" target="_blank">Symfony Framework</a> with a
-            <a href="http://mysql.com/" target="_blank">MySQL</a> database for the backend. While it is currently a very
-            static site, my plan is to develop it into something that can easily be used by others as a portfolio
-            website. In a sense, it will be a Content Management System that is very specific to developers and their
-            portfolio.
-        </p>
-        <section id="resume">
-            <header><h3>My Resume</h3></header>
-            <div class="pure-g">
-                <p class="pure-u-1 pure-u-xl-4-5">If you would like to view my resume, I have made it available for download in multiple formats</p>
-                <p class="pure-u-1 pure-u-xl-1-5">
-                    <a href=""><span class="link-text fa-file-pdf-o">PDF</span></a>
-                    <a href=""><span class="link-text fa-file-word-o">Word</span></a>
-                    <a href=""><span class="link-text fa-file-code-o">HTML</span></a>
+        <div class="pure-g">
+            <p class="pure-u-1 pure-u-xl-13-24">
+                This portfolio site is another example of my abilities. It is built using the
+                <a href="https://php.net/" target="_blank">PHP</a> language with
+                <a href="https://getcomposer.org/" target="_blank">Composer</a> as the package manager. It is built on the
+                <a href="https://symfony.com/" target="_blank">Symfony Framework</a> with a
+                <a href="https://mysql.com/" target="_blank">MySQL</a> database for the backend. On the front end, I'm using
+                <a href="https://yarnpkg.com/" target="_blank">Yarn</a> for package management and
+                <a href="https://github.com/symfony/webpack-encore" target="_blank">Encore</a> with
+                <a href="https://webpack.github.io/" target="_blank">WebPack</a> for JS and CSS minification. While it is
+                currently a very static site, my plan is to develop it into something that can easily be used by others as
+                a portfolio website. In a sense, it will be a Content Management System that is very specific to developers
+                and their portfolio.
+            </p>
+            <div class="pure-u-xl-1-24"></div>
+            <section id="resume" class="pure-u-1 pure-u-xl-10-24">
+                <header><h3>My Resume</h3></header>
+                <p>If you would like to view my resume, I have made it available for download in multiple formats</p>
+                <p class="centered">
+                    <a href="{{ asset('uploads/resume/resume.pdf') }}" class="pure-button button-link"><i class="fa fa-file-pdf-o"></i> PDF</a>
+                    <a href="{{ asset('uploads/resume/resume.doc') }}" class="pure-button button-link"><i class="fa fa-file-word-o"></i> Word</a>
+                    <a href="" class="pure-button button-link"><i class="fa fa-file-code-o"></i> HTML</a>
                 </p>
-            </div>
-        </section>
+            </section>
+        </div>
     </section>
-    <section id="projects" class="panel">
+    <section id="projects" class="panel menu-section">
         <header><h2>My Projects</h2></header>
         <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?</p>
         <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?</p>
         <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?</p>
     </section>
-    <section id="contact" class="panel">
+    <section id="contact" class="panel menu-section">
         <header>
             <h2>Contact Me</h2>
         </header>

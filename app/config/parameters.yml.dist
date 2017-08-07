@@ -22,4 +22,4 @@ parameters:
     github.username: ~
 
     # LinkedIn Configuration
-    linkedin.username
+    linkedin.username: ~
