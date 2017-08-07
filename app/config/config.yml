@@ -39,6 +39,7 @@ twig:
     strict_variables: '%kernel.debug%'
     globals:
         github_username: '%github.username%'
+        linkedin_username: '%linkedin.username%'
 
 # Doctrine Configuration
 doctrine:

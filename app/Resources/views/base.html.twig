@@ -9,7 +9,6 @@
         <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Quicksand|Open+Sans">
         <link rel="stylesheet" type="text/css" href="{{ asset('bundles/portfolio/css/pure.css') }}">
         <link rel="stylesheet" type="text/css" href="{{ asset('bundles/portfolio/css/grids-responsive.css') }}">
-        <link rel="stylesheet" type="text/css" href="{{ asset('bundles/portfolio/css/font-awesome.css') }}">
         <link rel="stylesheet" type="text/css" href="{{ asset('build/global.css') }}">
         {% endblock %}
         <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}">
@@ -26,8 +25,8 @@
                     <ul class="pure-menu-list">
                         <li class="pure-menu-separator"></li>
                         <li class="pure-menu-item section-link">
-                            <a href="{{ url('homepage') }}#resume" class="pure-menu-link" data-section="resume">
-                                <span class="menu-text fa-file-text">My Resume</span>
+                            <a href="{{ url('homepage') }}#about" class="pure-menu-link" data-section="about">
+                                <span class="menu-text fa-user-circle-o">About Me</span>
                             </a>
                         </li>
                         <li class="pure-menu-item section-link">
@@ -69,8 +68,12 @@
                 <nav id="social">
                     <div class="pure-menu-separator"></div>
                     <ul class="pure-menu-list pure-menu-horizontal">
+                        {% if github_username %}
                         <li class="pure-menu-item"><a href="https://github.com/{{ github_username }}/" class="pure-menu-link fa-github-square" title="GitHub" target="_blank"></a></li>
-                        <li class="pure-menu-item"><a href="#" class="pure-menu-link fa-twitter-square" title="Twitter" target="_blank"></a></li>
+                        {% endif %}
+                        {% if linkedin_username %}
+                        <li class="pure-menu-item"><a href="https://linkedin.com/in/{{ linkedin_username }}" class="pure-menu-link fa-linkedin-square" title="Linked In" target="_blank"></a></li>
+                        {% endif %}
                     </ul>
                 </nav>
             </header>
@@ -80,7 +83,7 @@
             <footer id="footer">
                 <div>
                     <section id="copyright">&copy; Eric Gach All Rights Reserved</section>
-                    <section id="project"><a href="https://www.github.com/BigE/portfolio" target="_blank">Portfolio</a> build using <a href="http://www.symfony.com/" target="_blank">Symfony</a></section>
+                    <section id="project"><a href="https://www.github.com/BigE/portfolio" target="_blank">Portfolio</a> is built using the <a href="http://www.symfony.com/" target="_blank">Symfony Framework</a></section>
                 </div>
             </footer>
             <a id="menuToggle"></a>

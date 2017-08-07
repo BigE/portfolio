@@ -8,6 +8,7 @@ body.header-visible #content, body.header-visible #menuToggle {
 
 #header {
     background-color: $dark_shade;
+    color: $light_accent;
     height: 100vh;
     left: 0;
     position: fixed;
@@ -22,8 +23,21 @@ body.header-visible #header {
     @include transform(translateX(0));
 }
 
+#header .pure-menu-link {
+    color: $light_accent;
+}
+
+#header .pure-menu-link:hover {
+    background-color: $light_shade;
+    color: $dark_shade;
+}
+
+#header .pure-menu-link:hover .menu-text:before, #header .pure-menu-item.pure-menu-active .menu-text:before {
+    color: $main;
+}
+
 #logo {
-    color: $default;
+    color: $light_accent;
     padding: 0;
     margin: 0.5rem 1rem;
     min-height: 4.8rem;
@@ -57,9 +71,9 @@ body.header-visible #header {
 }
 
 #menuToggle:before {
-    background-color: rgba(49, 46, 62, 0.8);
+    background-color: $dark_shade;
     border-radius: 0.5rem;
-    color: $default;
+    color: $main;
     content: '\f0c9';
     display: block;
     font-family: FontAwesome;
@@ -81,21 +95,46 @@ body.header-visible #header {
     font-size: 3.2rem;
 }
 
+#social .pure-menu-link:hover {
+    background-color: inherit;
+    color: $main;
+}
+
 .avatar img {
     -webkit-border-radius: 50%;
     -moz-border-radius: 50%;
     border-radius: 50%;
+    box-sizing: border-box;
     height: 4.8rem;
     display: block;
 }
 
+.pure-menu-heading:hover .avatar img {
+    box-shadow: 0 0 1rem -0.2rem $main;
+}
+
+.menu-text {
+    display: inline-block;
+    line-height: 2em;
+    position: relative;
+    width: 100%;
+}
+
+.menu-text:before {
+    font-size: 1.2em;
+    font-family: FontAwesome;
+    left: 0;
+    position: absolute;
+}
+
 @media (min-width: 1024px) {
     #content {
-        margin-left: 22%;
+        box-shadow: inset 1.4rem 0 1rem -1rem $dark_shade;
+        margin-left: 20%;
     }
 
     #footer {
-        margin-left: 22%;
+        margin-left: 20%;
     }
 
     #header {

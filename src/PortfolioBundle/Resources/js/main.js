@@ -44,7 +44,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
                 from = elem.scrollTop,
                 to = document.getElementById(id).offsetTop,
                 timer = setInterval(function () {
-                    var step = Math.min(1, (new Date().getTime() - start) / 1000);
+                    var step = Math.min(1, (new Date().getTime() - start) / 600);
                     elem['scrollTop'] = (from + step * (to - from));
                     if (step === 1) {
                         clearInterval(timer);
@@ -53,6 +53,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
                 }, 25);
             elem['scrollTop'] = from;
             event.preventDefault();
+            closeMenu();
         });
     });
 

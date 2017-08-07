@@ -20,3 +20,6 @@ parameters:
 
     # Github Configuration
     github.username: ~
+
+    # LinkedIn Configuration
+    linkedin.username

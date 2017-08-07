@@ -20,6 +20,21 @@ class DefaultController extends Controller
         $contactType = $this->createForm(ContactType::class);
 
         if ($contactType->isSubmitted() && $contactType->isValid()) {
+            $contact = $contactType->getData();
+            $mailer = $this->get('swiftmailer.mailer.default');
+            $message = (new \Swift_Message('Portfolio Contact'))
+                ->setFrom($contact['email'], $contact['name'])
+                ->setTo('eric.gach@gmail.com', 'Eric Gach')
+                ->addCc($contact['email'], $contact['name'])
+                ->setBody(
+                    $this->renderView('', [
+                        'contact' => $contact,
+                    ]),
+                    'text/html'
+                )
+            ;
+
+            $mailer->send($message);
         } else if ($contactType->isSubmitted() && !$contactType->isValid()) {
         }
 

@@ -10,11 +10,8 @@ html {
 
 body {
     background-color: $light_shade;
+    color: $dark_shade;
     font-size: 1.6rem;
-}
-
-a {
-    color: inherit;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -25,6 +22,18 @@ h1, h2, h3, h4, h5, h6 {
     padding: 4rem 2rem;
 }
 
+#content a {
+    color: $main;
+    text-decoration: none;
+}
+
+#content a[target=_blank]:after {
+    color: $main;
+    content: '\f08e';
+    font-family: FontAwesome;
+    padding-left: 0.4rem;
+}
+
 .error-list {
     margin: 0 0 0 11em;
 }
@@ -33,17 +42,13 @@ h1, h2, h3, h4, h5, h6 {
     color: $error;
 }
 
-.menu-text {
-    display: inline-block;
-    line-height: 2em;
-    position: relative;
-    width: 100%;
+.link-text:before {
+    font-family: FontAwesome;
+    padding: 0 0.6rem 0 1rem;
 }
 
-.menu-text:before {
-    font-family: FontAwesome;
-    left: 0;
-    position: absolute;
+.panel > header {
+    padding-top: 2.4rem;
 }
 
 .pure-menu-active > .pure-menu-link {
@@ -58,6 +63,32 @@ h1, h2, h3, h4, h5, h6 {
     padding: 0 0 1.8rem 0;
 }
 
+.right {
+    text-align: right;
+}
+
 .success {
     color: $success;
+}
+
+@media (min-width: 1024px) {
+    #content {
+        padding: 4rem 2rem 4rem 4rem;
+    }
+}
+
+@media (min-width: 1280px) {
+    #resume .pure-u-1:last-child {
+        text-align: right;
+    }
+}
+
+@media (min-width: 1280px) and (max-width: 1445px) {
+    #content .link-text {
+        font-size: 0;
+    }
+
+    #content .link-text:before {
+        font-size: 1.6rem;
+    }
 }

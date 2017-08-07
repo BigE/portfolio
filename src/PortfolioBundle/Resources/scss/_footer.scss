@@ -1,4 +1,7 @@
 #footer {
+    background-color: $light_accent;
+    box-shadow: 0 -0.4rem 1rem -0.2rem $dark_shade;
+    font-size: 1.1em;
     padding: 8rem 0 10rem 0;
 }
 
@@ -10,15 +13,25 @@
     line-height: 1.6em;
 }
 
-@media (min-width: 568px) {
-    #footer section {
-        border-left: 0.1rem solid rgba(40, 40, 40, 0.8);
-        display: inline-block;
-        margin-left: 0.6rem;
-        padding-left: 1rem;
-    }
+#footer a {
+    color: $main;
+    text-decoration: none;
+}
 
-    #footer section:first-child {
-        border: none;
+#footer a[target=_blank]:after {
+    color: $main;
+    content: '\f08e';
+    font-family: FontAwesome;
+    padding-left: 0.4rem;
+}
+
+@media (min-width: 568px) {
+    #footer section:not(:first-child):before {
+        content: '\f142';
+        font-family: FontAwesome;
+        margin: 0 1rem 0 0.4rem;
+    }
+    #footer section {
+        display: inline-block;
     }
 }
