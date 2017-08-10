@@ -18,10 +18,6 @@ h1, h2, h3, h4, h5, h6 {
     font-family: $heading;
 }
 
-#content .panel {
-    padding: 4rem 2rem;
-}
-
 #content .panel a {
     color: $main;
     text-decoration: none;
@@ -36,7 +32,7 @@ h1, h2, h3, h4, h5, h6 {
 
 #intro {
     background-color: rgba(49,46,62,0.65);
-    color: $light_accent;
+    color: $light_shade;
     display: table-cell;
     height: 75vh;
     padding: 3rem;
@@ -56,6 +52,11 @@ h1, h2, h3, h4, h5, h6 {
     position: absolute;
     top: 0;
     z-index: -1;
+}
+
+#projects {
+    background-color: $dark_shade;
+    color: $light_shade;
 }
 
 #resume {
@@ -105,6 +106,11 @@ h1, h2, h3, h4, h5, h6 {
     padding: 0 0.6rem 0 1rem;
 }
 
+.panel {
+    background-color: $light_shade;
+    padding: 4rem 2rem;
+}
+
 .panel > header {
     padding-top: 2.4rem;
 }
@@ -123,6 +129,10 @@ h1, h2, h3, h4, h5, h6 {
 
 .right {
     text-align: right;
+}
+
+.shadow {
+    box-shadow: 0 0 1rem $dark_shade;
 }
 
 .success {
@@ -167,5 +177,9 @@ h1, h2, h3, h4, h5, h6 {
 
     #resume {
         margin-top: 0;
+    }
+
+    #resume h3 {
+        font-size: 3rem;
     }
 }

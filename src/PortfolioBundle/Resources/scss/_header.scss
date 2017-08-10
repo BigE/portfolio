@@ -2,7 +2,7 @@
     @include transition(transform, 0.5s ease);
 }
 
-body.header-visible #content, body.header-visible #menuToggle {
+body.header-visible #content, body.header-visible #menuToggle, body.header-visible #footer {
     @include transform(translateX(27.5rem));
 }
 
@@ -72,6 +72,7 @@ body.header-visible #header {
 
 #menuToggle:before {
     background-color: $dark_shade;
+    border: 0.1rem solid $dark_accent;
     border-radius: 0.5rem;
     color: $main;
     content: '\f0c9';
@@ -129,7 +130,6 @@ body.header-visible #header {
 
 @media (min-width: 1024px) {
     #content {
-        box-shadow: inset 1.4rem 0 1rem -1rem $dark_shade;
         margin-left: 20%;
     }
 
@@ -148,6 +148,10 @@ body.header-visible #header {
 
     #menuToggle {
         display: none;
+    }
+
+    .panel {
+        box-shadow: inset 1.4rem 0 1rem -1rem $dark_shade;
     }
 }
 
