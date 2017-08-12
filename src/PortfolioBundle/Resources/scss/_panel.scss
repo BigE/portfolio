@@ -1,0 +1,57 @@
+.panel {
+    box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
+    border-radius: 2rem;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    padding: 2rem;
+    margin: 1em 0;
+    @media (min-width: 568px) {
+        margin-right: 2rem;
+        margin-left: 2rem;
+    }
+}
+
+.panel .button {
+    -webkit-border-radius: 1rem;
+    -moz-border-radius: 1rem;
+    border-radius: 1rem;
+}
+
+.dark .panel .button {
+    background-color: $light_shade;
+    color: $light_accent;
+}
+
+.dark .panel .button {
+    background-color: $light_accent;
+    color: $light_shade;
+}
+
+.light .panel {
+    background-color: $dark_accent;
+    color: $light_shade;
+}
+
+.dark .panel {
+    background-color: $light_shade;
+    color: $dark_shade;
+}
+
+.panel-header {
+    margin: 0 0 1rem 0;
+}
+
+.dark .panel-header {
+    color: $main;
+}
+
+.panel-footer {
+    text-align: right;
+}
+
+@each $header in $headings {
+    .panel-header #{$header} {
+        margin: 0 0 1rem 0;
+    }
+}

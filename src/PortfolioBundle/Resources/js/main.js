@@ -65,7 +65,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
 
         var elem = (document.scrollingElement || document.documentElement),
             top = elem.scrollTop,
-            elements = Array.prototype.slice.call(document.getElementsByClassName('menu-section')).reverse();
+            elements = Array.prototype.slice.call(document.getElementsByClassName('menu-block')).reverse();
 
         clearActive();
         for (var i = 0; i < elements.length; i++) {

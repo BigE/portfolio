@@ -14,24 +14,29 @@ body {
     font-size: 1.6rem;
 }
 
-h1, h2, h3, h4, h5, h6 {
+#{$headings} {
     font-family: $heading;
 }
 
-#content .panel a {
-    color: $main;
-    text-decoration: none;
+@each $header in $headings {
+    #{$header}:before {
+        font-family: FontAwesome;
+        font-weight: normal;
+        padding: 0 0.4em 0 0;
+    }
 }
 
-#content .panel a[target=_blank]:after {
-    color: $main;
+a[target=_blank]:not(.button):after {
     content: '\f08e';
+    display: table-cell;
     font-family: FontAwesome;
+    font-size: 0.6em;
     padding-left: 0.4rem;
+    vertical-align: middle;
 }
 
 #intro {
-    background-color: rgba(49,46,62,0.65);
+    background-color: rgba($dark_shade,0.65);
     color: $light_shade;
     display: table-cell;
     height: 75vh;
@@ -54,39 +59,36 @@ h1, h2, h3, h4, h5, h6 {
     z-index: -1;
 }
 
-#projects {
+.block {
+    padding: 4rem 2rem;
+}
+
+.block.light {
+    background-color: $light_shade;
+    color: $dark_shade;
+}
+
+.block.dark {
     background-color: $dark_shade;
     color: $light_shade;
 }
 
-#resume {
-    border-radius: 1rem;
-    -webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    box-sizing: border-box;
-    background-color: $dark_accent;
-    color: $light_shade;
-    margin-top: 1rem;
-    padding: 2rem;
+.block > header {
+    padding-top: 2.4rem;
 }
 
-#resume h3 {
-    margin: 0 0 1em 0;
+.block a {
+    color: $light_accent;
+    text-decoration: none;
 }
 
-#resume h3:before {
-    content: '\f15b';
+.block a[target=_blank]:after {
+    color: $light_accent;
+}
+
+.button:before {
     font-family: FontAwesome;
-    padding: 0 1rem 0 0;
-}
-
-#resume .button-link {
-    background-color: $light_shade;
-    -webkit-border-radius: 1rem;
-    -moz-border-radius: 1rem;
-    border-radius: 1rem;
-    color: $dark_shade;
-    margin: 0.6rem 0 0 0;
+    padding: 0 0.4em 0 0;
 }
 
 .centered {
@@ -106,15 +108,6 @@ h1, h2, h3, h4, h5, h6 {
     padding: 0 0.6rem 0 1rem;
 }
 
-.panel {
-    background-color: $light_shade;
-    padding: 4rem 2rem;
-}
-
-.panel > header {
-    padding-top: 2.4rem;
-}
-
 .pure-menu-active > .pure-menu-link {
     background-color: $light_shade;
 }
@@ -131,19 +124,8 @@ h1, h2, h3, h4, h5, h6 {
     text-align: right;
 }
 
-.shadow {
-    box-shadow: 0 0 1rem $dark_shade;
-}
-
 .success {
     color: $success;
-}
-
-@media (min-width: 568px) {
-    #resume {
-        margin-right: 2rem;
-        margin-left: 2rem;
-    }
 }
 
 @media (min-width: 768px) {
@@ -163,7 +145,7 @@ h1, h2, h3, h4, h5, h6 {
         font-size: 4rem;
     }
 
-    #content .panel {
+    #content .block {
         padding: 4rem 2rem 4rem 4rem;
     }
 
@@ -173,13 +155,5 @@ h1, h2, h3, h4, h5, h6 {
 
     #intro h1 {
         font-size: 6rem;
-    }
-
-    #resume {
-        margin-top: 0;
-    }
-
-    #resume h3 {
-        font-size: 3rem;
     }
 }

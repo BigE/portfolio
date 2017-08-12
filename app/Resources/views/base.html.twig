@@ -7,8 +7,6 @@
         <title>{% block title %}Welcome!{% endblock %}</title>
         {% block stylesheets %}
         <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Quicksand|Open+Sans">
-        <link rel="stylesheet" type="text/css" href="{{ asset('bundles/portfolio/css/pure.css') }}">
-        <link rel="stylesheet" type="text/css" href="{{ asset('bundles/portfolio/css/grids-responsive.css') }}">
         <link rel="stylesheet" type="text/css" href="{{ asset('build/global.css') }}">
         {% endblock %}
         <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}">
@@ -16,7 +14,7 @@
     <body>
         {% block body %}
             <header id="header" class="pure-menu">
-                <a href="{{ url('homepage') }}#intro" id="logo" class="pure-menu-heading menu-trigger" data-section="intro">
+                <a href="{{ url('homepage') }}#intro" id="logo" class="pure-menu-heading menu-heading menu-trigger" data-section="intro">
                     <span class="image avatar"><img src="{{ asset('images/logo.png') }}" title="logo"></span>
                     <h1>Eric Gach</h1>
                     <p>Software Engineer</p>
@@ -25,43 +23,45 @@
                     <ul class="pure-menu-list">
                         <li class="pure-menu-separator"></li>
                         <li class="pure-menu-item">
-                            <a href="{{ url('homepage') }}#about" class="pure-menu-link menu-trigger" data-section="about">
+                            <a href="{{ url('homepage') }}#about" class="pure-menu-link menu-link menu-trigger" data-section="about">
                                 <span class="menu-text fa-user-circle-o">About Me</span>
                             </a>
                         </li>
                         <li class="pure-menu-item">
-                            <a href="{{ url('homepage') }}#projects" class="pure-menu-link menu-trigger" data-section="projects">
+                            <a href="{{ url('homepage') }}#projects" class="pure-menu-link menu-link menu-trigger" data-section="projects">
                                 <span class="menu-text fa-codepen">My Projects</span>
                             </a>
                         </li>
                         <li class="pure-menu-item">
-                            <a href="{{ url('homepage') }}#contact" class="pure-menu-link menu-trigger" data-section="contact">
+                            <a href="{{ url('homepage') }}#contact" class="pure-menu-link menu-link menu-trigger" data-section="contact">
                                 <span class="menu-text fa-send">Contact</span>
                             </a>
                         </li>
-                        <li class="pure-menu-separator"></li>
-                        {% if app.user %}
-                            <li class="pure-menu-item{% if menu_active == 'dashboard' %} pure-menu-active{% endif %}">
-                                <a href="{{ url('portfolio_user_dashboard') }}" class="pure-menu-link">
-                                    <span class="menu-text fa-dashboard">Dashboard</span>
-                                </a>
-                            </li>
-                            <li class="pure-menu-item">
-                                <a href="{{ url('logout') }}" class="pure-menu-link">
-                                    <span class="menu-text fa-sign-out">Logout</span>
-                                </a>
-                            </li>
-                        {% else %}
-                            <li class="pure-menu-item{% if menu_active == 'register' %} pure-menu-active{% endif %}">
-                                <a href="{{ url('portfolio_security_register') }}" class="pure-menu-link">
-                                    <span class="menu-text fa-user-plus">Register</span>
-                                </a>
-                            </li>
-                            <li class="pure-menu-item{% if menu_active == 'login' %} pure-menu-active{% endif %}">
-                                <a href="{{ url('login') }}" class="pure-menu-link">
-                                    <span class="menu-text fa-sign-in">Login</span>
-                                </a>
-                            </li>
+                        {% if app.environment == 'dev' %}
+                            <li class="pure-menu-separator"></li>
+                            {% if app.user %}
+                                <li class="pure-menu-item{% if menu_active == 'dashboard' %} pure-menu-active{% endif %}">
+                                    <a href="{{ url('portfolio_user_dashboard') }}" class="pure-menu-link menu-link">
+                                        <span class="menu-text fa-dashboard">Dashboard</span>
+                                    </a>
+                                </li>
+                                <li class="pure-menu-item">
+                                    <a href="{{ url('logout') }}" class="pure-menu-link menu-link">
+                                        <span class="menu-text fa-sign-out">Logout</span>
+                                    </a>
+                                </li>
+                            {% else %}
+                                <li class="pure-menu-item{% if menu_active == 'register' %} pure-menu-active{% endif %}">
+                                    <a href="{{ url('portfolio_security_register') }}" class="pure-menu-link menu-link">
+                                        <span class="menu-text fa-user-plus">Register</span>
+                                    </a>
+                                </li>
+                                <li class="pure-menu-item{% if menu_active == 'login' %} pure-menu-active{% endif %}">
+                                    <a href="{{ url('login') }}" class="pure-menu-link menu-link">
+                                        <span class="menu-text fa-sign-in">Login</span>
+                                    </a>
+                                </li>
+                            {% endif %}
                         {% endif %}
                     </ul>
                 </nav>
@@ -69,10 +69,10 @@
                     <div class="pure-menu-separator"></div>
                     <ul class="pure-menu-list pure-menu-horizontal">
                         {% if github_username %}
-                        <li class="pure-menu-item"><a href="https://github.com/{{ github_username }}/" class="pure-menu-link fa-github-square" title="GitHub" target="_blank"></a></li>
+                        <li class="pure-menu-item"><a href="https://github.com/{{ github_username }}/" class="pure-menu-link menu-link fa-github-square" title="GitHub" target="_blank"></a></li>
                         {% endif %}
                         {% if linkedin_username %}
-                        <li class="pure-menu-item"><a href="https://linkedin.com/in/{{ linkedin_username }}" class="pure-menu-link fa-linkedin-square" title="Linked In" target="_blank"></a></li>
+                        <li class="pure-menu-item"><a href="https://linkedin.com/in/{{ linkedin_username }}" class="pure-menu-link menu-link fa-linkedin-square" title="Linked In" target="_blank"></a></li>
                         {% endif %}
                     </ul>
                 </nav>

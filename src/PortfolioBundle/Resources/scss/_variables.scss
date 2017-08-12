@@ -1,15 +1,29 @@
 // background colors
-$main: #cd5e36;
-$light_accent: #a1b5b9;
-$light_shade: #f7f9f5;
-$dark_accent: #ec983b;
-$dark_shade: #312e3e;
+//$main: #a09da4;
+$main: #a19383;
+//$light_accent: #7f7884;
+$light_accent: #da942c;
+//$light_shade: #f6f7f5;
+$light_shade: #f7f5f0;
+//$dark_accent: #6d6c62;
+$dark_accent: #b76529;
+//$dark_shade: #29252a;
+$dark_shade: #373032;
+
 // foreground colors
-$default: #a1b5b9;
+//$default: #a09da4;
+$default: #a19383;
+//$error: #f44336;
 $error: #f44336;
-$info: #302e3e;
-$success: #739748;
-$warning: #f08710;
+//$info: #29252a;
+$info: #373032;
+//$success: #65aa69;
+$success: 66a75f;
+//$warning: #e39a31;
+$warning: #e39727;
+
 // fonts
 $font: Open Sans, sans-serif;
 $heading: Quicksand, sans-serif;
+
+$headings: h1 h2 h3 h4 h5 h6;

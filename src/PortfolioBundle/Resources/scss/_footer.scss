@@ -1,6 +1,7 @@
 #footer {
-    background-color: $light_accent;
+    background-color: $dark_shade;
     box-shadow: 0 -0.4rem 1rem -0.2rem $dark_shade;
+    color: $main;
     font-size: 1.1em;
     padding: 8rem 0 10rem 0;
 }
@@ -10,28 +11,26 @@
 }
 
 #footer section {
-    line-height: 1.6em;
+    margin: 0.8em 0;
+    @media (min-width: 568px) and (max-width: 1024px), (min-width: 1280px) {
+        display: inline-block;
+    }
+}
+
+#footer section:not(:first-child):before {
+    @media (min-width: 568px) and (max-width: 1024px), (min-width: 1280px) {
+        content: '\f142';
+        color: $light_shade;
+        font-family: FontAwesome;
+        margin: 0 1rem 0 0.4rem;
+    }
 }
 
 #footer a {
-    color: $main;
+    color: $light_accent;
     text-decoration: none;
 }
 
 #footer a[target=_blank]:after {
-    color: $main;
-    content: '\f08e';
-    font-family: FontAwesome;
-    padding-left: 0.4rem;
-}
-
-@media (min-width: 568px) {
-    #footer section:not(:first-child):before {
-        content: '\f142';
-        font-family: FontAwesome;
-        margin: 0 1rem 0 0.4rem;
-    }
-    #footer section {
-        display: inline-block;
-    }
+    color: $light_accent;
 }

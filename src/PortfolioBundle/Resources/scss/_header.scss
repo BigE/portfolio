@@ -7,8 +7,8 @@ body.header-visible #content, body.header-visible #menuToggle, body.header-visib
 }
 
 #header {
-    background-color: $dark_shade;
-    color: $light_accent;
+    background-color: $main;
+    color: $light_shade;
     height: 100vh;
     left: 0;
     position: fixed;
@@ -23,21 +23,21 @@ body.header-visible #header {
     @include transform(translateX(0));
 }
 
-#header .pure-menu-link {
-    color: $light_accent;
+#header .menu-link {
+    color: $light_shade;
 }
 
-#header .pure-menu-link:hover {
+#header .menu-link:hover {
     background-color: $light_shade;
     color: $dark_shade;
 }
 
-#header .pure-menu-link:hover .menu-text:before, #header .pure-menu-item.pure-menu-active .menu-text:before {
+#header .menu-link:hover .menu-text:before, #header .pure-menu-item.pure-menu-active .menu-text:before {
     color: $main;
 }
 
 #logo {
-    color: $light_accent;
+    color: $light_shade;
     padding: 0;
     margin: 0.5rem 1rem;
     min-height: 4.8rem;
@@ -92,11 +92,23 @@ body.header-visible #header {
 }
 
 #social a:before {
+    -webkit-border-radius: 1rem;
+    -moz-border-radius: 1rem;
+    border-radius: 1rem;
     font-family: FontAwesome;
     font-size: 3.2rem;
+    padding: 0.5rem 1rem;
 }
 
-#social .pure-menu-link:hover {
+#social a:hover:before {
+    background-color: $light_shade;
+}
+
+#social a:after {
+    content: '';
+}
+
+#social .menu-link:hover {
     background-color: inherit;
     color: $main;
 }
@@ -105,13 +117,10 @@ body.header-visible #header {
     -webkit-border-radius: 50%;
     -moz-border-radius: 50%;
     border-radius: 50%;
+    box-shadow: 0 0 1rem -0.2rem $dark_shade;
     box-sizing: border-box;
     height: 4.8rem;
     display: block;
-}
-
-.pure-menu-heading:hover .avatar img {
-    box-shadow: 0 0 1rem -0.2rem $main;
 }
 
 .menu-text {
@@ -150,7 +159,7 @@ body.header-visible #header {
         display: none;
     }
 
-    .panel {
+    .block {
         box-shadow: inset 1.4rem 0 1rem -1rem $dark_shade;
     }
 }
