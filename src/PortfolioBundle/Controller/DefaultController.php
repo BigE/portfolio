@@ -18,6 +18,7 @@ class DefaultController extends Controller
     public function contactAction(Request $request)
     {
         $contactType = $this->createForm(ContactType::class);
+        $contactType->handleRequest($request);
 
         if ($contactType->isSubmitted() && $contactType->isValid()) {
             $contact = $contactType->getData();
@@ -27,7 +28,7 @@ class DefaultController extends Controller
                 ->setTo('eric.gach@gmail.com', 'Eric Gach')
                 ->addCc($contact['email'], $contact['name'])
                 ->setBody(
-                    $this->renderView('', [
+                    $this->renderView('PortfolioBundle:Email:contact.html.twig', [
                         'contact' => $contact,
                     ]),
                     'text/html'
@@ -38,7 +39,7 @@ class DefaultController extends Controller
         } else if ($contactType->isSubmitted() && !$contactType->isValid()) {
         }
 
-        return $this->redirectToRoute('homepage');
+        return $this->redirectToRoute('homepage', ['_fragment' => 'contact']);
     }
 
     /**
