@@ -23,16 +23,13 @@ body.header-visible #header {
     @include transform(translateX(0));
 }
 
-#header .menu-link {
+#header .menu-link, #header .menu-link:focus {
+    background-color: $main;
     color: $light_shade;
 }
 
-#header .menu-link:hover {
+#header .menu-link:hover, #header .pure-menu-active .menu-link {
     background-color: $light_shade;
-    color: $dark_shade;
-}
-
-#header .menu-link:hover .menu-text:before, #header .pure-menu-item.pure-menu-active .menu-text:before {
     color: $main;
 }
 

@@ -12,6 +12,9 @@ body {
     background-color: $light_shade;
     color: $dark_shade;
     font-size: 1.6rem;
+    @media (min-width: 1024px) {
+        font-size: 2rem;
+    }
 }
 
 #{$headings} {
@@ -45,6 +48,9 @@ a[target=_blank]:not(.button):after {
     text-align: center;
     vertical-align: middle;
     width: 100vw;
+    @media (min-width: 1024px) {
+        font-size: 3rem;
+    }
 }
 
 #intro::after {
@@ -59,31 +65,18 @@ a[target=_blank]:not(.button):after {
     z-index: -1;
 }
 
-.block {
-    padding: 4rem 2rem;
+#intro h1 {
+    @media (min-width: 1024px) {
+        font-size: 6rem;
+    }
 }
 
-.block.light {
-    background-color: $light_shade;
-    color: $dark_shade;
-}
-
-.block.dark {
-    background-color: $dark_shade;
-    color: $light_shade;
-}
-
-.block > header {
-    padding-top: 2.4rem;
-}
-
-.block a {
-    color: $light_accent;
-    text-decoration: none;
-}
-
-.block a[target=_blank]:after {
-    color: $light_accent;
+#resume {
+    @media (min-width: 768px) {
+        margin-left: auto;
+        margin-right: auto;
+        max-width: 65%;
+    }
 }
 
 .button:before {
@@ -108,14 +101,6 @@ a[target=_blank]:not(.button):after {
     padding: 0 0.6rem 0 1rem;
 }
 
-.pure-menu-active > .pure-menu-link {
-    background-color: $light_shade;
-}
-
-.pure-menu-active .menu-text {
-    color: $dark_shade;
-}
-
 .profile-success {
     padding: 0 0 1.8rem 0;
 }
@@ -126,34 +111,4 @@ a[target=_blank]:not(.button):after {
 
 .success {
     color: $success;
-}
-
-@media (min-width: 768px) {
-    #resume {
-        margin-left: auto;
-        margin-right: auto;
-        max-width: 65%;
-    }
-}
-
-@media (min-width: 1024px) {
-    body {
-        font-size: 2rem;
-    }
-
-    #content h2 {
-        font-size: 4rem;
-    }
-
-    #content .block {
-        padding: 4rem 2rem 4rem 4rem;
-    }
-
-    #intro {
-        font-size: 3rem;
-    }
-
-    #intro h1 {
-        font-size: 6rem;
-    }
 }
