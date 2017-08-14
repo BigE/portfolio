@@ -83,6 +83,8 @@ document.addEventListener("DOMContentLoaded", function (event) {
                         errorDiv.classList.add('error');
                         element.parentNode.appendChild(errorDiv);
                     });
+                } else {
+                    form.reset();
                 }
 
                 form.parentNode.insertBefore(messageP, form);
