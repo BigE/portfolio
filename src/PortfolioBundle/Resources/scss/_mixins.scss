@@ -1,0 +1,22 @@
+@mixin transform($wat) {
+    -webkit-transform: $wat;
+    -moz-transform: $wat;
+    -ms-transform: $wat;
+    -o-transform: $wat;
+    transform: $wat;
+}
+
+@mixin transition($prop, $time) {
+    -webkit-transition: $prop $time;
+    -moz-transition: $prop $time;
+    -ms-transition: $prop $time;
+    -o-transition: $prop $time;
+    transition: $prop $time;
+}
+
+@mixin backface-visibility($prop) {
+    -webkit-backface-visibility: $prop;
+    -moz-backface-visibility: $prop;
+    -ms-backface-visibility: $prop;
+    backface-visibility: $prop;
+}

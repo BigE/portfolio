@@ -1,0 +1,169 @@
+{% extends 'base.html.twig' %}
+
+{% form_theme contactForm '@Portfolio/Form/purecss_layout.html.twig' %}
+
+{% block content %}
+    <section id="intro" class="menu-block">
+        <header>
+            <h1>Welcome to my Portfolio</h1>
+            <p>Within you will find many things about me and my abilities</p>
+            <a href="#about" class="fa-arrow-circle-down pure-button button menu-trigger" data-section="about">Learn More</a>
+        </header>
+    </section>
+    <section id="about" class="block light menu-block">
+        <header><h2 class="fa-user-circle-o">About Me</h2></header>
+        <p>
+            I am a self taught software engineer with over 15 years of extensive experience in primarily web
+            development. Through the years I have been able to branch out some and get experience with desktop
+            applications, and through my own curiousness, built back end services as well like an IRC bot. I have also
+            had the opportunity to put my linux abilities to the test and become a system administrator for a small
+            enterprise system.
+        </p>
+        <div class="pure-g">
+            <div class="pure-u-1 pure-u-xl-13-24">
+                <p>
+                    Through my career I have mostly been a full stack LAMP developer. My primary focus in development has
+                    been in <a href="https://php.net/" target="_blank">PHP</a> but I have had a few opportunities to branch
+                    out and do some <a href="https://python.org/" target="_blank">Python</a> development as well. I'm
+                    familiar with several languages and proficient with multiple databases, primarily being
+                    <a href="https://mysql.com/" target="_blank">MySQL</a> and
+                    <a href="https://postgresql.org/" target="_blank">PostgreSQL</a>.
+                </p>
+                <p>
+                    Currently I run <a href="https://archlinux.org/" target="_blank">Arch Linux</a> as my daily
+                    operation system, but I have had experience with many Linux distributions. I've used most major
+                    distrobutions including the <a href="https://ubuntu.com/" target="_blank">Ubuntu</a> and
+                    <a href="https://centos.org/" target="_blank">CentOS</a> flavors. Though I have used and supported Windows in the
+                    past, it has been a few years since I've used it as my primary operating system.
+                </p>
+            </div>
+            <div class="pure-u-xl-1-24"></div>
+            <section id="resume" class="pure-u-1 pure-u-xl-10-24">
+                <div class="panel">
+                    <header class="panel-header"><h3 class="fa-file-text">My Resume</h3></header>
+                    <p>
+                        If you would like to view my resume to view a full list of my skills and experience, I have made it
+                        available for download in multiple formats.
+                    </p>
+                    <footer class="panel-footer centered">
+                        <a href="{{ asset('uploads/resume/resume.pdf') }}" class="fa-file-pdf-o pure-button button">PDF</a>
+                        <a href="{{ asset('uploads/resume/resume.doc') }}" class="fa-file-word-o pure-button button">Word</a>
+                        <a href="" class="fa-file-code-o pure-button button">HTML</a>
+                    </footer>
+                </div>
+            </section>
+        </div>
+    </section>
+    <section id="projects" class="block dark menu-block">
+        <header><h2 class="fa-codepen">My Projects</h2></header>
+        <p>
+            These are a few of my personal projects that I have either worked on in the past, or am currently working
+            on in my spare time. It is through these projects that I am able to explore new ideas, technologies, and
+            teach myself new concepts. Though not all of them are currently active, they have all played a big role in
+            my development.
+        </p>
+        <section id="desk-changer" class="panel">
+            <header class="panel-header"><h3 class="fa-photo">Desk Changer</h3></header>
+            <p>
+                Desk Changer is a <a href="https://wiki.gnome.org/Projects/GnomeShell" target="_blank">Gnome Shell</a>
+                extension that is written using JavaScript with <a href="https://wiki.gnome.org/Projects/Gjs"
+                                                                   target="_blank">gjs</a>, and Python for the separate
+                daemon process. Its purpose is to provide the ability to rotate the background wallpaper at a set
+                interval. This extension comes with the unique ability to add multiple profiles. Each profile can
+                contain any amount of folders or files that will be rotated through. It is currently available for
+                download on the <a href="https://extensions.gnome.org/extension/1131/desk-changer/"
+                                   target="_blank">Gnome Shell Extensions</a> website.
+            </p>
+            <footer class="panel-footer">
+                <a href="https://github.com/BigE/desk-changer" class="fa-github pure-button button"
+                   target="_blank">View on GitHub</a>
+            </footer>
+        </section>
+        <section id="portfolio" class="panel">
+            <header class="panel-header"><h3 class="fa-user">Portfolio</h3></header>
+            <p>
+                This portfolio site is another example of my abilities. It is built using the
+                <a href="https://php.net/" target="_blank">PHP</a> language with
+                <a href="https://getcomposer.org/" target="_blank">Composer</a> as the package manager. It is built on the
+                <a href="https://symfony.com/" target="_blank">Symfony Framework</a> with a
+                <a href="https://mysql.com/" target="_blank">MySQL</a> database for the backend. On the front end, I'm using
+                <a href="https://yarnpkg.com/" target="_blank">Yarn</a> for package management and
+                <a href="https://github.com/symfony/webpack-encore" target="_blank">Encore</a> with
+                <a href="https://webpack.github.io/" target="_blank">WebPack</a> for JS and CSS minification. While it is
+                currently a very static site, my plan is to develop it into something that can easily be used by others as
+                a portfolio website. In a sense, it will be a Content Management System that is very specific to developers
+                and their portfolio.
+            </p>
+            <footer class="panel-footer">
+                <a href="https://github.com/BigE/portfolio" class="fa-github pure-button button"
+                   target="_blank">View on GitHub</a>
+            </footer>
+        </section>
+        <section id="sitech" class="panel">
+            <header class="panel-header"><h3 class="fa-object-ungroup">SiTech</h3></header>
+            <p>
+                SiTech is a code library that I wrote for PHP several years ago and have not actively maintained in
+                a couple of years. It was originally my alternative to using a full framework or the
+                <a href="https://pear.net/" target="_blank">PEAR Library</a> as they were both heavy with dependencies.
+                The purpose of SiTech being a library was so that you could easily use individual parts of the library,
+                much like a framework, but without the dependency on any other part of the library. Since writing it I
+                have started to use other code libraries and, at this point, no longer wish to maintain my own. Some day
+                I might attempt to rewrite this library for PHP 7 using some of the newer features in the language and
+                apply some newer patterns that I myself have learned.
+            </p>
+            <footer class="panel-footer">
+                <a href="https://github.com/BigE/SiTech/tree/release-1.2" class="fa-github pure-button button"
+                   target="_blank">View on GitHub</a>
+            </footer>
+        </section>
+        <section id="simpleirc" class="panel">
+            <header class="panel-header"><h3 class="fa-hashtag">SimpleIRC</h3></header>
+            <p>
+                SimpleIRC is a project I created several years ago. It was initially written to be an IRC bot, but my
+                insight changed to wanting more of a library than a client. At first it was written in PHP, but after
+                finding limitations when creating reloadable code modules, I rewrote the project in Python. Several
+                years back I unfortunately lost the original code in a hard drive failure and did not have backups. I
+                have not, since, taken the time to recreate the original work.
+            </p>
+        </section>
+    </section>
+    <section id="contact" class="block menu-block">
+        <header><h2 class="fa-send">Contact Me</h2></header>
+        <p>
+            If you have any questions, please feel free to drop me a line. I would also like to speak with you if
+            you are interested in working together. Please allow me a couple of days to reply back to you. We all
+            get busy from time to time, but I promise I'll get back with you!
+        </p>
+        {{ form_start(contactForm) }}
+        {% if app.session.flashBag.has(contactForm.vars.name) %}
+            <p class="error">{{ app.session.flashBag.get(contactForm.vars.name)|join('<br>') }}</p>
+        {% endif %}
+        {% if app.session.flashBag.has(contactForm.vars.id ~ '_success') %}
+            <p class="success">{{ app.session.flashBag.get(contactForm.vars.id ~ '_success')|join('<br>') }}</p>
+        {% endif %}
+        <div class="pure-g">
+            <div class="pure-u-1 pure-u-lg-1-2 pure-control-group">
+                {{ form_widget(contactForm.name) }}
+                {% if app.session.flashBag.has(contactForm.name.vars.id) %}
+                    <div class="error">{{ app.session.flashBag.get(contactForm.name.vars.id)|join('<br>') }}</div>
+                {% endif %}
+            </div>
+            <div class="pure-u-1 pure-u-lg-1-2 pure-control-group">
+                {{ form_widget(contactForm.email) }}
+                {% if app.session.flashBag.has(contactForm.email.vars.id) %}
+                    <div class="error">{{ app.session.flashBag.get(contactForm.email.vars.id)|join('<br>') }}</div>
+                {% endif %}
+            </div>
+            <div class="pure-u-1 pure-control-group">
+                {{ form_widget(contactForm.subject) }}
+            </div>
+            <div class="pure-u-1 pure-control-group">
+                {{ form_widget(contactForm.message) }}
+            </div>
+            <div class="pure-u-1 centered">
+                {{ form_widget(contactForm.submit, {'attr': {'class': 'fa-envelope-o button'}}) }}
+            </div>
+        </div>
+        {{ form_end(contactForm) }}
+    </section>
+{% endblock %}

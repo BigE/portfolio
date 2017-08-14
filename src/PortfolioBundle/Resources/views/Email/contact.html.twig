@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{{ contact.subject }}</title>
+</head>
+<body>
+<p>Hello {{ contact.name }},</p>
+<p>
+    Thank you for taking the time to contact me! This e-mail, along with your message has also been sent to me. Now all
+    there is to do is sit and wait for my reply! I may take a couple of days to reply, but I promise you will hear from
+    me shortly. Thank you again, {{ contact.name }}.
+</p>
+<p>
+<div><span style="display: inline-block; width: 100px;"><strong>Name</strong></span>{{ contact.name }}</div>
+<div><span style="display: inline-block; width: 100px;"><strong>Email</strong></span>{{ contact.email }}</div>
+<div><span style="display: inline-block; width: 100px;"><strong>Subject</strong></span>{{ contact.subject }}</div>
+<div><strong>Message</strong></div>
+<div><pre>{{ contact.message }}</pre></div>
+</p>
+</body>
+</html>

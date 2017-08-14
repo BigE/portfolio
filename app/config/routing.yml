@@ -1,0 +1,5 @@
+app:
+    resource: '@PortfolioBundle/Controller/'
+    type: annotation
+logout:
+    path: /logout

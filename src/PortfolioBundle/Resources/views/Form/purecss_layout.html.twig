@@ -1,0 +1,50 @@
+{% use 'form_div_layout.html.twig' %}
+
+{% block button_row -%}
+    <div class="pure-controls">
+        {{- form_widget(form) -}}
+    </div>
+{%- endblock %}
+
+{% block button_widget -%}
+    {% set attr = attr|merge({class: (attr.class|default('') ~ ' pure-button')|trim}) %}
+    {{- parent() -}}
+{%- endblock %}
+
+{% block checkbox_widget -%}
+    {% set attr = attr|merge({class: (attr.class|default('') ~ ' pure-checkbox')|trim}) %}
+    {{- parent() -}}
+{%- endblock %}
+
+{% block form_errors -%}
+    {%- if errors|length > 0 -%}
+        <div class="error-list">
+        {%- for error in errors -%}
+            <span class="pure-form-message error">{{ error.message }}</span>
+        {%- endfor -%}
+        </div>
+    {%- endif -%}
+{%- endblock %}
+
+{% block form_row -%}
+    <div class="pure-control-group">
+        {{- form_label(form) -}}
+        {{- form_widget(form) -}}
+        {{- form_errors(form) -}}
+    </div>
+{%- endblock %}
+
+{% block form_start -%}
+    {% set attr = attr|merge({class: (attr.class|default('') ~ ' pure-form pure-form-aligned')|trim}) %}
+    {{- parent() -}}
+{%- endblock %}
+
+{% block radio_widget -%}
+    {% set attr = attr|merge({class: (attr.class|default('') ~ ' pure-raido')|trim}) %}
+    {{- parent() -}}
+{%- endblock %}
+
+{% block submit_widget -%}
+    {% set attr = attr|merge({class: (attr.class|default('') ~ ' pure-button-primary')|trim}) %}
+    {{- parent() -}}
+{%- endblock %}

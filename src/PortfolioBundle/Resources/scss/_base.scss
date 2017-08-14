@@ -1,0 +1,114 @@
+html,body {
+    overflow-x: hidden;
+}
+
+html {
+    font-family: $font;
+    font-size: 10px;
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: $light_shade;
+    color: $dark_shade;
+    font-size: 1.6rem;
+    @media (min-width: 1024px) {
+        font-size: 2rem;
+    }
+}
+
+#{$headings} {
+    font-family: $heading;
+}
+
+@each $header in $headings {
+    #{$header}:before {
+        font-family: FontAwesome;
+        font-weight: normal;
+        padding: 0 0.4em 0 0;
+    }
+}
+
+a[target=_blank]:not(.button):after {
+    content: '\f08e';
+    display: table-cell;
+    font-family: FontAwesome;
+    font-size: 0.6em;
+    padding-left: 0.4rem;
+    vertical-align: middle;
+}
+
+#intro {
+    background-color: rgba($dark_shade,0.65);
+    color: $light_shade;
+    display: table-cell;
+    height: 75vh;
+    padding: 3rem;
+    position: relative;
+    text-align: center;
+    vertical-align: middle;
+    width: 100vw;
+    @media (min-width: 1024px) {
+        font-size: 3rem;
+    }
+}
+
+#intro::after {
+    background: url('../images/intro.jpg') no-repeat 0 0;
+    background-size: cover;
+    bottom: 0;
+    content: '';
+    left: 0;
+    right: 0;
+    position: absolute;
+    top: 0;
+    z-index: -1;
+}
+
+#intro h1 {
+    @media (min-width: 1024px) {
+        font-size: 6rem;
+    }
+}
+
+#resume {
+    @media (min-width: 768px) {
+        margin-left: auto;
+        margin-right: auto;
+        max-width: 65%;
+    }
+}
+
+.button:before {
+    font-family: FontAwesome;
+    padding: 0 0.4em 0 0;
+}
+
+.centered {
+    text-align: center;
+}
+
+.error-list {
+    margin: 0 0 0 11em;
+}
+
+.error {
+    color: $error;
+}
+
+.link-text:before {
+    font-family: FontAwesome;
+    padding: 0 0.6rem 0 1rem;
+}
+
+.profile-success {
+    padding: 0 0 1.8rem 0;
+}
+
+.right {
+    text-align: right;
+}
+
+.success {
+    color: $success;
+}

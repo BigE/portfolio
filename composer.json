@@ -1,110 +1,73 @@
 {
-	"name": "laravel/laravel",
-	"description": "The Laravel Framework.",
-	"keywords": ["framework", "laravel"],
-	"license": "MIT",
-	"require": {
-		"laravel/framework": "4.1.*",
-		"components/jquery": "2.1.*",
-		"components/jqueryui": "1.10.*",
-		"components/font-awesome": "4.1.*",
-		"components/froala": "*",
-		"BigE/jquery-passmeter": "0.1.*",
-		"vitalets/x-editable-jqueryui": "1.5.*",
-		"components/normalize.css": "*"
-	},
-	"autoload": {
-		"classmap": [
-			"app/commands",
-			"app/controllers",
-			"app/models",
-			"app/database/migrations",
-			"app/database/seeds",
-			"app/tests/TestCase.php"
-		]
-	},
-	"repositories": [
-		{
-			"type": "package",
-			"package": {
-				"name": "components/froala",
-				"type": "component",
-				"version": "dev-master",
-				"dist": {
-					"url": "http://editor.froala.com/latest.zip",
-					"type": "zip"
-				},
-				"require": {
-					"robloach/component-installer": "*",
-					"components/jquery": ">=2.0"
-				},
-				"extra": {
-					"component": {
-						"name": "froala",
-						"scripts": [
-							"js/froala_editor.min.js",
-							"js/langs/**"
-						],
-						"styles": [
-							"css/froala_editor.css"
-						],
-						"files": [
-							"css/froala_editor.min.css"
-						]
-					}
-				}
-			}
-		},
-		{
-			"type": "vcs",
-			"url": "https://github.com/BigE/jquery-passmeter"
-		},
-		{
-			"type": "package",
-			"package": {
-				"name": "vitalets/x-editable-jqueryui",
-				"type": "component",
-				"version": "1.5.1",
-				"dist": {
-					"url": "http://vitalets.github.io/x-editable/assets/zip/jqueryui-editable-1.5.1.zip",
-					"type": "zip"
-				},
-				"require": {
-					"robloach/component-installer": "*",
-					"components/jqueryui": ">=1.9"
-				},
-				"extra": {
-					"component": {
-						"scripts": [
-							"jqueryui-editable/js/jqueryui-editable.js"
-						],
-						"styles": [
-							"jqueryui-editable/css/jqueryui-editable.css"
-						],
-						"files": [
-							"jqueryui-editable/js/jqueryui-editable.min.js",
-							"jqueryui-editable/img/*"
-						]
-					}
-				}
-			}
-		}
-	],
-	"scripts": {
-		"post-install-cmd": [
-			"php artisan optimize"
-		],
-		"post-update-cmd": [
-			"php artisan clear-compiled",
-			"php artisan optimize"
-		],
-		"post-create-project-cmd": [
-			"php artisan key:generate"
-		]
-	},
-	"config": {
-		"component-dir": "public/components",
-		"preferred-install": "dist"
-	},
-	"minimum-stability": "dev"
+    "name": "ericgach/portfolio",
+    "license": "MIT",
+    "type": "project",
+    "autoload": {
+        "psr-4": {
+            "": "src/"
+        },
+        "classmap": [
+            "app/AppKernel.php",
+            "app/AppCache.php"
+        ]
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Tests\\": "tests/"
+        },
+        "files": [
+            "vendor/symfony/symfony/src/Symfony/Component/VarDumper/Resources/functions/dump.php"
+        ]
+    },
+    "require": {
+        "php": ">=5.5.9",
+        "doctrine/doctrine-bundle": "^1.6",
+        "doctrine/orm": "^2.5",
+        "incenteev/composer-parameter-handler": "^2.0",
+        "sensio/distribution-bundle": "^5.0.19",
+        "sensio/framework-extra-bundle": "^3.0.2",
+        "symfony/monolog-bundle": "^3.1.0",
+        "symfony/polyfill-apcu": "^1.0",
+        "symfony/swiftmailer-bundle": "^2.3.10",
+        "symfony/symfony": "3.3.*",
+        "twig/twig": "^1.0||^2.0"
+    },
+    "require-dev": {
+        "composer/composer": "^1.4",
+        "sensio/generator-bundle": "^3.0",
+        "symfony/phpunit-bridge": "^3.0"
+    },
+    "scripts": {
+        "symfony-scripts": [
+            "Incenteev\\ParameterHandler\\ScriptHandler::buildParameters",
+            "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::buildBootstrap",
+            "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::clearCache",
+            "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::installAssets",
+            "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::installRequirementsFile",
+            "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::prepareDeploymentTarget"
+        ],
+        "post-install-cmd": [
+            "PortfolioBundle\\Composer\\YarnHandler::postInstall",
+            "@symfony-scripts"
+        ],
+        "post-update-cmd": [
+            "PortfolioBundle\\Composer\\YarnHandler::postUpdate",
+            "@symfony-scripts"
+        ]
+    },
+    "config": {
+        "sort-packages": true
+    },
+    "extra": {
+        "symfony-app-dir": "app",
+        "symfony-bin-dir": "bin",
+        "symfony-var-dir": "var",
+        "symfony-web-dir": "web",
+        "symfony-tests-dir": "tests",
+        "symfony-assets-install": "relative",
+        "incenteev-parameters": {
+            "file": "app/config/parameters.yml"
+        },
+        "branch-alias": null
+    }
 }

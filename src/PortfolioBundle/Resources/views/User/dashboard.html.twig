@@ -1,0 +1,19 @@
+{% extends "::base.html.twig" %}
+{% set menu_active = 'dashboard' %}
+
+{% form_theme profileForm '@Portfolio/Form/purecss_layout.html.twig' %}
+
+{% block title %}PortfolioBundle:User:dashboard{% endblock %}
+
+{% block content %}
+    <h1>Welcome to your dash board, {{ user }}</h1>
+    <section id="profile">
+        {{ form_start(profileForm) }}
+            <div class="pure-controls profile-success">
+            {% for message in app.flashes('success-profile') %}
+                <div class="pure-form-message success">{{ message }}</div>
+            {% endfor %}
+            </div>
+        {{ form_end(profileForm) }}
+    </section>
+{% endblock %}
