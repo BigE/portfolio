@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% load wagtailcore_tags %}
+
+{% block content %}
+  <section class="resume__skills">
+    {% for block in page.skills %}
+      {% include_block block %}
+    {% endfor %}
+  </section>
+  <section class="resume__body">
+    {% for block in page.body %}
+      {% include_block block %}
+    {% endfor %}
+  </section>
+{% endblock %}
