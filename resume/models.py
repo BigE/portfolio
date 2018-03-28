@@ -1,10 +1,10 @@
 from django.db import models
 from django.utils.encoding import python_2_unicode_compatible
 
-from wagtail.wagtailadmin.edit_handlers import FieldPanel, MultiFieldPanel, StreamFieldPanel
-from wagtail.wagtailcore.fields import RichTextField, StreamField
-from wagtail.wagtailcore.models import Page
-from wagtail.wagtailsnippets.models import register_snippet
+from wagtail.admin.edit_handlers import FieldPanel, MultiFieldPanel, StreamFieldPanel
+from wagtail.core.fields import RichTextField, StreamField
+from wagtail.core.models import Page
+from wagtail.snippets.models import register_snippet
 
 from .blocks import ResumeEducationListBlock, ResumeExperienceListBlock, ResumeSkillsBlock
 # Create your models here.
