@@ -1,12 +1,18 @@
-@import "~font-awesome/scss/font-awesome";
-@import "~purecss/build/pure.css";
-@import "~purecss/build/grids-responsive.css";
-@import "_mixins";
-@import "_variables";
-@import "_pure_overrides";
-@import "_header";
-@import "_block";
-@import "_panel";
-@import "_contact";
-@import "_footer";
-@import "_base";
+@import "variables";
+
+@import "@fortawesome/fontawesome-free-webfonts/scss/fa-brands";
+@import "@fortawesome/fontawesome-free-webfonts/scss/fa-regular";
+@import "@fortawesome/fontawesome-free-webfonts/scss/fa-solid";
+@import "@fortawesome/fontawesome-free-webfonts/scss/fontawesome";
+@import "purecss/build/pure";
+@import "purecss/build/grids-responsive";
+@import "purecss/build/forms";
+
+@import "mixins";
+@import "pure_overrides";
+@import "header";
+@import "block";
+@import "panel";
+@import "contact";
+@import "footer";
+@import "base";

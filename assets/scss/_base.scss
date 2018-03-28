@@ -22,18 +22,23 @@ body {
 }
 
 @each $header in $headings {
-    #{$header}:before {
-        font-family: FontAwesome;
-        font-weight: normal;
-        padding: 0 0.4em 0 0;
+    #{$header} {
+        .fa, .fab, .far {
+            padding: 0 0.4em 0 0;
+        }
+
+        .fab {
+            font-weight: 400;
+        }
     }
 }
 
 a[target=_blank]:not(.button):after {
-    content: '\f08e';
+    content: '\f35d';
     display: table-cell;
-    font-family: FontAwesome;
+    font-family: 'Font Awesome 5 Free';
     font-size: 0.6em;
+    font-weight: 900;
     padding-left: 0.4rem;
     vertical-align: middle;
 }
@@ -79,9 +84,10 @@ a[target=_blank]:not(.button):after {
     }
 }
 
-.button:before {
-    font-family: FontAwesome;
-    padding: 0 0.4em 0 0;
+.button {
+    .fa, .fab {
+        padding: 0 0.4em 0 0;
+    }
 }
 
 .centered {
@@ -97,7 +103,7 @@ a[target=_blank]:not(.button):after {
 }
 
 .link-text:before {
-    font-family: FontAwesome;
+    font-family: 'Font Awesome 5 Free';
     padding: 0 0.6rem 0 1rem;
 }
 

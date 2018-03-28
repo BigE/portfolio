@@ -1,17 +1,16 @@
-{% extends 'base.html.twig' %}
-
-{% form_theme contactForm '@Portfolio/Form/purecss_layout.html.twig' %}
+{% extends 'base.html' %}
+{% load static wagtailcore_tags %}
 
 {% block content %}
     <section id="intro" class="menu-block">
         <header>
             <h1>Welcome to my Portfolio</h1>
             <p>Within you will find many things about me and my abilities</p>
-            <a href="#about" class="fa-arrow-circle-down pure-button button menu-trigger" data-section="about">Learn More</a>
+            <a href="#about" class="pure-button button menu-trigger" data-section="about"><i class="fa fa-arrow-circle-down"></i> Learn More</a>
         </header>
     </section>
     <section id="about" class="block light menu-block">
-        <header><h2 class="fa-user-circle-o">About Me</h2></header>
+        <header><h2><i class="far fa-user-circle"></i> About Me</h2></header>
         <p>
             I am a self taught software engineer with over 15 years of extensive experience in primarily web
             development. Through the years I have been able to branch out some and get experience with desktop
@@ -40,22 +39,22 @@
             <div class="pure-u-xl-1-24"></div>
             <section id="resume" class="pure-u-1 pure-u-xl-10-24">
                 <div class="panel">
-                    <header class="panel-header"><h3 class="fa-file-text">My Resume</h3></header>
+                    <header class="panel-header"><h3><i class="fa-file-text"></i> My Resume</h3></header>
                     <p>
                         If you would like to view my resume to view a full list of my skills and experience, I have made it
                         available for download in multiple formats.
                     </p>
                     <footer class="panel-footer centered">
-                        <a href="{{ asset('uploads/resume/resume.pdf') }}" class="fa-file-pdf-o pure-button button">PDF</a>
-                        <a href="{{ asset('uploads/resume/resume.doc') }}" class="fa-file-word-o pure-button button">Word</a>
-                        <a href="" class="fa-file-code-o pure-button button">HTML</a>
+                        <a href="{%  static 'uploads/resume/resume.pdf' %}" class="pure-button button"><i class="fa fa-file-pdf"></i> PDF</a>
+                        <a href="{% static 'uploads/resume/resume.doc' %}" class="pure-button button"><i class="fa fa-file-word"></i> Word</a>
+                        <a href="{% pageurl resume_page %}" class="pure-button button"><i class="fa fa-file-code"></i> HTML</a>
                     </footer>
                 </div>
             </section>
         </div>
     </section>
     <section id="projects" class="block dark menu-block">
-        <header><h2 class="fa-codepen">My Projects</h2></header>
+        <header><h2><i class="fab fa-codepen"></i> My Projects</h2></header>
         <p>
             These are a few of my personal projects that I have either worked on in the past, or am currently working
             on in my spare time. It is through these projects that I am able to explore new ideas, technologies, and
@@ -63,7 +62,7 @@
             my development.
         </p>
         <section id="desk-changer" class="panel">
-            <header class="panel-header"><h3 class="fa-photo">Desk Changer</h3></header>
+            <header class="panel-header"><h3><i class="far fa-image"></i> Desk Changer</h3></header>
             <p>
                 Desk Changer is a <a href="https://wiki.gnome.org/Projects/GnomeShell" target="_blank">Gnome Shell</a>
                 extension that is written using JavaScript with <a href="https://wiki.gnome.org/Projects/Gjs"
@@ -75,12 +74,12 @@
                                    target="_blank">Gnome Shell Extensions</a> website.
             </p>
             <footer class="panel-footer">
-                <a href="https://github.com/BigE/desk-changer" class="fa-github pure-button button"
-                   target="_blank">View on GitHub</a>
+                <a href="https://github.com/BigE/desk-changer" class="pure-button button"
+                   target="_blank"><i class="fab fa-github"></i>View on GitHub</a>
             </footer>
         </section>
         <section id="portfolio" class="panel">
-            <header class="panel-header"><h3 class="fa-user">Portfolio</h3></header>
+            <header class="panel-header"><h3><i class="far fa-user"></i> Portfolio</h3></header>
             <p>
                 This portfolio site is another example of my abilities. It is built using the
                 <a href="https://php.net/" target="_blank">PHP</a> language with
@@ -95,12 +94,12 @@
                 and their portfolio.
             </p>
             <footer class="panel-footer">
-                <a href="https://github.com/BigE/portfolio" class="fa-github pure-button button"
-                   target="_blank">View on GitHub</a>
+                <a href="https://github.com/BigE/portfolio" class="pure-button button"
+                   target="_blank"><i class="fab fa-github"></i>View on GitHub</a>
             </footer>
         </section>
         <section id="sitech" class="panel">
-            <header class="panel-header"><h3 class="fa-object-ungroup">SiTech</h3></header>
+            <header class="panel-header"><h3><i class="far fa-object-ungroup"></i> SiTech</h3></header>
             <p>
                 SiTech is a code library that I wrote for PHP several years ago and have not actively maintained in
                 a couple of years. It was originally my alternative to using a full framework or the
@@ -112,12 +111,12 @@
                 apply some newer patterns that I myself have learned.
             </p>
             <footer class="panel-footer">
-                <a href="https://github.com/BigE/SiTech/tree/release-1.2" class="fa-github pure-button button"
-                   target="_blank">View on GitHub</a>
+                <a href="https://github.com/BigE/SiTech/tree/release-1.2" class="pure-button button"
+                   target="_blank"><i class="fab fa-github"></i>View on GitHub</a>
             </footer>
         </section>
         <section id="simpleirc" class="panel">
-            <header class="panel-header"><h3 class="fa-hashtag">SimpleIRC</h3></header>
+            <header class="panel-header"><h3><i class="fa fa-hashtag"></i> SimpleIRC</h3></header>
             <p>
                 SimpleIRC is a project I created several years ago. It was initially written to be an IRC bot, but my
                 insight changed to wanting more of a library than a client. At first it was written in PHP, but after
@@ -128,42 +127,30 @@
         </section>
     </section>
     <section id="contact" class="block menu-block">
-        <header><h2 class="fa-send">Contact Me</h2></header>
+        <header><h2><i class="far fa-paper-plane"></i> Contact Me</h2></header>
         <p>
             If you have any questions, please feel free to drop me a line. I would also like to speak with you if
             you are interested in working together. Please allow me a couple of days to reply back to you. We all
             get busy from time to time, but I promise I'll get back with you!
         </p>
-        {{ form_start(contactForm) }}
-        {% if app.session.flashBag.has(contactForm.vars.name) %}
-            <p class="error">{{ app.session.flashBag.get(contactForm.vars.name)|join('<br>') }}</p>
-        {% endif %}
-        {% if app.session.flashBag.has(contactForm.vars.id ~ '_success') %}
-            <p class="success">{{ app.session.flashBag.get(contactForm.vars.id ~ '_success')|join('<br>') }}</p>
-        {% endif %}
-        <div class="pure-g">
-            <div class="pure-u-1 pure-u-lg-1-2 pure-control-group">
-                {{ form_widget(contactForm.name) }}
-                {% if app.session.flashBag.has(contactForm.name.vars.id) %}
-                    <div class="error">{{ app.session.flashBag.get(contactForm.name.vars.id)|join('<br>') }}</div>
-                {% endif %}
+        <form class="pure-form pure-form-aligned">
+            <div class="pure-g">
+                <div class="pure-u-1 pure-u-lg-1-2 pure-control-group">
+                  <input>
+                </div>
+                <div class="pure-u-1 pure-u-lg-1-2 pure-control-group">
+                  <input>
+                </div>
+                <div class="pure-u-1 pure-control-group">
+                  <input type="text" name="subject" required="required" placeholder="What would you like to talk about?">
+                </div>
+                <div class="pure-u-1 pure-control-group">
+                  <textarea name="message"></textarea>
+                </div>
+                <div class="pure-u-1 centered">
+                  <button class="button pure-button pure-button-primary" type="submit"><i class="fa fa-envelope"></i> Send A Message</button>
+                </div>
             </div>
-            <div class="pure-u-1 pure-u-lg-1-2 pure-control-group">
-                {{ form_widget(contactForm.email) }}
-                {% if app.session.flashBag.has(contactForm.email.vars.id) %}
-                    <div class="error">{{ app.session.flashBag.get(contactForm.email.vars.id)|join('<br>') }}</div>
-                {% endif %}
-            </div>
-            <div class="pure-u-1 pure-control-group">
-                {{ form_widget(contactForm.subject) }}
-            </div>
-            <div class="pure-u-1 pure-control-group">
-                {{ form_widget(contactForm.message) }}
-            </div>
-            <div class="pure-u-1 centered">
-                {{ form_widget(contactForm.submit, {'attr': {'class': 'fa-envelope-o button'}}) }}
-            </div>
-        </div>
-        {{ form_end(contactForm) }}
+        </form>
     </section>
 {% endblock %}

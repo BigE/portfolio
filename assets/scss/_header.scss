@@ -74,7 +74,6 @@ body.header-visible #header {
     color: $main;
     content: '\f0c9';
     display: block;
-    font-family: FontAwesome;
     font-size: 2rem;
     line-height: 4rem;
     width: 5rem;
@@ -88,13 +87,14 @@ body.header-visible #header {
     width: 100%;
 }
 
-#social a:before {
-    -webkit-border-radius: 1rem;
-    -moz-border-radius: 1rem;
-    border-radius: 1rem;
-    font-family: FontAwesome;
-    font-size: 3.2rem;
-    padding: 0.5rem 1rem;
+#social {
+    .fa, .fab, .far {
+        -webkit-border-radius: 1rem;
+        -moz-border-radius: 1rem;
+        border-radius: 1rem;
+        font-size: 3.2rem;
+        padding: 0.5rem 1rem;
+    }
 }
 
 #social a:hover:before {
@@ -127,11 +127,12 @@ body.header-visible #header {
     width: 100%;
 }
 
-.menu-text:before {
-    font-size: 1.2em;
-    font-family: FontAwesome;
-    left: 0;
-    position: absolute;
+.menu-text {
+    .fa, .fab, .far {
+        left: 0;
+        line-height: 2em;
+        position: absolute;
+    }
 }
 
 @media (min-width: 1024px) {

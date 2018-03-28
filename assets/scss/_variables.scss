@@ -26,4 +26,7 @@ $warning: #e39727;
 $font: Open Sans, sans-serif;
 $heading: Quicksand, sans-serif;
 
+// font-awesome path
+$fa-font-path: unquote(get-setting(NODE_MODULES_URL) + '@fortawesome/fontawesome-free-webfonts/webfonts/');
+
 $headings: h1 h2 h3 h4 h5 h6;

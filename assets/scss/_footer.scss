@@ -17,12 +17,12 @@
     }
 }
 
-#footer section:not(:first-child):before {
+#footer .separator {
+    display: none;
     @media (min-width: 568px) and (max-width: 1024px), (min-width: 1280px) {
-        content: '\f142';
+        display: inline-block;
         color: $light_shade;
-        font-family: FontAwesome;
-        margin: 0 1rem 0 0.4rem;
+        margin: 0 1rem;
     }
 }
 
