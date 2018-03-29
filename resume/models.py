@@ -30,6 +30,7 @@ class ResumeSkill(models.Model):
 class ResumePage(Page):
     objective_header = models.CharField(max_length=150, default='Objective')
     objective = RichTextField()
+    skills_header = models.CharField(max_length=100, default='Professional Skills')
     skills = StreamField([
         ('skill_set', ResumeSkillsBlock()),
     ])
@@ -43,6 +44,9 @@ class ResumePage(Page):
             FieldPanel('objective_header'),
             FieldPanel('objective'),
         ], heading='resume objective'),
-        StreamFieldPanel('skills'),
+        MultiFieldPanel([
+            FieldPanel('skills_header'),
+            StreamFieldPanel('skills'),
+        ], heading='resume skills'),
         StreamFieldPanel('body'),
     ]

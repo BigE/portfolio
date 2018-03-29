@@ -1,8 +1,12 @@
 {% load wagtailcore_tags %}
 
-<section class="resume__experience__block">
-  <h3>{{ value.company_name }} &raquo; {{ value.position }}</h3>
-  <h4>{{ value.location }} &raquo; {{ value.date_started|date:'F Y' }} to {% if value.date_ended %}{{ value.date_ended|date:'F Y' }}{% else %}<em>Current</em>{% endif %}</h4>
+<section class="resume__experience__block panel">
+  <header class="panel-header">
+    <h2 class="resume__experience-company">{{ value.company_name }}</h2>
+    <h3 class="resume__experience-position">{{ value.position }}</h3>
+    <h4 class="resume__experience-location">{{ value.location }}</h4>
+    <h5 class="resume__experience-employment">{{ value.date_started|date:'F Y' }} to {% if value.date_ended %}{{ value.date_ended|date:'F Y' }}{% else %}<em>Current</em>{% endif %}</h5>
+  </header>
   <div class="resume__experience__body">
     {{ value.description|richtext }}
   </div>

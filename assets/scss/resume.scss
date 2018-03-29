@@ -1,0 +1,29 @@
+@import "variables";
+
+.resume__experience {
+  &-company, &-location {
+    float: left;
+  }
+
+  &-position, &-employment {
+    float: right;
+  }
+
+  &-location {
+    clear: both;
+  }
+
+  &__body {
+    clear: both;
+  }
+}
+
+.resume__skillset {
+  ul {
+    list-style: none;
+  }
+
+  li {
+    display: inline-block;
+  }
+}

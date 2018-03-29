@@ -1,7 +1,7 @@
 {% load wagtailcore_tags %}
 
-<section class="resume__education">
-  <h2>{{ value.header }}</h2>
+<section class="resume__education panel">
+  <header class="panel-header"><h2>{{ value.header }}</h2></header>
   <ul>
     {% for block in value.education %}
       <li>{% include_block block %}</li>

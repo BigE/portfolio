@@ -1,7 +1,7 @@
 {% load wagtailcore_tags %}
 
 <section class="resume__experience">
-  <h2>{{ value.header }}</h2>
+  <h1>{{ value.header }}</h1>
   <ul>
     {% for block in value.experience %}
       {% include_block block %}

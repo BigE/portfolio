@@ -1,10 +1,10 @@
-<section class="resume__skillset">
+<section class="resume__skillset panel">
   {% if value.header %}
-    <h3>{{ value.header }}</h3>
+    <header class="panel-header"><h2>{{ value.header }}</h2></header>
   {% endif %}
   <ul>
     {% for skill in value.skills %}
-      <li><a name="{{ skill.name|lower }}"{% if skill.url %} href="{{ skill.url }}"{% endif %}>{{ skill.name }}</a></li>
+      <li><a name="{{ skill.name|lower }}" class="pure-button button" {% if skill.url %} href="{{ skill.url }}"{% endif %}><i class="fab fa-{{ skill.name|lower }}"></i> {{ skill.name }}</a></li>
     {% endfor %}
   </ul>
 </section>

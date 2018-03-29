@@ -1,13 +1,24 @@
 {% extends 'base.html' %}
-{% load wagtailcore_tags %}
+{% load sass_tags wagtailcore_tags %}
+
+{% block extra_css %}
+  <link rel="stylesheet" type="text/css" media="all" href="{% sass_src 'scss/resume.scss' %}"
+{% endblock %}
 
 {% block content %}
-  <section class="resume__skills">
+  <section class="resume__objective block dark">
+    <section class="panel">
+      <header class="panel-header"><h1>{{ page.objective_header }}</h1></header>
+      {{ page.objective|richtext }}
+    </section>
+  </section>
+  <section class="resume__skills block light">
+    <h1>{{ page.skills_header }}</h1>
     {% for block in page.skills %}
       {% include_block block %}
     {% endfor %}
   </section>
-  <section class="resume__body">
+  <section class="resume__body block dark">
     {% for block in page.body %}
       {% include_block block %}
     {% endfor %}
