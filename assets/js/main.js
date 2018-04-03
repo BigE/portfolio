@@ -32,66 +32,6 @@ document.addEventListener("DOMContentLoaded", function (event) {
         }
     });
 
-    document.body.querySelector('form[name=portfolio_bundle_contact_type]').addEventListener('submit', function (event) {
-        event.preventDefault();
-
-        var xhr = new XMLHttpRequest(),
-            form = this,
-            elements = this.querySelectorAll('input, select, textarea');
-            data = [],
-            clean = this.parentNode.querySelectorAll('.success, .error');
-
-        for (var i = 0; i < clean.length; i++) {
-            clean[i].parentNode.removeChild(clean[i]);
-        }
-
-        for (var i = 0; i < elements.length; i++) {
-            var element = elements.item(i);
-            data.push(element.name + '=' + encodeURIComponent(element.value));
-        }
-
-        xhr.open('POST', '/contact');
-        xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
-        xhr.setRequestHeader('X-Requested-With', 'XMLHttpRequest');
-        xhr.send(data.join('&'));
-        xhr.onreadystatechange = function () {
-            if (xhr.readyState === 4) {
-                if (xhr.status !== 200) {
-                    console.log('Error: ' + xhr.status);
-                }
-
-                var data = JSON.parse(xhr.responseText);
-                if (typeof data.message === Array) {
-                    console.log(data.message);
-                    data.message = data.message.join('<br>');
-                }
-
-                if (data.message) {
-                    var message = document.createTextNode(data.message),
-                        messageP = document.createElement('p');
-                    messageP.appendChild(message);
-                    messageP.classList.add((data.success)? 'success' : 'error');
-                }
-
-                if (data.errors) {
-                    Object.keys(data.errors).forEach(function (key,index) {
-                        var element = form.querySelector('#'+form.name+'_'+key),
-                            error = document.createTextNode(data.errors[key].join(', ')),
-                            errorDiv = document.createElement('div');
-                        console.log(element, errorDiv);
-                        errorDiv.appendChild(error);
-                        errorDiv.classList.add('error');
-                        element.parentNode.appendChild(errorDiv);
-                    });
-                } else {
-                    form.reset();
-                }
-
-                form.parentNode.insertBefore(messageP, form);
-            }
-        };
-    });
-
     document.body.querySelectorAll('.menu-trigger').forEach(function (element, i, a) {
         element.addEventListener('click', function (event) {
             clicked = true;

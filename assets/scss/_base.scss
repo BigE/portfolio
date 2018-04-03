@@ -33,7 +33,7 @@ body {
     }
 }
 
-a[target=_blank]:not(.button):after {
+a[target=_blank]:not(.button, .menu-item):after {
     content: '\f35d';
     display: table-cell;
     font-family: 'Font Awesome 5 Free';

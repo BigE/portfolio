@@ -2,8 +2,14 @@
     @include transition(transform, 0.5s ease);
 }
 
-body.header-visible #content, body.header-visible #menuToggle, body.header-visible #footer {
-    @include transform(translateX(27.5rem));
+body.header-visible {
+    #content, body.header-visible #menuToggle, body.header-visible #footer {
+        @include transform(translateX(27.5rem));
+    }
+
+    #header {
+        @include transform(translateX(0));
+    }
 }
 
 #header {
@@ -17,20 +23,16 @@ body.header-visible #content, body.header-visible #menuToggle, body.header-visib
     text-align: right;
     top: 0;
     width: 27.5rem;
-}
 
-body.header-visible #header {
-    @include transform(translateX(0));
-}
+    .menu-link, #header .menu-link:focus {
+        background-color: $main;
+        color: $light_shade;
+    }
 
-#header .menu-link, #header .menu-link:focus {
-    background-color: $main;
-    color: $light_shade;
-}
-
-#header .menu-link:hover, #header .pure-menu-active .menu-link {
-    background-color: $light_shade;
-    color: $main;
+    .menu-link:hover, .pure-menu-active .menu-link {
+        background-color: $light_shade;
+        color: $main;
+    }
 }
 
 #logo {
@@ -39,25 +41,25 @@ body.header-visible #header {
     margin: 0.5rem 1rem;
     min-height: 4.8rem;
     position: relative;
-}
 
-#logo h1 {
-    font-size: 2rem;
-    line-height: 2.4rem;
-    margin: 0;
-}
+    h1 {
+        font-size: 2rem;
+        line-height: 2.4rem;
+        margin: 0;
+    }
 
-#logo p {
-    font-size: 1.4rem;
-    line-height: 1.8rem;
-    margin: 0.6rem 0 0 0;
-}
+    p {
+        font-size: 1.4rem;
+        line-height: 1.8rem;
+        margin: 0.6rem 0 0 0;
+    }
 
-#logo .image {
-    display: inline-block;
-    left: 0;
-    position: absolute;
-    top: 0;
+    .image {
+        display: inline-block;
+        left: 0;
+        position: absolute;
+        top: 0;
+    }
 }
 
 #menuToggle {
@@ -65,19 +67,19 @@ body.header-visible #header {
     left: 0.25rem;
     position: fixed;
     top: 0.25rem;
-}
 
-#menuToggle:before {
-    background-color: $dark_shade;
-    border: 0.1rem solid $dark_accent;
-    border-radius: 0.5rem;
-    color: $main;
-    content: '\f0c9';
-    display: block;
-    font-size: 2rem;
-    line-height: 4rem;
-    width: 5rem;
-    text-align: center;
+    :before {
+        background-color: $dark_shade;
+        border: 0.1rem solid $dark_accent;
+        border-radius: 0.5rem;
+        color: $main;
+        content: '\f0c9';
+        display: block;
+        font-size: 2rem;
+        line-height: 4rem;
+        width: 5rem;
+        text-align: center;
+    }
 }
 
 #social {
@@ -85,29 +87,30 @@ body.header-visible #header {
     position: absolute;
     text-align: center;
     width: 100%;
-}
 
-#social {
-    .fa, .fab, .far {
+    .menu-link {
         -webkit-border-radius: 1rem;
         -moz-border-radius: 1rem;
         border-radius: 1rem;
-        font-size: 3.2rem;
-        padding: 0.5rem 1rem;
+        font-size: 4rem;
+        margin: 0.4rem 1.6rem;
+        padding: 0;
+
+        .fa, .fab, .far {
+            padding: 0.5rem 1rem;
+        }
+
+        :hover {
+            .fa, .fab, far {
+                background-color: $light_shade;
+                color: $main;
+            }
+
+            :before {
+                background-color: $light_shade;
+            }
+        }
     }
-}
-
-#social a:hover:before {
-    background-color: $light_shade;
-}
-
-#social a:after {
-    content: '';
-}
-
-#social .menu-link:hover {
-    background-color: inherit;
-    color: $main;
 }
 
 .avatar img {
@@ -122,25 +125,20 @@ body.header-visible #header {
 
 .menu-text {
     display: inline-block;
-    line-height: 2em;
+    line-height: 4rem;
     position: relative;
     width: 100%;
-}
 
-.menu-text {
     .fa, .fab, .far {
+        font-size: 1.4em;
         left: 0;
-        line-height: 2em;
+        line-height: 4rem;
         position: absolute;
     }
 }
 
 @media (min-width: 1024px) {
-    #content {
-        margin-left: 20%;
-    }
-
-    #footer {
+    #content, #footer {
         margin-left: 20%;
     }
 
@@ -163,11 +161,7 @@ body.header-visible #header {
 }
 
 @media (min-width: 1320px) {
-    #content {
-        margin-left: 30rem;
-    }
-
-    #footer {
+    #content, #footer {
         margin-left: 30rem;
     }
 

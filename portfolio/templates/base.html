@@ -1,4 +1,4 @@
-{% load sass_tags static wagtailuserbar %}
+{% load navigation sass_tags static wagtailuserbar %}
 
 <!DOCTYPE html>
 <html>
@@ -22,10 +22,11 @@
         {% endblock %}
         <link rel="icon" type="image/x-icon" href="{% static 'favicon.ico' %}">
     </head>
-    <body>
+    <body class="{% block body_class %}{% endblock %}">
+        {% wagtailuserbar %}
         {% block body %}
             <header id="header" class="pure-menu">
-                <a href="/#intro" id="logo" class="pure-menu-heading menu-heading menu-trigger" data-section="intro">
+                <a href="/" id="logo" class="pure-menu-heading menu-heading menu-trigger" data-section="intro">
                     <span class="image avatar"><img src="{% static 'images/logo.png' %}" title="logo"></span>
                     <h1>Eric Gach</h1>
                     <p>Software Engineer</p>
@@ -79,12 +80,8 @@
                 <nav id="social">
                     <div class="pure-menu-separator"></div>
                     <ul class="pure-menu-list pure-menu-horizontal">
-                        {% if github_username %}
-                        <li class="pure-menu-item"><a href="https://github.com/{{ github_username }}/" class="pure-menu-link menu-link" title="GitHub" target="_blank"><i class="fa fa-github-square"></i></a></li>
-                        {% endif %}
-                        {% if linkedin_username %}
-                        <li class="pure-menu-item"><a href="https://linkedin.com/in/{{ linkedin_username }}" class="pure-menu-link menu-link fa-linkedin-square" title="Linked In" target="_blank"></a></li>
-                        {% endif %}
+                        <li class="pure-menu-item"><a href="https://github.com/BigE/" class="pure-menu-link menu-link" title="GitHub" target="_blank"><i class="fab fa-github-square"></i></a></li>
+                        <li class="pure-menu-item"><a href="https://linkedin.com/in/egach" class="pure-menu-link menu-link" title="Linked In" target="_blank"><i class="fab fa-linkedin"></i></a></li>
                     </ul>
                 </nav>
             </header>
@@ -98,7 +95,7 @@
             </footer>
             <a id="menuToggle"></a>
         {% endblock %}
-        {% block javascripts %}
-        {% endblock %}
+        <script type="text/javascript" src="{% static 'js/main.js' %}"></script>
+        {% block javascripts %}{% endblock %}
     </body>
 </html>
