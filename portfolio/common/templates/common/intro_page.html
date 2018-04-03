@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+{% load wagtailcore_tags %}
+
+{% block content %}
+  <section id="intro" class="menu-block">
+    <header>
+      <h1>{{ page.intro_header }}</h1>
+      {% if page.intro_sub_header %}
+        <p>{{ page.intro_sub_header }}</p>
+      {% endif %}
+      {% if page.intro_button_text %}
+        <a href="#about" class="pure-button button menu-trigger" data-section="about">
+          {% if page.intro_button_icon %}<i class="fa {{ page.intro_button_icon }}"></i> {% endif %}{{ page.intro_button_text }}
+        </a>
+      {% endif %}
+    </header>
+  </section>
+  {% include_block page.body %}
+{% endblock %}

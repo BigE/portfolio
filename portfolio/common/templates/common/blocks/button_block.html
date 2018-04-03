@@ -1,0 +1,14 @@
+{% load wagtailcore_tags %}
+
+{% if value.button_page or value.button_url %}
+  <a class="pure-button button{% if value.button_class %} {{ value.button_class }}{% endif %}"
+     href="{% if value.button_page %}{% pageurl value.button_page %}{% else %}{{ value.button_url }}{% endif %}">
+    {% if value.button_icon %}<i class="{{ value.button_icon }}"></i>{% endif %}
+    {{ value.button_text }}
+  </a>
+{% else %}
+  <button class="pure-button button{% if value.button_class %} {{ value.button_class }}{% endif %}">
+    {% if value.button_icon %}<i class="{{ value.button_icon }}"></i>{% endif %}
+    {{ value.button_text }}
+  </button>
+{% endif %}

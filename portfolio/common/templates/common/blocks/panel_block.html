@@ -1,0 +1,15 @@
+{% load wagtailcore_tags %}
+
+<section id="" class="panel">
+  <header class="panel-header">
+    <h3>{% if value.header.header_icon %}<i class="fa {{ value.header.header_icon }}"></i> {% endif %}{{ value.header.header_text }}</h3>
+  </header>
+  {{ value.body|richtext }}
+  {% if value.footer.buttons %}
+    <footer class="panel-footer{% if value.footer.alignment %} {{ value.footer.alignment }}{% endif %}">
+      {% for block in value.footer.buttons %}
+        {% include_block block %}
+      {% endfor %}
+    </footer>
+  {% endif %}
+</section>

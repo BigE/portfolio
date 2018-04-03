@@ -1,0 +1,30 @@
+<form class="pure-form pure-form-stacked" method="post" action="{{ value.form_action }}">
+  {% if messages %}
+    <ul class="messages">
+      {% for message in messages %}
+        <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+      {% endfor %}
+    </ul>
+  {% endif %}
+  {% csrf_token %}
+  {% for hidden in form.hidden_fields %}{{ hidden }}{% endfor %}
+  <div class="pure-g">
+    {% for field in form.visible_fields %}
+      {% if forloop.first or forloop.counter == 2 %}
+        <div class="pure-u-1 pure-u-lg-1-2">
+      {% else %}
+        <div class="pure-u-1">
+      {% endif %}
+          {{ field.label_tag }}
+          {{ field }}
+          {% if field.help_text %}<p class="help-text">{{ field.help_text }}</p>{% endif %}
+          {{ field.errors }}
+        </div>
+    {% endfor %}
+    <div class="pure-u-1 centered">
+      <button class="button pure-button pure-button-primary" type="submit"><i class="fa fa-envelope"></i>
+        {{ value.form.submit_button_text }}
+      </button>
+    </div>
+  </div>
+</form>

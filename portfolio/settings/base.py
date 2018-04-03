@@ -26,6 +26,7 @@ BASE_DIR = os.path.dirname(PROJECT_DIR)
 # Application definition
 
 INSTALLED_APPS = [
+    'portfolio.common',
     'home',
     'resume',
     'search',
@@ -42,6 +43,7 @@ INSTALLED_APPS = [
     'wagtail.admin',
     'wagtail.core',
     'wagtail.contrib.styleguide',
+    'wagtail.contrib.modeladmin',
 
     'modelcluster',
     'taggit',
@@ -53,6 +55,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'sass_processor',
+    'wagtailstreamforms',
 ]
 
 MIDDLEWARE = [
@@ -149,3 +152,12 @@ WAGTAIL_SITE_NAME = "portfolio"
 # Base URL to use when referring to full URLs within the Wagtail admin backend -
 # e.g. in notification emails. Don't include '/admin' or a trailing slash
 BASE_URL = 'http://example.com'
+
+
+# Wagtail StreamForms
+
+# These are the available templates to use for wagtailstreamforms
+# https://wagtailstreamforms.readthedocs.io/en/latest/templates.html
+WAGTAILSTREAMFORMS_FORM_TEMPLATES = (
+    ('forms/contact.html', 'Contact Form Template'),
+)

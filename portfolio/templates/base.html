@@ -32,50 +32,7 @@
                     <p>Software Engineer</p>
                 </a>
                 <nav id="nav">
-                    <ul class="pure-menu-list">
-                        <li class="pure-menu-separator"></li>
-                        <li class="pure-menu-item">
-                            <a href="/#about" class="pure-menu-link menu-link menu-trigger" data-section="about">
-                                <span class="menu-text"><i class="far fa-user-circle"></i> About Me</span>
-                            </a>
-                        </li>
-                        <li class="pure-menu-item">
-                            <a href="/#projects" class="pure-menu-link menu-link menu-trigger" data-section="projects">
-                                <span class="menu-text"><i class="fab fa-codepen"></i> My Projects</span>
-                            </a>
-                        </li>
-                        <li class="pure-menu-item">
-                            <a href="/#contact" class="pure-menu-link menu-link menu-trigger" data-section="contact">
-                                <span class="menu-text"><i class="far fa-paper-plane"></i>Contact</span>
-                            </a>
-                        </li>
-                        {% if app.environment == 'dev' %}
-                            <li class="pure-menu-separator"></li>
-                            {% if app.user %}
-                                <li class="pure-menu-item{% if menu_active == 'dashboard' %} pure-menu-active{% endif %}">
-                                    <a href="" class="pure-menu-link menu-link">
-                                        <span class="menu-text"><i class="fa fa-dashboard"></i> Dashboard</span>
-                                    </a>
-                                </li>
-                                <li class="pure-menu-item">
-                                    <a href="" class="pure-menu-link menu-link">
-                                        <span class="menu-text"><i class="fa fa-sign-out"></i> Logout</span>
-                                    </a>
-                                </li>
-                            {% else %}
-                                <li class="pure-menu-item{% if menu_active == 'register' %} pure-menu-active{% endif %}">
-                                    <a href="" class="pure-menu-link menu-link">
-                                        <span class="menu-text fa-user-plus">Register</span>
-                                    </a>
-                                </li>
-                                <li class="pure-menu-item{% if menu_active == 'login' %} pure-menu-active{% endif %}">
-                                    <a href="" class="pure-menu-link menu-link">
-                                        <span class="menu-text fa-sign-in">Login</span>
-                                    </a>
-                                </li>
-                            {% endif %}
-                        {% endif %}
-                    </ul>
+                  {% navigation %}
                 </nav>
                 <nav id="social">
                     <div class="pure-menu-separator"></div>

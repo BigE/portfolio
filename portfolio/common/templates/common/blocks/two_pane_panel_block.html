@@ -1,0 +1,16 @@
+{% load wagtailcore_tags %}
+
+<div class="pure-g">
+  {% if value.panel_alignment == 'left' %}
+    <div class="pure-u-1 pure-u-xl-10-24">{% include_block value.panel_pane %}</div>
+  {% else %}
+    <div class="pure-u-1 pure-u-xl-13-24">{{ value.content_pane|richtext }}</div>
+  {% endif %}
+  <div class="pure-u-xl-1-24"></div>
+  {% if value.panel_alignment == 'right' %}
+    <div class="pure-u-1 pure-u-xl-10-24">{% include_block value.panel_pane %}</div>
+  {% else %}
+    <div class="pure-u-1 pure-u-xl-12-24">{{ value.content_pane|richtext }}</div>
+    <div class="pure-u-xl-1-24"></div>
+  {% endif %}
+</div>

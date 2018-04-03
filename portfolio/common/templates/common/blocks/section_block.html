@@ -1,0 +1,8 @@
+{% load static wagtailcore_tags %}
+
+<section id="{{ value.id }}" class="block {% if value.dark %}dark{% else %}light{% endif %} menu-block">
+  <header>
+    <h2>{% if value.header.header_icon %}<i class="{{ value.header.header_icon }}"></i> {% endif %}{{ value.header.header_text }}</h2>
+  </header>
+  {% include_block value.body %}
+</section>
