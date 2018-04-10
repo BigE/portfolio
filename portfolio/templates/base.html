@@ -32,13 +32,25 @@
                     <p>Software Engineer</p>
                 </a>
                 <nav id="nav">
-                  {% navigation %}
+                  {% navigation 'main_nav' as menu %}
+                  <ul class="pure-menu-list">
+                    <li class="pure-menu-separator"></li>
+                    {% for item in menu.menu_items.all %}
+                      <li class="pure-menu-item">
+                        <a href="{{ item.url }}" class="pure-menu-link menu-link menu-trigger"{% if item.link_anchor %} data-section="{{ item.link_anchor }}"{% endif %}>
+                          <span class="menu-text"><i class="{{ item.menu_icon }}"></i> {{ item.menu_item_title }}</span>
+                        </a>
+                      </li>
+                    {% endfor %}
+                  </ul>
                 </nav>
                 <nav id="social">
                     <div class="pure-menu-separator"></div>
+                    {% navigation 'social_nav' as social_icons %}
                     <ul class="pure-menu-list pure-menu-horizontal">
-                        <li class="pure-menu-item"><a href="https://github.com/BigE/" class="pure-menu-link menu-link" title="GitHub" target="_blank"><i class="fab fa-github-square"></i></a></li>
-                        <li class="pure-menu-item"><a href="https://linkedin.com/in/egach" class="pure-menu-link menu-link" title="Linked In" target="_blank"><i class="fab fa-linkedin"></i></a></li>
+                        {% for icon in social_icons.menu_items.all %}
+                            <li class="pure-menu-item"><a href="{{ icon.url }}" class="pure-menu-link menu-link" title="{{ icon.menu_item_title }}" target="_blank"><i class="{{ icon.menu_icon }}"></i></a></li>
+                        {% endfor %}
                     </ul>
                 </nav>
             </header>

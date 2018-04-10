@@ -1,10 +1,8 @@
 <form class="pure-form pure-form-stacked" method="post" action="{{ value.form_action }}">
   {% if messages %}
-    <ul class="messages">
-      {% for message in messages %}
-        <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
-      {% endfor %}
-    </ul>
+    {% for message in messages %}
+      <p{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</p>
+    {% endfor %}
   {% endif %}
   {% csrf_token %}
   {% for hidden in form.hidden_fields %}{{ hidden }}{% endfor %}
